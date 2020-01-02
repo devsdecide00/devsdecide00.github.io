@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap);
 
 
 
@@ -1376,7 +1376,7 @@ section.lazy-placeholder:after {
 .cid-rMlDOhdnuo {
   padding-top: 120px;
   padding-bottom: 90px;
-  background-image: url("../../../assets/images/background7.jpg");
+  background-image: url("../../../assets/images/background7.jpeg");
 }
 .cid-rMlDOhdnuo .media-container-column .btn-bgr {
   z-index: 0;
@@ -1483,6 +1483,52 @@ section.lazy-placeholder:after {
 .cid-rMlLmk4Qeb .table-icon {
   color: #f27d7a;
 }
+.cid-rModHKg5dJ {
+  padding-top: 90px;
+  padding-bottom: 75px;
+  background-image: url("../../../assets/images/background3.jpg");
+}
+.cid-rModHKg5dJ .mbr-section-title {
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #232323;
+  text-align: center;
+}
+.cid-rModHKg5dJ .nav {
+  border: none;
+}
+.cid-rModHKg5dJ .nav-tabs {
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.cid-rModHKg5dJ .nav-tabs .nav-link {
+  box-sizing: border-box;
+  color: #f27d7a;
+  font-style: normal;
+  font-weight: 500;
+  padding: 1rem 3rem;
+  margin: 0px -0.5px 1rem -0.5px;
+  transition: all .5s;
+  border-radius: 0px !important;
+  border-bottom: 1px solid #f27d7a;
+}
+.cid-rModHKg5dJ .nav-tabs .nav-link:hover {
+  border: 1px solid #f27d7a;
+  background-color: #e5524e;
+  color: #ffffff;
+}
+.cid-rModHKg5dJ .nav-tabs .nav-link.active {
+  border: 1px solid #f27d7a;
+  font-weight: 500;
+  color: #ffffff;
+  font-style: normal;
+  background: #e5524e;
+}
+.cid-rModHKg5dJ P {
+  text-align: center;
+}
 .cid-rMlLnTDBCF {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -1555,7 +1601,7 @@ section.lazy-placeholder:after {
 .cid-rMlL7qKp4E {
   padding-top: 90px;
   padding-bottom: 90px;
-  background-image: url("../../../assets/images/background714.jpg");
+  background-image: url("../../../assets/images/background7.jpg");
 }
 .cid-rMlL7qKp4E .mbr-section-title {
   letter-spacing: 0.1em;
