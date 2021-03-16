@@ -16,6 +16,3 @@ jobs:
           arguments: '--recursive'
           from: bucket
           to: 's3://devsdecide.com'
-      - aws-cloudfront:
-          distribution_id: E2U5QRJGNRO0KP
-          paths: "*"
