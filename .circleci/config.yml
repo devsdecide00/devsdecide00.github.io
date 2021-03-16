@@ -4,10 +4,12 @@ jobs:
       - image: 'cimg/python:3.6'
     steps:
       - checkout
-      - run: ls
+      - run: mkidr bucket
+      - run: mv *html bucket/
+      - run: mv css bucket/
       - aws-s3/copy:
           arguments: '--recursive'
-          from: .
+          from: bucket
           to: 's3://devsdecide.com'
 orbs:
   aws-s3: circleci/aws-s3@2.0
