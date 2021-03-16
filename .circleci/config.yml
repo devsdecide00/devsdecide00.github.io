@@ -6,12 +6,10 @@ orbs:
 workflows:
   sample:
     jobs:
-      - run:
-          name: Tag and Push Image
-          command: |
-            ls
-#      - aws-s3/copy:
-#          from: .
-#          to: s3://devsdecide.com
-#          arguments: --recursive
-
+      - node/test:
+          version: '15.1'
+          post-steps:
+            - aws-s3/copy:
+                from: dist/
+                to: s3://s3://devsdecide.com
+                arguments: --recursive
