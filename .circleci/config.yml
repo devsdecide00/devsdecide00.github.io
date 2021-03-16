@@ -11,9 +11,9 @@ jobs:
           arguments: '--recursive'
           from: bucket
           to: 's3://devsdecide.com'
-      - aws-cloudfront:
-          distribution_id: E2U5QRJGNRO0KP
-          paths: "*"
+#      - aws-cloudfront:
+#          distribution_id: E2U5QRJGNRO0KP
+#          paths: "*"
 
 orbs:
   aws-s3: circleci/aws-s3@2.0
