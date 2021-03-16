@@ -6,7 +6,7 @@ jobs:
       - checkout
       - run: ls
       - aws-s3/copy:
-          arguments: '--dryrun'
+          arguments: '--recursive'
           from: .
           to: 's3://devsdecide.com'
 orbs:
