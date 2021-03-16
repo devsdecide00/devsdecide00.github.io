@@ -7,8 +7,8 @@ workflows:
   deploy:
     jobs:
       - run: "ls"
-      - aws-s3/copy:
-          from: .
-          to: s3://devsdecide.com
-          arguments: --recursive
+#      - aws-s3/copy:
+#          from: .
+#          to: s3://devsdecide.com
+#          arguments: --recursive
 
