@@ -1,3 +1,8 @@
+version: 2.1
+orbs:
+  aws-s3: circleci/aws-s3@2.0
+  aws-cloudfront: topmonks/aws-cloudfront@1.0.0
+
 jobs:
   build:
     docker:
@@ -11,10 +16,6 @@ jobs:
           arguments: '--recursive'
           from: bucket
           to: 's3://devsdecide.com'
-      - topmonks/aws-cloudfront:
+      - aws-cloudfront:
           distribution_id: E2U5QRJGNRO0KP
           paths: "*"
-orbs:
-  aws-s3: circleci/aws-s3@2.0
-  aws-cloudfront: topmonks/aws-cloudfront@1.0.0
-version: 2.1
