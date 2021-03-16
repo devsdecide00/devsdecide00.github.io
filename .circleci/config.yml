@@ -6,7 +6,10 @@ orbs:
 workflows:
   deploy:
     jobs:
-      - run: "ls"
+      - run:
+          name: Tag and Push Image
+          command: |
+            ls
 #      - aws-s3/copy:
 #          from: .
 #          to: s3://devsdecide.com
