@@ -6,7 +6,7 @@ orbs:
 workflows:
   deploy:
     jobs:
-      - run: ls
+      - run: "ls"
       - aws-s3/copy:
           from: .
           to: s3://devsdecide.com
