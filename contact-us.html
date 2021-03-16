@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/contact.css">
+    <title>Contact Us</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9CW7YMWGJX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9CW7YMWGJX');
+    </script>
+</head>
+<body>
+<header id="hero">
+    <h1>What <a>JAVA</a> Or Infrastructure Problems Do You Need Solved?</h1>
+</header>
+
+<script>
+    function redirectThankYou() {
+        window.location.href = 'thank-you.html';
+        return true;
+    }
+</script>
+
+<section>
+    <div class="container">
+        <div class="content">
+            <form action="https://api.devsdecide.com/contact-us" method="POST">
+                <div class="input-box">
+                    <input name="name" type="text" required>
+                    <label>Enter your name</label>
+                </div>
+                <div class="input-box">
+                    <input name="email" type="text" required>
+                    <label>Enter your email</label>
+                </div>
+                <div class="message-box">
+                    <textarea name="message" required></textarea>
+                    <label>Enter your message</label>
+                </div>
+                <div class="g-recaptcha" data-sitekey="6LcBwIEaAAAAAB0sMOT8cfQp0q2HQhGHy03SRuv5"></div>
+                <div class="input-box">
+                    <input type="submit" value="Send">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
