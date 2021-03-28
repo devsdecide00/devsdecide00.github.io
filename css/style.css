@@ -27,8 +27,12 @@ body {
     line-height: 1.2;
 }
 
-#hero h1 a {
+#java {
     color: purple;
+}
+
+#aws {
+    color: #FF9900;
 }
 
 #hero p {
