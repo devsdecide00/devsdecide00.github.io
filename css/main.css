@@ -62,7 +62,7 @@ ul {
 }
 .hero-wrapper .hero-content h1 {
   font-weight: normal;
-  font-size: 72px;
+  font-size: 4.5em;
   line-height: 100%;
 }
 .hero-wrapper .hero-content .subtitle {
@@ -71,7 +71,7 @@ ul {
 }
 .hero-wrapper .hero-content .hero-cta {
   text-align: center;
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 .hero-wrapper .hero-content .hero-cta .primary-cta {
   background: var(--primary-color);
@@ -79,7 +79,7 @@ ul {
   text-decoration: none;
   padding: 0.6em 1.3em;
   font-size: 1.5em;
-  border-radius: 5em;
+  border-radius: 5rem;
   font-weight: bold;
   display: inline-block;
 }
@@ -88,20 +88,22 @@ ul {
   color: var(--copy-color);
   font-size: 4em;
   line-height: 100%;
-  margin-bottom: 0.5em;
+  margin-bottom: 5rem;
 }
 .use-cases-wrapper .use-case-cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 2em;
+  gap: 2rem;
   width: 100%;
 }
 .use-cases-wrapper .use-case-cards .card {
-  border-radius: 1em;
-  padding: 3em;
+  border-radius: 1rem;
+  padding: 3rem;
   background-color: #151515;
   flex: 45%;
+  display: grid;
+  grid-gap: 3rem;
 }
 .use-cases-wrapper .use-case-cards .card h3 {
   font-weight: 100;
@@ -115,12 +117,34 @@ ul {
   font-weight: bold;
   color: var(--primary-color);
   font-size: 1.35em;
+  align-self: end;
 }
 
 .wrapper {
-  padding: 1.5em;
+  padding: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: auto;
+  box-sizing: border-box;
+  width: 400px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(114, 186, 94, 0.05);
+  border: 2px dashed rgba(114, 186, 94, 0.35);
+}
+
+.item {
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 213, 70, 0.4);
+  border: 2px dashed rgba(236, 198, 48, 0.5);
 }
 
 /*# sourceMappingURL=main.css.map */
