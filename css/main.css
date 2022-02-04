@@ -91,6 +91,18 @@ ul {
   gap: 2rem;
   width: 100%;
 }
+.feature-wrapper .feature-cards .card-2 {
+  border-radius: 1rem;
+  padding: 3rem;
+  background-color: var(--primary-color-20);
+  flex: 5%;
+  display: grid;
+  grid-gap: 3rem;
+}
+.feature-wrapper .feature-cards .card-2 li {
+  font-size: 1.4em;
+  font-weight: normal;
+}
 .feature-wrapper .feature-cards .card {
   border-radius: 1rem;
   padding: 3rem;
@@ -99,13 +111,13 @@ ul {
   display: grid;
   grid-gap: 3rem;
 }
-.feature-wrapper .feature-cards .card .card-text h3 {
+.feature-wrapper .feature-cards .card-text h3 {
   font-weight: 100;
-  font-size: 2.5em;
+  font-size: 2em;
   margin: 0;
   margin-bottom: 2rem;
 }
-.feature-wrapper .feature-cards .card .card-text p {
+.feature-wrapper .feature-cards .card-text p {
   font-size: medium;
   margin: 0;
 }
@@ -138,19 +150,23 @@ ul {
 }
 .use-cases-wrapper .use-case-cards .card .card-text h3 {
   font-weight: 100;
-  font-size: 2.5em;
+  font-size: 2em;
   margin: 0;
   margin-bottom: 2rem;
 }
 .use-cases-wrapper .use-case-cards .card .card-text p {
-  font-size: medium;
   margin: 0;
+  font-size: 1em;
 }
 .use-cases-wrapper .use-case-cards .card a {
   font-weight: bold;
   color: var(--primary-color);
   font-size: 1.35em;
   align-self: end;
+  text-decoration: none;
+}
+.use-cases-wrapper .use-case-cards .card a svg {
+  fill: var(--primary-color);
 }
 
 .wrapper {
