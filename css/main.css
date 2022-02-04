@@ -1,6 +1,5 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -22,38 +21,25 @@ ul {
 }
 
 .nav-wrapper .wrapper header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .nav-wrapper .wrapper header .logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   font-size: 1.5em;
 }
-
 .nav-wrapper .wrapper header .logo .devs {
   color: var(--primary-color);
   font-weight: bold;
 }
-
 .nav-wrapper .wrapper header .logo .decide {
   font-weight: lighter;
 }
-
 .nav-wrapper .wrapper header ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .nav-wrapper .wrapper header ul li a {
-  font-size: 1.25;
+  font-size: 1.25em;
   padding: 0 0.6em;
 }
 
@@ -63,41 +49,30 @@ ul {
   height: 100vh;
   width: 100vw;
 }
-
 .hero-wrapper .hero-overlay {
   background: rgba(0, 0, 0, 0.7);
   height: 100vh;
 }
-
 .hero-wrapper .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-content: center;
+  align-items: center;
   height: 70vh;
   width: 615px;
 }
-
 .hero-wrapper .hero-content h1 {
   font-weight: normal;
   font-size: 72px;
   line-height: 100%;
 }
-
 .hero-wrapper .hero-content .subtitle {
   margin-top: 0;
   margin-bottom: 0;
 }
-
 .hero-wrapper .hero-content .hero-cta {
   text-align: center;
   margin-top: 2em;
 }
-
 .hero-wrapper .hero-content .hero-cta .primary-cta {
   background: var(--primary-color);
   color: white;
@@ -113,40 +88,29 @@ ul {
   color: var(--copy-color);
   font-size: 4em;
   line-height: 100%;
+  margin-bottom: 0.5em;
 }
-
 .use-cases-wrapper .use-case-cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2em;
   width: 100%;
 }
-
 .use-cases-wrapper .use-case-cards .card {
   border-radius: 1em;
   padding: 3em;
   background-color: #151515;
-  -webkit-box-flex: 50%;
-      -ms-flex: 50%;
-          flex: 50%;
+  flex: 45%;
 }
-
 .use-cases-wrapper .use-case-cards .card h3 {
   font-weight: 100;
   font-size: 2.5em;
   margin: 0;
 }
-
 .use-cases-wrapper .use-case-cards .card p {
   font-size: medium;
 }
-
 .use-cases-wrapper .use-case-cards .card a {
   font-weight: bold;
   color: var(--primary-color);
@@ -158,4 +122,5 @@ ul {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 /*# sourceMappingURL=main.css.map */
