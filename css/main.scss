@@ -58,40 +58,77 @@ ul {
 }
 
 .hero-wrapper {
-  background-size: cover;
-  background-image: radial-gradient(circle at 38% 32%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 8%,transparent 8%, transparent 92%),radial-gradient(circle at 34% 62%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 8%,transparent 8%, transparent 92%),radial-gradient(circle at 3% 32%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 28% 87%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 15% 30%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 64% 45%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 3% 100%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 74% 78%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 92% 23%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 100% 40%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 43% 31%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 4%,transparent 4%, transparent 96%),linear-gradient(90deg, rgb(164, 0, 244),rgb(57, 10, 184));
   height: 100vh;
-
-  .hero-overlay {
-    
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(37, 37, 37, 0.514) 70%);
-    height: 100vh;
+  position: relative;
+  
+  .img-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.10;
+      animation: scale 25s;
+    }
+    overflow: hidden;
+  }
+  @keyframes scale {
+    0%  {
+      transform: scale(1.3);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 
-  .wrapper {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    height: 70vh;
-    width: 615px;
-  }
-
-  .hero-content {
-    h1 {
-      font-weight: normal;
-      font-size: 4.5em;
-      line-height: 100%;
+  .hero-content-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    perspective: 100rem;
+    .hero-content {
+      display: grid;
+      align-content: center;
+      align-items: center;
+      gap: 2rem;
+      h1 {
+        font-weight: normal;
+        font-size: 4.5em;
+        line-height: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+        animation: moveHero 1s forwards;
+        opacity: 0;
+      }
+  
+      .subtitle {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 1.5em;
+        text-align: center;
+        animation: moveHero 1s forwards 0.2s;
+        opacity: 0;
+      }
+  
+      .hero-cta {
+        text-align: center;
+        // margin-top: 7rem;
+        opacity: 0;
+        animation: moveHero 1s forwards 0.4s;
+      }
     }
-
-    .subtitle {
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: 1.5em;
-    }
-
-    .hero-cta {
-      text-align: center;
-      margin-top: 2rem;
+    @keyframes moveHero {
+      0% {
+        transform: translateY(40rem) rotateY(-20deg);
+      }
+      100% {
+        transform: translateY(0) rotateY(0deg);
+        opacity: 1;
+      }
     }
   }
 }
@@ -157,7 +194,6 @@ ul {
     margin-top: 2rem;
   }
 }
-
 
 .use-cases-wrapper {
   background-image: radial-gradient(circle at top right, rgb(36, 9, 119) 0%, rgb(36, 9, 119) 48%,rgb(72, 7, 149) 48%, rgb(72, 7, 149) 53%,rgb(109, 5, 178) 53%, rgb(109, 5, 178) 56%,rgb(145, 2, 208) 56%, rgb(145, 2, 208) 69%,rgb(181, 0, 237) 69%, rgb(181, 0, 237) 100%);
@@ -234,4 +270,16 @@ ul {
   border-radius: 5rem;
   font-weight: bold;
   display: inline-block;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.reveal.active  {
+  transform: translateY(0);
+  opacity: 1;
 }

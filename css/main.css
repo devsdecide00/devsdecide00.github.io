@@ -67,46 +67,121 @@ ul {
 }
 
 .hero-wrapper {
-  background-size: cover;
-  background-image: radial-gradient(circle at 38% 32%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 34% 62%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 3% 32%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 28% 87%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 15% 30%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 64% 45%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 3% 100%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 74% 78%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 92% 23%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 100% 40%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 43% 31%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 4%, transparent 4%, transparent 96%), -webkit-gradient(linear, left top, right top, from(#a400f4), to(#390ab8));
-  background-image: radial-gradient(circle at 38% 32%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 34% 62%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 3% 32%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 28% 87%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 15% 30%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 64% 45%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 3% 100%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 74% 78%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 92% 23%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 100% 40%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 43% 31%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 4%, transparent 4%, transparent 96%), linear-gradient(90deg, #a400f4, #390ab8);
   height: 100vh;
+  position: relative;
 }
 
-.hero-wrapper .hero-overlay {
-  background: -webkit-gradient(linear, left bottom, left top, from(black), color-stop(70%, rgba(37, 37, 37, 0.514)));
-  background: linear-gradient(0deg, black 0%, rgba(37, 37, 37, 0.514) 70%);
-  height: 100vh;
+.hero-wrapper .img-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
 }
 
-.hero-wrapper .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.hero-wrapper .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.10;
+  -webkit-animation: scale 25s;
+          animation: scale 25s;
+}
+
+@-webkit-keyframes scale {
+  0% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scale {
+  0% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.hero-wrapper .hero-content-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  -webkit-perspective: 100rem;
+          perspective: 100rem;
+}
+
+.hero-wrapper .hero-content-wrapper .hero-content {
+  display: -ms-grid;
+  display: grid;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 70vh;
-  width: 615px;
+  gap: 2rem;
 }
 
-.hero-wrapper .hero-content h1 {
+.hero-wrapper .hero-content-wrapper .hero-content h1 {
   font-weight: normal;
   font-size: 4.5em;
   line-height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  -webkit-animation: moveHero 1s forwards;
+          animation: moveHero 1s forwards;
+  opacity: 0;
 }
 
-.hero-wrapper .hero-content .subtitle {
+.hero-wrapper .hero-content-wrapper .hero-content .subtitle {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 1.5em;
+  text-align: center;
+  -webkit-animation: moveHero 1s forwards 0.2s;
+          animation: moveHero 1s forwards 0.2s;
+  opacity: 0;
 }
 
-.hero-wrapper .hero-content .hero-cta {
+.hero-wrapper .hero-content-wrapper .hero-content .hero-cta {
   text-align: center;
-  margin-top: 2rem;
+  opacity: 0;
+  -webkit-animation: moveHero 1s forwards 0.4s;
+          animation: moveHero 1s forwards 0.4s;
+}
+
+@-webkit-keyframes moveHero {
+  0% {
+    -webkit-transform: translateY(40rem) rotateY(-20deg);
+            transform: translateY(40rem) rotateY(-20deg);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotateY(0deg);
+            transform: translateY(0) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes moveHero {
+  0% {
+    -webkit-transform: translateY(40rem) rotateY(-20deg);
+            transform: translateY(40rem) rotateY(-20deg);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotateY(0deg);
+            transform: translateY(0) rotateY(0deg);
+    opacity: 1;
+  }
 }
 
 .feature-wrapper {
@@ -268,5 +343,20 @@ ul {
   border-radius: 5rem;
   font-weight: bold;
   display: inline-block;
+}
+
+.reveal {
+  position: relative;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.reveal.active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
 }
 /*# sourceMappingURL=main.css.map */
