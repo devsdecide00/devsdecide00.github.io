@@ -240,6 +240,7 @@ ul {
   font-size: 1.35em;
   align-self: end;
   text-decoration: none;
+  width: 8rem;
 }
 .use-cases-wrapper .use-case-cards .card a svg {
   fill: var(--color-secondary-2-0);
