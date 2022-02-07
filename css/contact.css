@@ -182,6 +182,10 @@ section {
   background-color: var(--color-secondary-1-3);
 }
 
+#other {
+  display: none;
+}
+
 @media (max-width: 1000px) {
   .content .image-box {
     max-width: 70%;
