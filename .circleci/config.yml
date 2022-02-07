@@ -12,6 +12,7 @@ jobs:
       - run: mkdir bucket
       - run: mv *html bucket/
       - run: mv css bucket/
+      - run: mv img bucket/
       - aws-s3/copy:
           arguments: '--recursive'
           from: bucket
