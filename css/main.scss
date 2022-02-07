@@ -63,8 +63,15 @@ ul {
         display: flex;
 
         li a {
+          font-weight: bold;
           font-size: 1em;
           padding: 0 0.6em;
+          text-decoration: none;
+          color: white;
+        }
+        li a:hover {
+          color: var(--color-secondary-2-1);
+          text-decoration: underline;
         }
       }
     }
@@ -260,13 +267,10 @@ ul {
         font-size: 1.35em;
         align-self: end;
         text-decoration: none;
-
         svg {
           fill: var(--color-secondary-2-0);
         }
-
       }
-
     }
   }
 }
