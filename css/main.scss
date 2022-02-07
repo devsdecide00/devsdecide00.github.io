@@ -7,14 +7,28 @@ body {
   margin: 0;
   background: black;
   color: white;
-  font-family: "Poppins";
+  font-family: Poppins, Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 :root {
-  --primary-color: #9f70ff;
   --copy-color: #A1A1A6;
-  --primary-color-20: #2C0262;
-  --primary-color-55: #6926F2;
+  --color-primary-0: #6A118E;
+  --color-primary-1: #9B33C4;
+  --color-primary-2: #9531BC;
+  --color-primary-3: #3C0651;
+  --color-primary-4: #340447;
+
+  --color-secondary-1-0: #0B8080;
+  --color-secondary-1-1: #2AB8B8;
+  --color-secondary-1-2: #28AFAF;
+  --color-secondary-1-3: #024949;
+  --color-secondary-1-4: #014040;
+
+  --color-secondary-2-0: #D57912;
+  --color-secondary-2-1: #FFA23A;
+  --color-secondary-2-2: #FFA23B;
+  --color-secondary-2-3: #7A4204;
+  --color-secondary-2-4: #6A3901;
 }
 
 ul {
@@ -34,7 +48,7 @@ ul {
         display: flex;
 
         .devs {
-          color: var(--primary-color);
+          color: var(--color-primary-0);
           font-weight: bold;
         }
 
@@ -155,7 +169,7 @@ ul {
     .card-2 {
       border-radius: 1rem;
       padding: 3rem;
-      background-color: var(--primary-color-20);
+      background-color: var(--color-primary-4);
       flex: 5%;
       display: grid;
       grid-gap: 3rem;
@@ -169,7 +183,7 @@ ul {
     .card {
       border-radius: 1rem;
       padding: 3rem;
-      background-color: var(--primary-color-20);
+      background-color: var(--color-primary-4);
       flex: 45%;
       display: grid;
       grid-gap: 3rem;
@@ -242,13 +256,13 @@ ul {
 
       a {
         font-weight: bold;
-        color: var(--primary-color);
+        color: var(--color-secondary-2-0);
         font-size: 1.35em;
         align-self: end;
         text-decoration: none;
 
         svg {
-          fill: var(--primary-color);
+          fill: var(--color-secondary-2-0);
         }
 
       }
@@ -264,7 +278,7 @@ ul {
 }
 
 .primary-cta {
-  background: var(--primary-color-55);
+  background: var(--color-secondary-1-2);
   color: white;
   text-decoration: none;
   padding: 0.6em 1.3em;
