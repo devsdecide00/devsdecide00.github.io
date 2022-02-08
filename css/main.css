@@ -21,8 +21,8 @@ body {
   --color-secondary-1-2: #28AFAF;
   --color-secondary-1-3: #024949;
   --color-secondary-1-4: #014040;
-  --color-secondary-2-0: #FF7601;
-  --color-secondary-2-1: #D55300;
+  --color-secondary-2-1: #FF7601;
+  --color-secondary-2-0: #D55300;
   --color-secondary-2-2: #AB3000;
   --color-secondary-2-3: #840100;
   --color-secondary-2-4: #610000;
@@ -44,6 +44,8 @@ ul {
 }
 .nav-wrapper .wrapper header .logo {
   display: flex;
+  text-decoration: none;
+  color: white;
   font-size: 1.5em;
 }
 .nav-wrapper .wrapper header .logo .devs {
@@ -113,7 +115,6 @@ ul {
   text-align: center;
   animation: moveHero 1s forwards;
   opacity: 0;
-  width: 615px;
   margin: 0 auto 0 auto;
 }
 .hero-wrapper .hero-content-wrapper .hero-content .subtitle {
@@ -145,13 +146,6 @@ ul {
   padding-bottom: 10rem;
   transform: translateY(0px) !important;
 }
-.feature-wrapper .use-case-copy {
-  color: var(--copy-color);
-  font-size: 4em;
-  line-height: 100%;
-  margin-bottom: 5rem;
-  text-align: center;
-}
 .feature-wrapper .feature-cards {
   display: flex;
   flex-direction: row;
@@ -179,7 +173,7 @@ ul {
   display: grid;
   grid-gap: 3rem;
 }
-.feature-wrapper .feature-cards .card-text h2 {
+.feature-wrapper .feature-cards .card-text h3 {
   font-weight: 100;
   font-size: 2em;
   margin: 0;
@@ -202,13 +196,6 @@ ul {
   padding-bottom: 10rem;
   background: linear-gradient(180deg, black 0%, rgba(37, 37, 37, 0.514) 70%);
 }
-.use-cases-wrapper .use-case-copy {
-  color: var(--copy-color);
-  font-size: 4em;
-  line-height: 100%;
-  margin-bottom: 5rem;
-  text-align: center;
-}
 .use-cases-wrapper .use-case-cards {
   display: flex;
   flex-direction: row;
@@ -224,7 +211,7 @@ ul {
   display: grid;
   grid-gap: 3rem;
 }
-.use-cases-wrapper .use-case-cards .card .card-text h2 {
+.use-cases-wrapper .use-case-cards .card .card-text h3 {
   font-weight: 100;
   font-size: 2em;
   margin: 0;
@@ -280,6 +267,14 @@ ul {
 .reveal.active {
   transform: translateY(0);
   opacity: 1;
+}
+
+.use-case-copy {
+  color: var(--copy-color);
+  font-size: 3em;
+  line-height: 150%;
+  margin-bottom: 5rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

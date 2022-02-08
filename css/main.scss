@@ -24,8 +24,8 @@ body {
   --color-secondary-1-3: #024949;
   --color-secondary-1-4: #014040;
 
-  --color-secondary-2-0: #FF7601;
-  --color-secondary-2-1: #D55300;
+  --color-secondary-2-1: #FF7601;
+  --color-secondary-2-0: #D55300;
   --color-secondary-2-2: #AB3000;
   --color-secondary-2-3: #840100;
   --color-secondary-2-4: #610000;
@@ -46,7 +46,8 @@ ul {
       align-items: center;
       .logo {
         display: flex;
-
+        text-decoration: none;
+        color: white;
         .devs {
           color: var(--color-primary-1);
           font-weight: bold;
@@ -122,7 +123,7 @@ ul {
         text-align: center;
         animation: moveHero 1s forwards;
         opacity: 0;
-        width: 615px;
+        //width: 615px;
         margin: 0 auto 0 auto;
       }
   
@@ -159,13 +160,6 @@ ul {
   padding-top: 10rem;
   padding-bottom: 10rem;
   transform: translateY(0px) !important;
-  .use-case-copy {
-    color: var(--copy-color);
-    font-size: 4em;
-    line-height: 100%;
-    margin-bottom: 5rem;
-    text-align: center;
-  }
 
   .feature-cards {
     display: flex;
@@ -198,7 +192,7 @@ ul {
     }
 
     .card-text {
-      h2 {
+      h3 {
         font-weight: 100;
         font-size: 2em;
         margin: 0;
@@ -225,13 +219,6 @@ ul {
     padding-bottom: 10rem;
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(37, 37, 37, 0.514) 70%);
   }
-  .use-case-copy {
-    color: var(--copy-color);
-    font-size: 4em;
-    line-height: 100%;
-    margin-bottom: 5rem;
-    text-align: center;
-  }
 
   .use-case-cards {
     display: flex;
@@ -249,7 +236,7 @@ ul {
       grid-gap: 3rem;
 
       .card-text {
-        h2 {
+        h3 {
           font-weight: 100;
           font-size: 2em;
           margin: 0;
@@ -311,4 +298,12 @@ ul {
 .reveal.active  {
   transform: translateY(0);
   opacity: 1;
+}
+
+.use-case-copy {
+  color: var(--copy-color);
+  font-size: 3em;
+  line-height: 150%;
+  margin-bottom: 5rem;
+  text-align: center;
 }
