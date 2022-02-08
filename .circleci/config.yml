@@ -11,6 +11,12 @@ jobs:
       - image: 'cimg/python:3.6'
     steps:
       - checkout
+  deploy:
+    docker:
+      - image: 'cimg/python:3.6'
+    steps:
+      - checkout:
+          path: ~/repo
       - run: mkdir bucket
       - run: mv *html bucket/
       - run: mv css bucket/
