@@ -28,7 +28,8 @@ jobs:
 workflows:
     baseworkflow:
       jobs:
-        - build:
+        - build
+        - deploy:
             filters: 
               branches:
                 only: master 
