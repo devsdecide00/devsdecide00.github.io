@@ -3,14 +3,17 @@ orbs:
   aws-s3: circleci/aws-s3@2.0
   aws-cloudfront: topmonks/aws-cloudfront@1.0.0
   path-filtering: circleci/path-filtering@0.1.1
-
+  node: circleci/node@5.0.0
 
 jobs:
   build:
-    docker:
-      - image: 'cimg/python:3.6'
+    executor: node/default
     steps:
       - checkout
+      - node/install:
+          node-version: '16.13'
+      - run: node --version
+      - node/install-packages
       - save_cache:
           paths:
             - ~/
