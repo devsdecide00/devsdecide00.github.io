@@ -2,6 +2,7 @@ import './App.css';
 import NavBar from "./Navbar";
 import Hero from "./Hero";
 import UseCases from "./UseCases";
+import Feature from './Feature';
 
 function App() {
     return (
@@ -9,6 +10,7 @@ function App() {
             <NavBar/>
             <Hero />
             <UseCases />
+            <Feature />
         </div>
     );
 }

@@ -3,9 +3,9 @@ import Card from "./Card";
 function UseCases() {
     return (
         <div className="max-w-7xl mx-auto px-8">
-            <div className="text-center text-7xl">
+            <h1 className="text-center">
                 A Few Changes Could Redefine Your Business
-            </div>
+            </h1>
             <div className="use-cases-overlay">
                 <div className="wrapper">
                     <div className="grid gap-8 lg:grid-cols-2 grid-cols-1">
