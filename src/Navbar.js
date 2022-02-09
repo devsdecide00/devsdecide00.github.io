@@ -1,9 +1,9 @@
 import Logo from "./Logo";
 import Nav from "./Nav";
 
-function NavBar() {
+function NavBar({classes}) {
     return (
-        <div className="flex items-center justify-between h-16 max-w-7xl mx-auto px-8">
+        <div className={`flex items-center justify-between h-16 ${classes}`}>
             <Logo />
             <Nav />
         </div>

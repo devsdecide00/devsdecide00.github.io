@@ -1,8 +1,8 @@
 import Card from "./Card";
 
-function UseCases() {
+function UseCases({classes}) {
     return (
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className={`${classes}`}>
             <h1 className="text-center">
                 A Few Changes Could Redefine Your Business
             </h1>

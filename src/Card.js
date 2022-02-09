@@ -4,7 +4,7 @@ function Card({headline, copy}) {
             <h3 className="font-thin">{headline}</h3>
             <p>{copy}</p>
             <div className="font-bold text-orange-500 self-end hover:text-orange-700 mr-auto hover:underline">
-                <a className="content-end" href="contact-us.html">Contact Us</a>
+                <a className="content-end" href="#contact-us">Contact Us</a>
             </div>
         </div>
     );
