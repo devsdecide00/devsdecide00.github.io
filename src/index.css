@@ -28,6 +28,12 @@
   a {
     @apply text-xs    md:text-sm    lg:text-base    xl:text-lg      2xl:text-xl;
   }
+  label {
+    @apply text-xs    md:text-sm    lg:text-base    xl:text-lg      2xl:text-xl;
+  }
+  section {
+    @apply rounded-2xl m-3 md:m-5 lg:m-7 xl:m-9 2xl:m-11;
+  }
 }
 @tailwind components;
 
@@ -53,7 +59,7 @@ code {
 }
 
 .zoomeffect {
-  animation: scale 20s;
+  animation: scale 10s;
 }
 
 @keyframes scale {
