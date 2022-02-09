@@ -19,6 +19,9 @@
   h6 {
     @apply text-base md:text-xl lg:text-2xl;
   }
+  sub {
+    @apply text-base md:text-xl lg:text-2xl;
+  }
   p {
     @apply text-xs md:text-sm lg:text-base;
   }

@@ -11,9 +11,9 @@ function App() {
         <div >
             <NavBar classes="max-w-7xl mx-auto px-4 md:px-8"/>
             <Hero />
-            <UseCases classes="max-w-7xl mx-auto px-4 md:px-8"/>
-            <Feature classes="max-w-7xl mx-auto px-4 md:px-8"/>
-            <ContactUs classes="max-w-7xl mx-auto px-4 md:px-8"/>
+            <UseCases classes="max-w-7xl mx-auto px-4 md:px-8 pt-40 pb-10"/>
+            <Feature classes="max-w-7xl mx-auto px-4 md:px-8 pt-40 pb-10"/>
+            <ContactUs classes="max-w-7xl mx-auto px-4 md:px-8 pt-40 pb-10"/>
             <Footer classes="max-w-7xl mx-auto px-4 md:px-8"/>
         </div>
     );

@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+#use-cases {
+  background-image: linear-gradient(to right top, rgb(7, 25, 49) 0%, rgb(51, 39, 79) 30%, rgb(86, 25, 57) 100%);;
+
+}
+
+#features {
+  background-image: linear-gradient(rgb(61, 13, 34) 40%, rgb(21, 21, 22) 100%);
+}
+
+
+#contact-us {
+  background-image: linear-gradient(-217deg, #621e8f 16%, #762ca6 56%, #cf6e88 99%)
+}

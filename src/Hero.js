@@ -7,9 +7,9 @@ function Hero() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <div className="grid content-center items-center gap-9">
                     <h1 className="text-center">Boost Your Print Business’ Profits</h1>
-                    <h6 className="text-center">With custom reports and integrations you can have the full insights into your business you’ve always wanted.</h6>
+                    <sub className="text-center">With custom reports and integrations you can have the full insights into your business you’ve always wanted.</sub>
                     <div className="text-center">
-                        <a href="#contact-us" className="no-underline bg-orange-500 rounded-full py-2 md:py-3 px-4 md:px-5 font-bold inline-block hover:bg-orange-700">Contact Us</a>
+                        <a href="#contact-us" className="no-underline bg-cta-500 rounded-full py-2 md:py-3 px-4 md:px-5 font-bold inline-block hover:bg-cta-700">Contact Us</a>
                     </div>
                 </div>
             </div>
