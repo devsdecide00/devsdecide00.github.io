@@ -50,3 +50,15 @@
 #contact-us {
   background-image: linear-gradient(-217deg, #621e8f 16%, #762ca6 56%, #cf6e88 99%)
 }
+
+.reveal {
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.reveal.active  {
+  transform: translateY(0);
+  opacity: 1;
+}
