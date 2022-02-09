@@ -1,6 +1,6 @@
 function Logo() {
     return (
-        <a className="flex text-white no-underline text-base" href="/">
+        <a className="flex text-white no-underline" href="/">
             <div className="">
                 <svg width="24.3" height="33" viewBox="0 0 53 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
