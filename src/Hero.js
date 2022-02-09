@@ -1,7 +1,9 @@
 function Hero() {
     return (
         <div className="h-screen">
-            <img className="opacity-30 object-cover w-full h-full zoomeffect" src="herobackground.webp" alt=""/>
+            <div className="w-full h-full overflow-hidden">
+                <img className="opacity-30 object-cover w-full h-full zoomeffect" src="herobackground.webp" alt=""/>
+            </div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <div className="grid content-center items-center gap-9">
                     <h1 className="text-center">Boost Your Print Business’ Profits</h1>
