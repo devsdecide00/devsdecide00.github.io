@@ -14,7 +14,7 @@ function Logo() {
                         fill="white"/>
                 </svg>
             </div>
-            <h5 className="font-bold text-purple-600 ml-1">Devs</h5>
+            <h5 className="font-bold text-purple-500 ml-1">Devs</h5>
             <h5 className="font-light">Decide</h5>
         </a>
     );
