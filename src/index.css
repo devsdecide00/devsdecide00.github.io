@@ -29,8 +29,13 @@
     @apply text-xs    md:text-sm    lg:text-base    xl:text-lg      2xl:text-xl;
   }
 }
-
 @tailwind components;
+
+@layer components {
+  .section-header {
+    @apply pb-8 md:pb-10 lg:pb-12 xl:pb-14 2xl:pb-16;
+  }
+}
 @tailwind utilities;
 
 body {

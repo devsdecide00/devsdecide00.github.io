@@ -2,7 +2,7 @@ function ContactUs({classes}) {
     return (
         <section id="contact-us">
             <div className={`${classes}`}>
-                <h3 className="text-center font-bold">Contact Us</h3>
+                <h3 className="text-center font-bold section-header">Contact Us</h3>
                 <div className="grid lg:grid-cols-4 ">
                     <div className="rounded-2xl p-4 md:p-8 lg:p-12 bg-neutral-900/30 w-auto lg:col-span-2 lg:col-start-2">
                         <form action="https://api.devsdecide.com/contact-us" method="POST">
@@ -23,7 +23,7 @@ function ContactUs({classes}) {
                                     <label>Message</label>
                                     <textarea name="message" required className="text-black h-24 rounded-md" aria-label="message"/>
                                 </div>
-                                <div className="no-underline bg-cta-500 rounded-full py-2 md:py-3 px-4 md:px-5 font-bold inline-block hover:bg-cta-700 text-center">
+                                <div className="no-underline bg-cta-700 rounded-full py-2 md:py-3 px-4 md:px-5 font-bold inline-block hover:bg-cta-800 text-center">
                                     <input type="submit" value="Send"/>
                                 </div>
                             </div>

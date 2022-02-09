@@ -4,8 +4,7 @@ function UseCases({classes}) {
     return (
         <section id="use-cases" className="">
             <div className={`${classes}`}>
-                <h2 className="text-center font-bold text-gray-400">
-                    A Few Changes Could <span className="text-white">Redefine</span> Your Business
+                <h2 className="text-center font-bold text-gray-400 section-header">A Few Changes Could <span className="text-white">Redefine</span> Your Business
                 </h2>
                 <div className="use-cases-overlay">
                     <div className="wrapper">
