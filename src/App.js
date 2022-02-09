@@ -9,12 +9,12 @@ import Footer from "./Footer";
 function App() {
     return (
         <div >
-            <NavBar classes="max-w-7xl mx-auto px-4 md:px-8"/>
+            <NavBar     classes="mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20"/>
             <Hero />
-            <UseCases classes="max-w-7xl mx-auto px-4 md:px-8 pt-40 pb-10"/>
-            <Feature classes="max-w-7xl mx-auto px-4 md:px-8 pt-40 pb-10"/>
-            <ContactUs classes="max-w-7xl mx-auto px-4 md:px-8 pt-40 pb-10"/>
-            <Footer classes="max-w-7xl mx-auto px-4 md:px-8"/>
+            <UseCases   classes="mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-40 pb-10"/>
+            <Feature    classes="mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-40 pb-10"/>
+            <ContactUs  classes="mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-40 pb-10"/>
+            <Footer     classes="mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20"/>
         </div>
     );
 }

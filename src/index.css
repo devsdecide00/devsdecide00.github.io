@@ -2,31 +2,31 @@
 
 @layer base {
   h1 {
-    @apply text-4xl md:text-6xl lg:text-7xl;
+    @apply text-4xl   md:text-6xl   lg:text-7xl     xl:text-8xl     2xl:text-9xl;
   }
   h2 {
-    @apply text-3xl md:text-5xl lg:text-6xl;
+    @apply text-3xl   md:text-5xl   lg:text-6xl     xl:text-7xl     2xl:text-8xl;
   }
   h3 {
-    @apply text-2xl md:text-4xl lg:text-5xl;
+    @apply text-2xl   md:text-4xl   lg:text-5xl     xl:text-6xl     2xl:text-7xl;
   }
   h4 {
-    @apply text-xl md:text-3xl lg:text-4xl;
+    @apply text-xl    md:text-3xl   lg:text-4xl     xl:text-5xl     2xl:text-6xl;
   }
   h5 {
-    @apply text-lg md:text-2xl lg:text-3xl;
+    @apply text-lg    md:text-2xl   lg:text-3xl     xl:text-4xl     2xl:text-5xl;
   }
   h6 {
-    @apply text-base md:text-xl lg:text-2xl;
+    @apply text-base  md:text-xl    lg:text-2xl     xl:text-3xl     2xl:text-4xl;
   }
   sub {
-    @apply text-base md:text-xl lg:text-2xl;
+    @apply text-base  md:text-xl    lg:text-2xl     xl:text-2xl     2xl:text-3xl;
   }
   p {
-    @apply text-xs md:text-sm lg:text-base;
+    @apply text-xs    md:text-sm    lg:text-base    xl:text-lg      2xl:text-xl;
   }
   a {
-    @apply text-xs md:text-sm lg:text-base;
+    @apply text-xs    md:text-sm    lg:text-base    xl:text-lg      2xl:text-xl;
   }
 }
 

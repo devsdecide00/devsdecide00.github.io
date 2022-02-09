@@ -1,6 +1,6 @@
 function Logo() {
     return (
-        <a className="flex text-white no-underline" href="/">
+        <a className="flex text-white no-underline items-center" href="/">
             <div className="">
                 <svg width="24.3" height="33" viewBox="0 0 53 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -14,8 +14,8 @@ function Logo() {
                         fill="white"/>
                 </svg>
             </div>
-            <h5 className="font-bold text-purple-500 ml-1">Devs</h5>
-            <h5 className="font-light">Decide</h5>
+            <h6 className="font-bold text-purple-500 ml-1">Devs</h6>
+            <h6 className="font-light">Decide</h6>
         </a>
     );
 }

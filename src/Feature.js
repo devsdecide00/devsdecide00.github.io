@@ -1,4 +1,5 @@
 import Card from "./Card";
+import ContactUCTA from "./ContactUCTA";
 
 function Feature({classes}) {
     return (
@@ -9,11 +10,7 @@ function Feature({classes}) {
                     <Card headline="Unlock Your Business’ True Potential" doNotShowContactUs="true" classes="col-span-2"/>
                     <Card headline="Tech We Use" doNotShowContactUs="true"/>
                 </div>
-                <div className="text-center">
-                    <a href="#contact-us"
-                       className="w-full sm:w-auto no-underline bg-cta-500 rounded-full py-2 md:py-3 px-4 md:px-5 font-bold inline-block hover:bg-cta-700">
-                        Contact Us</a>
-                </div>
+                <ContactUCTA />
             </div>
         </section>
     );
