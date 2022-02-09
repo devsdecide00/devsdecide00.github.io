@@ -1,7 +1,7 @@
 function Feature() {
     return (
         <div>
-            <h1>Sell More! Sell Faster!</h1>
+            <h1 className="text-center">Sell More! Sell Faster!</h1>
 
             <div className="grid gap-8 lg:grid-cols-2 grid-cols-1">
 

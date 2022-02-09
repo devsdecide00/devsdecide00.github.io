@@ -2,7 +2,7 @@ import Card from "./Card";
 
 function UseCases() {
     return (
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
             <h1 className="text-center">
                 A Few Changes Could Redefine Your Business
             </h1>
