@@ -11,14 +11,14 @@ import HowWe from "./HowWe";
 function App() {
     return (
         <div >
-            <NavBar         classes="mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20"/>
+            <NavBar         classes="section-wrapper-padding"/>
             <Hero />
-            <Sales          classes="mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-40 pb-10 h-screen h-full"/>
-            <Redefine       classes="mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-40 pb-10 h-screen h-full"/>
-            <Overwhelmed    classes="mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-40 pb-10 h-screen h-full"/>
-            <HowWe          classes="mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-40 pb-10 h-screen h-full"/>
-            <ContactUs      classes="mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-40 pb-10 h-screen h-full"/>
-            <Footer         classes="mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20"/>
+            <Sales          classes="section-wrapper-padding pt-40 pb-10 h-screen h-full"/>
+            <Redefine       classes="section-wrapper-padding pt-40 pb-10 h-screen h-full"/>
+            <Overwhelmed    classes="section-wrapper-padding pt-40 pb-10 h-screen h-full"/>
+            <HowWe          classes="section-wrapper-padding pt-40 pb-10 h-screen h-full"/>
+            <ContactUs      classes="section-wrapper-padding pt-40 pb-10 h-screen h-full"/>
+            <Footer         classes="section-wrapper-padding"/>
         </div>
     );
 }

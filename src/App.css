@@ -87,8 +87,8 @@
 }
 
 .indicator {
-  width: 25px;
-  height: 40px;
+  /*width: 25px;*/
+  /*height: 40px;*/
   border: 2px solid #fff;
   border-radius: 50px;
   position: relative;

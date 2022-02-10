@@ -2,44 +2,47 @@
 
 @layer base {
   h1 {
-    @apply text-4xl   md:text-6xl   lg:text-7xl     xl:text-8xl     2xl:text-9xl;
+    @apply text-4xl   md:text-6xl   lg:text-7xl     xl:text-8xl     2xl:text-9xl    4xl:text-[10rem];
   }
   h2 {
-    @apply text-3xl   md:text-5xl   lg:text-6xl     xl:text-7xl     2xl:text-8xl;
+    @apply text-3xl   md:text-5xl   lg:text-6xl     xl:text-7xl     2xl:text-8xl    4xl:text-9xl;
   }
   h3 {
-    @apply text-2xl   md:text-4xl   lg:text-5xl     xl:text-6xl     2xl:text-7xl;
+    @apply text-2xl   md:text-4xl   lg:text-5xl     xl:text-6xl     2xl:text-7xl    4xl:text-8xl;
   }
   h4 {
-    @apply text-xl    md:text-3xl   lg:text-4xl     xl:text-5xl     2xl:text-6xl;
+    @apply text-xl    md:text-3xl   lg:text-4xl     xl:text-5xl     2xl:text-6xl    4xl:text-7xl;
   }
   h5 {
-    @apply text-lg    md:text-2xl   lg:text-3xl     xl:text-4xl     2xl:text-5xl;
+    @apply text-lg    md:text-2xl   lg:text-3xl     xl:text-4xl     2xl:text-5xl    4xl:text-6xl;
   }
   h6 {
-    @apply text-base  md:text-xl    lg:text-2xl     xl:text-3xl     2xl:text-4xl;
+    @apply text-base  md:text-xl    lg:text-2xl     xl:text-3xl     2xl:text-4xl    4xl:text-5xl;
   }
   sub {
-    @apply text-base  md:text-xl    lg:text-2xl     xl:text-2xl     2xl:text-3xl;
+    @apply text-base  md:text-xl    lg:text-2xl     xl:text-2xl     2xl:text-3xl    4xl:text-4xl;
   }
   p {
-    @apply text-xs    md:text-sm    lg:text-base    xl:text-lg      2xl:text-xl;
+    @apply text-xs    md:text-sm    lg:text-base    xl:text-lg      2xl:text-xl     4xl:text-3xl;
   }
   a {
-    @apply text-xs    md:text-sm    lg:text-base    xl:text-lg      2xl:text-xl;
+    @apply text-xs    md:text-sm    lg:text-base    xl:text-lg      2xl:text-xl     4xl:text-2xl;
   }
   label {
-    @apply text-xs    md:text-sm    lg:text-base    xl:text-lg      2xl:text-xl;
+    @apply text-xs    md:text-sm    lg:text-base    xl:text-lg      2xl:text-xl     4xl:text-2xl;
   }
   section {
-    @apply rounded-2xl m-3 md:m-5 lg:m-7 xl:m-9 2xl:m-11;
+    @apply rounded-2xl m-3 md:m-5   lg:m-7          xl:m-9          2xl:m-11        4xl:text-9xl;
   }
 }
 @tailwind components;
 
 @layer components {
   .section-header {
-    @apply pb-8 md:pb-10 lg:pb-12 xl:pb-14 2xl:pb-16;
+    @apply pb-8       md:pb-10      lg:pb-12        xl:pb-14        2xl:pb-16       4xl:pb-20;
+  }
+  .section-wrapper-padding {
+    @apply mx-auto px-4 md:px-8     lg:px-12        xl:px-16        2xl:px-20       4xl:px-28;
   }
 }
 @tailwind utilities;
