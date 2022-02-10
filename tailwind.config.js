@@ -17,6 +17,7 @@ module.exports = {
       purple: colors.purple,
       neutral: colors.neutral,
       green: colors.green,
+      blue: colors.blue,
       cta: {
         50: '#7bc4f1',
         100: '#66c3f6',
