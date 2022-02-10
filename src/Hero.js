@@ -11,6 +11,8 @@ function Hero({classes}) {
                     <h1 className="text-center font-bold w-5/6 m-auto">Boost Your Print Business’ Profits</h1>
                     <sub className="text-center">With custom reports and integrations you can have the full insights into your business you’ve always wanted.</sub>
                     <ContactUCTA />
+                    <div className="indicator m-auto self-end" />
+
                 </div>
             </div>
         </div>
