@@ -69,7 +69,7 @@
 
 .reveal {
   position: relative;
-  transform: translateY(100px);
+  transform: translateY(50px);
   opacity: 0;
   transition: all 2s ease;
 }
