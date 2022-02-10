@@ -6,7 +6,7 @@ function Card({headline, copy, copy2, doNotShowContactUs, classes, points=[], li
         contactUs =<></>
     }
     return (
-        <div className={`rounded-2xl p-4 md:p-8 lg:p-12 grid gap-4 md:gap-8 lg:gap-12 bg-purple-900/30 reveal ${classes}`}>
+        <div className={`rounded-2xl p-4 md:p-8 lg:p-12 grid gap-4 md:gap-8 lg:gap-12 bg-purple-900/30 reveal cardgrid ${classes}`}>
             <h4 className="font-light text-gray-300">{headline}</h4>
             <p className="text-gray-300">{copy}</p>
             <ul className={"feature-bullets w-full"}>

@@ -16,7 +16,7 @@ function Sales({classes}) {
                                       listIcon={`fa-solid fa-money-bill-1 text-green-500`}
                                 />
                                 <Card headline="Cut The Tedious Work"
-                                      copy="Not having to do basic tasks over and over can make a world of difference. Increasing your business' productivity and profitability start with just a few things done again and again."
+                                      copy="Not having to do tedious tasks over and over gives you more time to spend on your customers and your business. How would your shop feel with just these three things?"
                                       points={["Automatically generate shipping labels", "Automatically generate daily sales reports", "Automatically generate your new customer list"]}
                                       listIcon={`fa-solid fa-hourglass text-blue-300`}
                                 />
