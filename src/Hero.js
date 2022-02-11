@@ -2,7 +2,7 @@ import ContactUCTA from "./ContactUCTA";
 
 function Hero({classes}) {
     return (
-        <section id={`hero`} className={`h-screen m-0 rounded-none grid items-center ${classes}`}>
+        <section id={`hero`} className={`h-screen m-0 rounded-none grid items-center overflow-hidden ${classes}`}>
             <div className="section-wrapper-padding grid gap-20 max-w-[1600px]">
                 <div className={`grid items-center gap-24 lg:grid-cols-[60%_40%]`}>
                     <div className="grid content-center items-center gap-4 2xl:gap-16 h-1/2">
