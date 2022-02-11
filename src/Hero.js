@@ -3,7 +3,7 @@ import ContactUCTA from "./ContactUCTA";
 function Hero({classes}) {
     return (
         <section id={`hero`} className={`h-screen m-0 rounded-none grid items-center ${classes}`}>
-            <div className="section-wrapper-padding grid gap-20">
+            <div className="section-wrapper-padding grid gap-20 max-w-[1600px]">
                 <div className={`grid items-center gap-24 lg:grid-cols-2`}>
                     <div className="grid content-center items-center gap-4 2xl:gap-16 h-1/2">
                         <h1 className="text-center font-bold lg:text-left">Boost Your Print Shop’s Profits</h1>
@@ -16,8 +16,8 @@ function Hero({classes}) {
                 <div className={`grid gap-6`}>
                     <ContactUCTA />
                     <div className="indicator m-auto self-end
-                        h-10 md:h-12 lg:h-14 xl:h-16 2xl:h-18
-                        w-5  md:w-6 lg:w-7 xl:w-8 2xl:w-9" />
+                        h-8     md:h-12    lg:h-14 xl:h-16     2xl:h-18
+                        w-3     md:w-4     lg:w-5  xl:w-6      2xl:w-7" />
                 </div>
             </div>
         </section>
