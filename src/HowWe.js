@@ -8,8 +8,8 @@ function HowWe({classes}) {
                 <div className="grid gap-8 lg:grid-cols-3 grid-cols-1 pb-10">
                     <Card headline="A Clear Focus On Results"
                           copy={`From our first meeting to our last we will always ask "How is your business doing?" Our unique style allows us to provide solutions that best suit your business. 
-                          For this reason all our engagements start off with a technology strategy.
-                          Here's how we stack up to the competition in an initial meetings.`}
+                          For this reason all our engagements start off with a technology strategy kick off meeting.
+                          Here's how we stack up to the competition in an initial meeting.`}
                           classes="col-span-3"
                           component={
                               <div className={`md:flex`}>
