@@ -38,8 +38,7 @@
 }
 
 #hero {
-  background-image: linear-gradient(157.5deg, rgb(148, 31, 115) 0%, rgb(148, 31, 115) 42%,rgb(129, 38, 114) 42%, rgb(129, 38, 114) 53%,rgb(110, 44, 113) 53%, rgb(110, 44, 113) 68%,rgb(91, 51, 113) 68%, rgb(91, 51, 113) 70%,rgb(72, 58, 112) 70%, rgb(72, 58, 112) 83%,rgb(53, 64, 111) 83%, rgb(53, 64, 111) 97%,rgb(34, 71, 110) 97%, rgb(34, 71, 110) 100%),linear-gradient(90deg, rgb(148, 31, 115) 0%, rgb(148, 31, 115) 42%,rgb(129, 38, 114) 42%, rgb(129, 38, 114) 53%,rgb(110, 44, 113) 53%, rgb(110, 44, 113) 68%,rgb(91, 51, 113) 68%, rgb(91, 51, 113) 70%,rgb(72, 58, 112) 70%, rgb(72, 58, 112) 83%,rgb(53, 64, 111) 83%, rgb(53, 64, 111) 97%,rgb(34, 71, 110) 97%, rgb(34, 71, 110) 100%),linear-gradient(0deg, rgb(148, 31, 115) 0%, rgb(148, 31, 115) 42%,rgb(129, 38, 114) 42%, rgb(129, 38, 114) 53%,rgb(110, 44, 113) 53%, rgb(110, 44, 113) 68%,rgb(91, 51, 113) 68%, rgb(91, 51, 113) 70%,rgb(72, 58, 112) 70%, rgb(72, 58, 112) 83%,rgb(53, 64, 111) 83%, rgb(53, 64, 111) 97%,rgb(34, 71, 110) 97%, rgb(34, 71, 110) 100%),linear-gradient(90deg, rgb(43, 115, 147),rgb(213, 181, 127));
-  background-blend-mode:overlay,overlay,overlay,normal;
+  background-image: radial-gradient(circle at 85% 1%, hsla(190,0%,93%,0.05) 0%, hsla(190,0%,93%,0.05) 96%,transparent 96%, transparent 100%),radial-gradient(circle at 14% 15%, hsla(190,0%,93%,0.05) 0%, hsla(190,0%,93%,0.05) 1%,transparent 1%, transparent 100%),radial-gradient(circle at 60% 90%, hsla(190,0%,93%,0.05) 0%, hsla(190,0%,93%,0.05) 20%,transparent 20%, transparent 100%),radial-gradient(circle at 79% 7%, hsla(190,0%,93%,0.05) 0%, hsla(190,0%,93%,0.05) 78%,transparent 78%, transparent 100%),radial-gradient(circle at 55% 65%, hsla(190,0%,93%,0.05) 0%, hsla(190,0%,93%,0.05) 52%,transparent 52%, transparent 100%),linear-gradient(135deg, rgb(12,14,28),rgb(23,5,36));
 }
 
 #sales {
