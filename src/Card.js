@@ -13,7 +13,7 @@ function Card({headline, copy, copy2, doNotShowContactUs, classes, points=[], li
                 {points.map((r, i) => <div className={`flex items-start gap-2`} key={i}><i className={`${listIcon} pt-1`} /><li className={`text-gray-300`}>{r}</li></div>)}
             </ul>
             <p className="text-gray-300">{copy2}</p>
-            {contactUs}
+            {/*{contactUs}*/}
         </div>
     );
 }
