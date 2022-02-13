@@ -4,14 +4,12 @@ function Hero({classes}) {
     return (
         <section id={`hero`} className={`h-screen m-0 rounded-none grid items-center overflow-hidden ${classes}`}>
             <div className="section-wrapper-padding grid gap-20 max-w-[1600px]">
-                <div className={`grid items-center gap-24 lg:grid-cols-[60%_40%]`}>
+                <div className={`grid items-center gap-24 lg:grid-cols-[60%_fit-content(40%)]`}>
                     <div className="grid content-center items-center gap-4 2xl:gap-16 h-1/2">
                         <h1 className="text-center font-bold lg:text-left">Boost Your Print Shop’s Profits</h1>
                         <sub className="text-center lg:text-left">With just a few custom reports and integrations you can get existing customers coming back for more and new customers buying more.</sub>
                     </div>
-                    <div className={`overflow-hidden`}>
-                        <img src={`drawing.svg`} className={`h-1/2 w-1/2 lg:h-full lg:w-full mx-auto`} alt={``}/>
-                    </div>
+                    <img src={`drawing.svg`} className={`object-contain`} alt={``}/>
                 </div>
                 <div className={`grid gap-6`}>
                     <ContactUCTA />
