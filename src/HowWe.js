@@ -1,4 +1,5 @@
 import Card from "./Card";
+import ContactUCTA from "./ContactUCTA";
 
 function HowWe({classes}) {
     return (
@@ -12,6 +13,7 @@ function HowWe({classes}) {
                           Here's how we stack up to the competition in an initial meeting.`}
                           classes="col-span-3"
                           component={
+                              <div className={`grid`}>
                               <div className={`md:flex`}>
                                   <Card headline={`Them`}
                                         points={["Let’s focus on improving you digital presence", "Let’s digitize your print wall", "Let’s roll out a new CRM", "Sounds like you could use an ERP", "Great let’s get the ball rolling on this"]}
@@ -23,7 +25,11 @@ function HowWe({classes}) {
                                         listIcon={`fa-solid fa-circle-check text-green-500`}
                                         transparentBg={true}
                                   />
-                              </div>}
+
+                              </div>
+                                  <ContactUCTA />
+                              </div>
+                                  }
                     />
                 </div>
             </div>
