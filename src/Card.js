@@ -1,10 +1,4 @@
-function Card({headline, copy, copy2, doNotShowContactUs, classes, points=[], listIcon, component, transparentBg}) {
-    var contactUs = <div className="font-bold text-cta-500 self-end hover:text-white mr-auto hover:underline">
-        <a className="content-end text-lg md:text-xl lg:text-2xl" href="#contact-us">Contact Us</a>
-    </div>;
-    if(doNotShowContactUs) {
-        contactUs =<></>
-    }
+function Card({headline, copy, copy2, classes, points=[], listIcon, component, transparentBg}) {
     var copyComp;
     if(copy !== undefined) {
         copyComp =<p className="text-gray-300">{copy}</p>;
@@ -27,7 +21,6 @@ function Card({headline, copy, copy2, doNotShowContactUs, classes, points=[], li
                 {points.map((r, i) => <div className={`flex items-start gap-2`} key={i}><i className={`${listIcon} pt-1`} /><li className={`text-gray-300`}>{r}</li></div>)}
             </ul>
             {compCopy2}
-            {/*{contactUs}*/}
         </div>
     );
 }
