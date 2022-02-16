@@ -14,8 +14,7 @@ jobs:
           node-version: '16.13'
       - run: node --version
       - node/install-packages
-      - node/run:
-          npm-run: build
+      -  run: npm run build
       - save_cache:
           paths:
             - ~/
