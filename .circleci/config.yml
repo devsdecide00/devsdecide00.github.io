@@ -14,6 +14,8 @@ jobs:
           node-version: '16.13'
       - run: node --version
       - node/install-packages
+      - node/run:
+          npm-run: build
       - save_cache:
           paths:
             - ~/
@@ -26,9 +28,7 @@ jobs:
           keys:
             - k-{{ .Revision }}
       - run: mkdir bucket
-      - run: mv *html bucket/
-      - run: mv css bucket/
-      - run: mv img bucket/
+      - run: mv build/* bucket/
       - aws-s3/copy:
           arguments: '--recursive'
           from: bucket
