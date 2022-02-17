@@ -115,7 +115,7 @@
   background-position: 100%;
   background-size: 400%;
   -webkit-transition: background 300ms ease-in-out;
-  transition: background 300ms ease-in-out;
+  transition: background 700ms ease-in-out;
 }
 .ctabtn:hover {
   background-position: 0;
