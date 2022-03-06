@@ -1,14 +1,14 @@
 import ContactUCTA from "./ContactUCTA";
 import BookUCTA from "./BookUCTA";
 
-function AlternateImgCard({ classes, cardsWithImages = [], sectionTitle }) {
+function AlternateImgCard({ classes, id, cardsWithImages = [], sectionTitle }) {
     return (
-        <section id="sales" className="">
+        <section id={`${id}`} className="">
             <div className={`${classes}`}>
                 <h2 className="font-bold text-gray-400 section-header">{sectionTitle}</h2>
                 <div className="use-cases-overlay lg:hidden">
                     <div className="wrapper">
-                        <div className="grid gap-8 lg:grid-cols-2 grid-cols-1">
+                        <div className="grid gap-8 grid-cols-1">
                             {cardsWithImages.map((ci, index) => {
                                 return (
                                     <div key={index}>
@@ -24,7 +24,7 @@ function AlternateImgCard({ classes, cardsWithImages = [], sectionTitle }) {
                 </div>
                 <div className="use-cases-overlay hidden lg:block">
                     <div className="wrapper">
-                        <div>
+                        <div className="grid gap-8 xl:gap-10 2xl:gap-12">
                             {cardsWithImages.map((ci, index) => {
                                 if (index % 2 === 1) {
                                     return (

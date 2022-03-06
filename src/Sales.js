@@ -16,6 +16,7 @@ function Sales({ classes }) {
     return (
         <div>
             <AlternateImgCard classes={`${classes}`}
+                id={`sales`}
                 sectionTitle={sectionTitle}
                 cardsWithImages={
                     [{
