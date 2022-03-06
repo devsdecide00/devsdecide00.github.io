@@ -1,4 +1,3 @@
-import Card from "./Card";
 import ContactUCTA from "./ContactUCTA";
 import BookUCTA from "./BookUCTA";
 

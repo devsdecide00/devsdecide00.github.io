@@ -2,7 +2,7 @@ import BookUCTA from "./BookUCTA";
 
 function Hero({classes}) {
     return (
-        <section id={`hero`} className={`h-screen m-0 rounded-none grid items-center overflow-hidden relative ${classes}`}>
+        <section id={`hero`} className={` m-0 rounded-none grid items-center overflow-hidden relative ${classes}`}>
             <div className="section-wrapper-padding max-w-[1600px] ">
                 <div className={`grid items-center gap-6 2xl:gap-8 lg:grid-cols-[55%_fit-content(45%)]`}>
                     <div className="grid content-center items-center gap-4 2xl:gap-16 h-1/2">
@@ -12,8 +12,11 @@ function Hero({classes}) {
                     </div>
                     <img src={`drawing.svg`} className={`object-contain w-1/2 lg:w-full mx-auto`}  alt={``}/>
                 </div>
-                <div id={`indicator`} className={`grid justify-center gap-4 absolute bottom-[8%] left-[50%] -translate-x-1/2`}>
+                <div id={`indicator`} className={`grid justify-center gap-4 absolute bottom-[2%] left-[50%] -translate-x-1/2`}>
                     <span style={{margin:"auto"}}></span>
+                    <div className={`opacity-50`}>
+                        Scroll
+                    </div>
                 </div>
             </div>
         </section>

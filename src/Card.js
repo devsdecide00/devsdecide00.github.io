@@ -8,13 +8,14 @@ function Card({headline, copy, copy2, classes, points=[], listIcon, component, t
         bgColor="";
     }
     var compCopy2;
-    if(compCopy2 !== undefined) {
+    if(copy2 !== undefined) {
         compCopy2 =<p className="text-gray-300">{copy2}</p>
     }
 
     return (
-        <div className={`rounded-2xl p-4 md:p-8 lg:p-12 grid gap-4 md:gap-8 lg:gap-12 ${bgColor} reveal      ${classes}`}>
-            <h4 className="font-light text-gray-300">{headline}</h4>
+        <div className={`rounded-2xl p-4 md:p-8 lg:p-12 ${bgColor} reveal      ${classes}`}>
+            <h4 className="font-thin text-gray-300 pb-6">{headline}</h4>
+            <div className={`grid gap-4 md:gap-8 lg:gap-8`}>
             {copyComp !== undefined ? copyComp :null}
             {component !== undefined ? component: null}
             {points !== undefined && points.length > 0 ?
@@ -26,6 +27,7 @@ function Card({headline, copy, copy2, classes, points=[], listIcon, component, t
                 </ul>:null
             }
             {compCopy2 !== undefined ? compCopy2:null}
+            </div>
         </div>
     );
 }
