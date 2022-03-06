@@ -2,10 +2,11 @@ function ContactUs({classes}) {
     return (
         <section id="contact-us">
             <div className={`${classes}`}>
-                <h3 className="text-center font-bold section-header">Contact Us</h3>
+                <h3 className="text-center font-bold section-header">How can we help?</h3>
+                <h6 className="text-center font-light section-header">We'll email you back within one business day to get to know more about your business. We will not use your email for any marketing purposes. </h6>
                 <div className="grid lg:grid-cols-4 ">
                     <div
-                        className="rounded-2xl p-4 md:p-8 lg:p-12 bg-neutral-900/30 w-auto lg:col-span-2 lg:col-start-2">
+                        className="rounded-2xl p-4 md:p-8 lg:p-12 bg-purple-900/30 w-auto lg:col-span-2 lg:col-start-2">
                         <form action="https://api.devsdecide.com/contact-us" method="POST">
                             <div className="grid gap-4">
                                 <div className="grid items-center">
