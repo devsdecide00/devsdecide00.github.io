@@ -17,7 +17,7 @@ function Solution({classes}) {
                           listIcon={`fa-solid fa-link text-blue-500`}
                     />
                     <Card headline="Remove Simple Tasks"
-                          points={["Generate shipping labels", "Updating prices... because inflation", "Daily magical excel spreadsheet updates"]}
+                          points={["Generate shipping labels", "Updating prices", "Daily magical excel spreadsheet updates", "Custom sales workflows"]}
                           listIcon={`fa-solid fa-xmark text-red-500`}
                     />
                     <Card headline="Improve Existing Sales"
