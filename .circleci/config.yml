@@ -32,6 +32,7 @@ jobs:
           arguments: '--recursive'
           from: bucket
           to: 's3://devsdecide.com'
+      - run: aws cloudfront create-invalidation --distribution-id E2U5QRJGNRO0KP --paths /*
   deploy2:
     docker:
       - image: 'cimg/python:3.6'

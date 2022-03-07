@@ -6,6 +6,7 @@ import Overwhelmed from "./Overwhelmed";
 import Sales from "./Sales";
 import Solution from "./Solution";
 import ContactUs from "./ContactUs";
+import Results from "./Results";
 
 function App() {
     return (
@@ -17,8 +18,8 @@ function App() {
             </div>
             <Overwhelmed    classes="section-wrapper-padding pt-10 lg:pt-40 pb-10 lg:pb-40 h-screen h-full  max-w-[1600px]"/>
             <Sales          classes="section-wrapper-padding pt-10 lg:pt-40 pb-10 lg:pb-40 h-screen h-full  max-w-[1600px]"/>
-            {/*<Redefine       classes="section-wrapper-padding pt-10 pb-10 h-screen h-full"/>*/}
             <Solution       classes="section-wrapper-padding pt-10 lg:pt-40 pb-10 lg:pb-40 h-screen h-full  max-w-[1600px]"/>
+            {/*<Results        classes="section-wrapper-padding pt-10 lg:pt-40 pb-10 lg:pb-40 h-screen h-full  max-w-[1600px]"/>*/}
             <ContactUs      classes="section-wrapper-padding pt-10 lg:pt-40 pb-10 lg:pb-40 h-screen h-full  max-w-[1600px]"/>
             <Footer         classes="section-wrapper-padding"/>
         </div>

@@ -2,12 +2,11 @@ import Card from "./Card";
 import AlternateImgCard from "./AlternateImgCard";
 
 function Sales({ classes }) {
-    const card1 = (<Card headline="Cut The Tedious Work Out Of Your Day"
-        copy="Don't waste time on things that can be automated for you."
+    const card1 = (<Card headline="Never Run Out Of Supplies"
+                         copy='Remove the headaches at guessing the exact amount of inventory you need and have an easy link to your suppliers.'
     />);
-
-    const card2 = (<Card headline="Never Run Out Of Supplies"
-        copy='Have you ever had issues with determining the exact amount of inventory you need when supplies are short? We have created several custom reports for ERPs which let you take into account trends before your purchase a single ream.'
+    const card2 = (<Card headline="Cut The Tedious Work Out Of Your Day"
+        copy="Don't waste time on things that can be automated for you."
     />);
     const card3 = (<Card headline="Lift Sales At A Click Of A Button"
                          copy={'Using your own sales data you can delivered information so useful your customers will no longer see you as a place to print but as a business partner.'}
@@ -21,15 +20,17 @@ function Sales({ classes }) {
                 cardsWithImages={
                     [{
                         "card": card1,
-                        "imageURI": "funnel.svg"
-                    },
-                    {
-                        "card": card2,
                         "imageURI": "automate-future.svg"
                     },
                     {
+                        "card": card2,
+                        "imageURI": "funnel.svg",
+                        "imgClasses": "w-[55%]"
+                    },
+                    {
                         "card": card3,
-                        "imageURI": "revenue.svg"
+                        "imageURI": "revenue.svg",
+                        "imgClasses": "w-[55%]"
                     },
                     ]
                 }

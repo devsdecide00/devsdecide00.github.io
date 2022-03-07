@@ -26,11 +26,15 @@ function AlternateImgCard({ classes, id, cardsWithImages = [], sectionTitle }) {
                     <div className="wrapper">
                         <div className="grid gap-8 xl:gap-10 2xl:gap-12">
                             {cardsWithImages.map((ci, index) => {
+                                var imgCls = "w-2/3";
+                                if (ci.imgClasses !== undefined) {
+                                    imgCls = ci.imgClasses;
+                                }
                                 if (index % 2 === 1) {
                                     return (
                                         <div key={index} className="grid gap-8 lg:grid-cols-2 grid-cols-1">
                                             <div className={`self-center`}>
-                                                <img src={ci.imageURI} alt={``} className={`ml-auto w-2/3`} />
+                                                <img src={ci.imageURI} alt={``} className={`ml-auto ${imgCls}`} />
                                             </div>
                                             {ci.card}
                                         </div>
@@ -41,7 +45,7 @@ function AlternateImgCard({ classes, id, cardsWithImages = [], sectionTitle }) {
                                         <div key={index} className="grid gap-8 lg:grid-cols-2 grid-cols-1">
                                             {ci.card}
                                             <div className={`self-center`}>
-                                                <img src={ci.imageURI} alt={``} className={`mr-auto w-2/3`} />
+                                                <img src={ci.imageURI} alt={``} className={`mr-auto ${imgCls}`} />
                                             </div>
                                         </div>
                                     );
