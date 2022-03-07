@@ -6,7 +6,6 @@ import Overwhelmed from "./Overwhelmed";
 import Sales from "./Sales";
 import Solution from "./Solution";
 import ContactUs from "./ContactUs";
-import Results from "./Results";
 
 function App() {
     return (

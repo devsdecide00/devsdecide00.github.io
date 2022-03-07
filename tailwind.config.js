@@ -19,7 +19,6 @@ module.exports = {
       green: colors.green,
       blue: colors.blue,
       red: colors.red,
-      yellow: colors.yellow,
       cta: {
         50: '#7bc4f1',
         100: '#66c3f6',

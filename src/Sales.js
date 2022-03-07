@@ -11,7 +11,7 @@ function Sales({ classes }) {
     const card3 = (<Card headline="Lift Sales At A Click Of A Button"
                          copy={'Using your own sales data you can delivered information so useful your customers will no longer see you as a place to print but as a business partner.'}
     />);
-    const sectionTitle = (<h2>Run Your Business In <span className="text-white">Half</span> The Time With More <span className="text-white">Profits</span></h2>);
+    const sectionTitle = (<>Run Your Business In <span className="text-white">Half</span> The Time With More <span className="text-white">Profits</span></>);
     return (
         <div>
             <AlternateImgCard classes={`${classes}`}
