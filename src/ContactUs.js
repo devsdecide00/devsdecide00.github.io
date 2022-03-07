@@ -43,7 +43,7 @@ class ContactUs extends React.Component {
                                                   aria-label="message"/>
                                     </div>
                                     <input type="submit" value={this.state.sending?"Sending...":"Send"} disabled={this.state.sending}
-                                           className={`no-underline bg-cta-700 rounded-full py-2 md:py-3 px-4 md:px-5 inline-block hover:bg-cta-800 text-center text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl font-bold disabled:opacity-40`}>
+                                           className={`ctabtn no-underline bg-cta-700 rounded-full py-2 md:py-3 px-4 md:px-5 inline-block hover:bg-cta-800 text-center text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl font-bold disabled:opacity-40`}>
                                     </input>
                                 </div>
                             </form>
