@@ -1,6 +1,7 @@
 import BookUCTA from "./BookUCTA";
 
 function Hero({classes}) {
+    /*eslint-disable */
     return (
         <section id={`hero`} className={` m-0 rounded-none grid items-center overflow-hidden relative ${classes}`}>
             <div className="section-wrapper-padding max-w-[1600px] ">
@@ -20,6 +21,7 @@ function Hero({classes}) {
             </div>
         </section>
     );
+    /*eslint-enable */
 }
 
 export default Hero;
