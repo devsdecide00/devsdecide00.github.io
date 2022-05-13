@@ -42,17 +42,31 @@
 
 }
 
-#indicator {
-
+#indicator a {
+  pointer-events: none;
 }
 
-#indicator span {
-  margin-left: -12px;
-  border-left: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  box-sizing: border-box;
+.arrow {
+  text-align: center;
+  margin: 8% 0;
+  color: #cecece;
+}
+.bounce {
+  -moz-animation: bounce 6s infinite;
+  -webkit-animation: bounce 6s infinite;
+  animation: bounce 6s infinite;
+}
+
+@keyframes bounce {
+  0%, 35%, 45%, 55%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 .ctabtn {

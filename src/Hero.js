@@ -13,9 +13,8 @@ function Hero({classes}) {
                     <img src={`drawing.svg`} className={`object-contain w-1/2 lg:w-full mx-auto`}  alt={``}/>
                 </div>
                 <div id={`indicator`} className={`grid justify-center gap-4 absolute bottom-[2%] left-[50%] -translate-x-1/2`}>
-                    <span className={`w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8`} style={{margin:"auto"}}></span>
-                    <div className={`opacity-50`}>
-                        Scroll
+                    <div className={`arrow bounce`}>
+                        <a className="fa fa-arrow-down fa-2x" href="#"></a>
                     </div>
                 </div>
             </div>
