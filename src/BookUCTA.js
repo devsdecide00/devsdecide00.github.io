@@ -19,7 +19,7 @@ function BookUCTA({classes}) {
                 }}
                 styles={{}}
                 text="Book A Free Strategy Session"
-                url="https://calendly.com/solomon-12"
+                url="https://calendly.com/solomon-12/20min"
             />
         </div>
     );
