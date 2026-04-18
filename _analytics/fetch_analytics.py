@@ -22,7 +22,7 @@ First-time setup:
 
 Output (in _analytics/output/YYYY-MM-DD/):
     Search Console: chart.csv, queries.csv, pages.csv, countries.csv, devices.csv, search_appearance.csv
-    GA4: traffic_acquisition.csv
+    GA4: traffic_acquisition.csv, pages_screens.csv
 """
 
 import os
@@ -169,12 +169,14 @@ def fetch_ga4(creds, run_dir):
 
     end_date = date.today() - timedelta(days=1)
     start_date = end_date - timedelta(days=28)
+    date_range = DateRange(start_date=start_date.isoformat(), end_date=end_date.isoformat())
 
+    print("GA4:")
+
+    # traffic_acquisition.csv
     request = RunReportRequest(
         property=f"properties/{GA4_PROPERTY_ID}",
-        date_ranges=[
-            DateRange(start_date=start_date.isoformat(), end_date=end_date.isoformat())
-        ],
+        date_ranges=[date_range],
         dimensions=[
             Dimension(name="sessionDefaultChannelGroup"),
             Dimension(name="sessionSource"),
@@ -192,36 +194,74 @@ def fetch_ga4(creds, run_dir):
         ],
         limit=500,
     )
-
     response = client.run_report(request)
-
-    print("GA4:")
 
     if not response.rows:
         print("  traffic_acquisition.csv: no data")
+    else:
+        output_file = run_dir / "traffic_acquisition.csv"
+        with open(output_file, "w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow([
+                "channel_group", "source", "medium",
+                "sessions", "engagement_rate", "engaged_sessions",
+                "avg_session_duration_s", "page_views",
+            ])
+            for row in response.rows:
+                writer.writerow([
+                    row.dimension_values[0].value,
+                    row.dimension_values[1].value,
+                    row.dimension_values[2].value,
+                    int(row.metric_values[0].value),
+                    f"{float(row.metric_values[1].value) * 100:.2f}%",
+                    int(row.metric_values[2].value),
+                    f"{float(row.metric_values[3].value):.1f}",
+                    int(row.metric_values[4].value),
+                ])
+        print(f"  traffic_acquisition.csv: {len(response.rows)} rows")
+
+    # pages_screens.csv — Engagement → Pages and screens
+    request = RunReportRequest(
+        property=f"properties/{GA4_PROPERTY_ID}",
+        date_ranges=[date_range],
+        dimensions=[
+            Dimension(name="pagePath"),
+            Dimension(name="pageTitle"),
+        ],
+        metrics=[
+            Metric(name="screenPageViews"),
+            Metric(name="activeUsers"),
+            Metric(name="userEngagementDuration"),
+            Metric(name="eventCount"),
+        ],
+        order_bys=[
+            OrderBy(metric=OrderBy.MetricOrderBy(metric_name="screenPageViews"), desc=True)
+        ],
+        limit=500,
+    )
+    response = client.run_report(request)
+
+    if not response.rows:
+        print("  pages_screens.csv: no data")
         return
 
-    output_file = run_dir / "traffic_acquisition.csv"
+    output_file = run_dir / "pages_screens.csv"
     with open(output_file, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerow([
-            "channel_group", "source", "medium",
-            "sessions", "engagement_rate", "engaged_sessions",
-            "avg_session_duration_s", "page_views",
+            "page_path", "page_title",
+            "views", "active_users", "engagement_duration_s", "event_count",
         ])
         for row in response.rows:
             writer.writerow([
                 row.dimension_values[0].value,
                 row.dimension_values[1].value,
-                row.dimension_values[2].value,
                 int(row.metric_values[0].value),
-                f"{float(row.metric_values[1].value) * 100:.2f}%",
-                int(row.metric_values[2].value),
-                f"{float(row.metric_values[3].value):.1f}",
-                int(row.metric_values[4].value),
+                int(row.metric_values[1].value),
+                f"{float(row.metric_values[2].value):.1f}",
+                int(row.metric_values[3].value),
             ])
-
-    print(f"  traffic_acquisition.csv: {len(response.rows)} rows")
+    print(f"  pages_screens.csv: {len(response.rows)} rows")
 
 
 def main():
