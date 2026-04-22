@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { Turnstile } from '@marsidev/react-turnstile';
 
@@ -109,7 +109,7 @@ export default function ChatUI() {
     setLoading(false);
   };
 
-  const reset = (sc?: string, pe?: string) => {
+  const reset = (sc?: string | React.MouseEvent, pe?: string) => {
     setConvo([]);
     if (cfToken) autoStart(cfToken, sc ?? scenario, pe ?? persona);
   };
