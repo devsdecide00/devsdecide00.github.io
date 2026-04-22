@@ -59,3 +59,4 @@ node_modules
 _analytics/output/
 _analytics/credentials.json
 _analytics/token.json
+.vercel
