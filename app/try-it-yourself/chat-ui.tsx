@@ -110,8 +110,9 @@ export default function ChatUI() {
   };
 
   const reset = (sc?: string | React.MouseEvent, pe?: string) => {
+    const scStr = typeof sc === 'string' ? sc : undefined;
     setConvo([]);
-    if (cfToken) autoStart(cfToken, sc ?? scenario, pe ?? persona);
+    if (cfToken) autoStart(cfToken, scStr ?? scenario, pe ?? persona);
   };
 
   return (
