@@ -27,11 +27,45 @@ export default function ChatUI() {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [cfToken, setCfToken] = useState('');
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const startedRef = useRef(false);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (convo.length > 0 || loading) {
+      const el = scrollContainerRef.current;
+      if (el) el.scrollTop = el.scrollHeight;
+    }
   }, [convo, loading]);
+
+  const autoStart = async (token: string, sc: string, pe: string) => {
+    setLoading(true);
+    try {
+      const res = await fetch('/api/ai', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          mode: 'chat',
+          scenario: sc,
+          persona: pe,
+          cfToken: token,
+          messages: [{ role: 'user', content: 'Hi' }],
+        }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setConvo([{ role: 'assistant', text: data.text?.trim() ?? '' }]);
+      }
+    } catch {}
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    if (cfToken && !startedRef.current) {
+      startedRef.current = true;
+      autoStart(cfToken, scenario, persona);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cfToken]);
 
   const send = async () => {
     if (!input.trim() || loading) return;
@@ -75,7 +109,10 @@ export default function ChatUI() {
     setLoading(false);
   };
 
-  const reset = () => setConvo([]);
+  const reset = (sc?: string, pe?: string) => {
+    setConvo([]);
+    if (cfToken) autoStart(cfToken, sc ?? scenario, pe ?? persona);
+  };
 
   return (
     <section className="max-w-[1240px] mx-auto py-14 px-10">
@@ -96,7 +133,7 @@ export default function ChatUI() {
               {scenarios.map((s) => (
                 <button
                   key={s}
-                  onClick={() => { setScenario(s); reset(); }}
+                  onClick={() => { setScenario(s); reset(s, persona); }}
                   className={`text-left px-[14px] py-2.5 rounded-[10px] text-[13px] cursor-pointer font-[inherit] border ${
                     scenario === s ? 'bg-ink text-bg border-ink' : 'bg-white text-ink-soft border-rule'
                   }`}
@@ -113,7 +150,7 @@ export default function ChatUI() {
               {personas.map((p) => (
                 <button
                   key={p}
-                  onClick={() => { setPersona(p); reset(); }}
+                  onClick={() => { setPersona(p); reset(scenario, p); }}
                   className={`px-[13px] py-[7px] rounded-full text-[12px] cursor-pointer font-[inherit] border ${
                     persona === p ? 'bg-ink text-bg border-ink' : 'bg-transparent text-ink-soft border-rule'
                   }`}
@@ -144,7 +181,7 @@ export default function ChatUI() {
         </div>
 
         <div className="bg-white border border-rule rounded-[20px] p-6 min-h-[560px] flex flex-col shadow-[0_20px_40px_-20px_rgba(26,24,20,0.1)]">
-          <div className="flex-1 overflow-y-auto pr-2 flex flex-col gap-[14px] min-h-[400px] max-h-[500px]">
+          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto pr-2 flex flex-col gap-[14px] min-h-[400px] max-h-[500px]">
             {convo.length === 0 && (
               <div className="text-ink-faint text-[14px] m-auto text-center max-w-[320px]">
                 <div className="font-display italic text-[28px] text-ink mb-3">Start talking.</div>
@@ -176,7 +213,6 @@ export default function ChatUI() {
                 ))}
               </div>
             )}
-            <div ref={bottomRef} />
           </div>
 
           <form
