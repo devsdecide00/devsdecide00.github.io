@@ -11,6 +11,10 @@ export const metadata: Metadata = {
     siteName: 'Developers Decide',
     type: 'website',
   },
+  twitter: {
+    title: 'AI Automation for Staffing Agencies in Alabama | Developers Decide',
+    description: 'Résumé screening, interview scheduling, and timesheet reconciliation automated for Alabama staffing firms.',
+  },
   alternates: {
     canonical: 'https://devsdecide.com/staffing',
   },

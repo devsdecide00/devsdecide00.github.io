@@ -11,6 +11,10 @@ export const metadata: Metadata = {
     siteName: 'Developers Decide',
     type: 'website',
   },
+  twitter: {
+    title: 'AI Automation for Construction Companies in Alabama | Developers Decide',
+    description: 'Bid prep, sub coordination, and owner updates automated for Alabama construction firms.',
+  },
   alternates: {
     canonical: 'https://devsdecide.com/construction',
   },

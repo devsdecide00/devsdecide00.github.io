@@ -11,6 +11,10 @@ export const metadata: Metadata = {
     siteName: 'Developers Decide',
     type: 'website',
   },
+  twitter: {
+    title: 'AI Automation for HVAC Companies in Alabama | Developers Decide',
+    description: 'Dispatching, intake, quotes, and follow-up automated for Alabama HVAC businesses. Flat-rate, month-to-month.',
+  },
   alternates: {
     canonical: 'https://devsdecide.com/hvac',
   },
