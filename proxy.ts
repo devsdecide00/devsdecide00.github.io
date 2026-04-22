@@ -20,7 +20,7 @@ const contactLimiter = redis
   ? new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(5, '60 m'), analytics: true, prefix: 'rl:contact' })
   : null;
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const ip =
     req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
     req.headers.get('x-real-ip') ??
