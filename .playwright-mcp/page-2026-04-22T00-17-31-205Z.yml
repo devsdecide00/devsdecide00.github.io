@@ -1,0 +1,62 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "d Developers Decide" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: d
+      - generic [ref=e5]: Developers Decide
+    - generic [ref=e6]:
+      - link "HVAC" [ref=e7] [cursor=pointer]:
+        - /url: /hvac
+      - link "Construction" [ref=e8] [cursor=pointer]:
+        - /url: /construction
+      - link "Staffing" [ref=e9] [cursor=pointer]:
+        - /url: /staffing
+      - link "Case study" [ref=e10] [cursor=pointer]:
+        - /url: /case-study
+      - link "Try it" [ref=e11] [cursor=pointer]:
+        - /url: /try-it-yourself
+      - link "Contact" [ref=e12] [cursor=pointer]:
+        - /url: /contact
+      - link "Book a call" [ref=e13] [cursor=pointer]:
+        - /url: /contact
+  - generic [ref=e14]:
+    - generic [ref=e15]: "404"
+    - heading "This page got automated away." [level=1] [ref=e16]
+    - paragraph [ref=e17]: Probably never existed. Maybe I moved it. Either way, let’s get you somewhere useful.
+    - link "Home →" [ref=e18] [cursor=pointer]:
+      - /url: /
+    - link "Try the demo" [ref=e19] [cursor=pointer]:
+      - /url: /try-it-yourself
+  - contentinfo [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]: d
+          - generic [ref=e25]: Developers Decide LLC
+        - paragraph [ref=e26]: AI automation consulting for small service businesses in Alabama. Hoover, AL.
+      - generic [ref=e27]:
+        - generic [ref=e28]: Industries
+        - link "HVAC" [ref=e29] [cursor=pointer]:
+          - /url: /hvac
+        - link "Construction" [ref=e30] [cursor=pointer]:
+          - /url: /construction
+        - link "Staffing" [ref=e31] [cursor=pointer]:
+          - /url: /staffing
+      - generic [ref=e32]:
+        - generic [ref=e33]: Resources
+        - link "Case study" [ref=e34] [cursor=pointer]:
+          - /url: /case-study
+        - link "Try it yourself" [ref=e35] [cursor=pointer]:
+          - /url: /try-it-yourself
+      - generic [ref=e36]:
+        - generic [ref=e37]: Contact
+        - link "solomon@devsdecide.com" [ref=e38] [cursor=pointer]:
+          - /url: mailto:solomon@devsdecide.com
+        - link "Book a call" [ref=e39] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=e40]:
+      - generic [ref=e41]: © 2026 Developers Decide LLC
+      - generic [ref=e42]: Hoover, Alabama
+  - button "Open Next.js Dev Tools" [ref=e48] [cursor=pointer]:
+    - img [ref=e49]
+  - alert [ref=e52]

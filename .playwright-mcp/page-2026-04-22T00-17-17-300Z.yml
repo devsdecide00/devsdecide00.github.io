@@ -1,0 +1,132 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "d Developers Decide" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: d
+      - generic [ref=e5]: Developers Decide
+    - generic [ref=e6]:
+      - link "HVAC" [ref=e7] [cursor=pointer]:
+        - /url: /hvac
+      - link "Construction" [ref=e8] [cursor=pointer]:
+        - /url: /construction
+      - link "Staffing" [ref=e9] [cursor=pointer]:
+        - /url: /staffing
+      - link "Case study" [ref=e10] [cursor=pointer]:
+        - /url: /case-study
+      - link "Try it" [ref=e11] [cursor=pointer]:
+        - /url: /try-it-yourself
+      - link "Contact" [ref=e12] [cursor=pointer]:
+        - /url: /contact
+      - link "Book a call" [ref=e13] [cursor=pointer]:
+        - /url: /contact
+  - generic [ref=e14]:
+    - generic [ref=e15]: HVAC · Alabama
+    - heading "Your techs fix HVAC. Let AI fix the rest." [level=1] [ref=e16]
+    - paragraph [ref=e17]: Dispatching, intake, quotes, follow-up — the non-wrench work that eats your evenings and Saturdays. We automate it so your crew stays on the trucks and you get your weekends back.
+    - generic [ref=e18]:
+      - link "Book a 30-min call →" [ref=e19] [cursor=pointer]:
+        - /url: /contact
+      - link "Try the live demo" [ref=e20] [cursor=pointer]:
+        - /url: /try-it-yourself
+  - generic [ref=e22]:
+    - generic [ref=e23]: The grind
+    - heading "What’s actually eating your week." [level=2] [ref=e24]
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - generic [ref=e27]: "01"
+        - generic [ref=e28]: Customer texts at 9pm
+        - generic [ref=e29]: Emergency or can-wait? Owner decides every time, on the phone, from the couch.
+      - generic [ref=e30]:
+        - generic [ref=e31]: "02"
+        - generic [ref=e32]: Dispatch chaos
+        - generic [ref=e33]: Three techs, seven service calls, changing priorities. Done on a whiteboard that's always wrong.
+      - generic [ref=e34]:
+        - generic [ref=e35]: "03"
+        - generic [ref=e36]: Quote turnaround
+        - generic [ref=e37]: Site visit → office → spreadsheet → PDF → email. Forty-five minutes, customer ghosts.
+  - generic [ref=e38]:
+    - generic [ref=e39]: The toolkit
+    - heading "Tools we typically build for hvac." [level=2] [ref=e40]
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - generic [ref=e43]: I
+        - generic [ref=e44]:
+          - generic [ref=e45]: IntakeRelay
+          - generic [ref=e46]: Texts triaged by urgency, routine requests auto-replied with a booking link, urgent ones paged to the on-call tech.
+          - generic [ref=e47]: ◆ 14 hrs/week saved
+      - generic [ref=e48]:
+        - generic [ref=e49]: D
+        - generic [ref=e50]:
+          - generic [ref=e51]: DispatchCompass
+          - generic [ref=e52]: Given today's calls and tech locations, generates an optimal route and updates customers automatically as ETAs shift.
+          - generic [ref=e53]: ◆ 2 extra calls/day per truck
+      - generic [ref=e54]:
+        - generic [ref=e55]: Q
+        - generic [ref=e56]:
+          - generic [ref=e57]: QuoteDraft
+          - generic [ref=e58]: Tech dictates site notes; a polished quote with line items and photos lands in the customer's inbox before the truck pulls away.
+          - generic [ref=e59]: ◆ 45 min → 4 min per quote
+      - generic [ref=e60]:
+        - generic [ref=e61]: F
+        - generic [ref=e62]:
+          - generic [ref=e63]: FollowLoop
+          - generic [ref=e64]: Post-service check-ins, review requests, seasonal maintenance reminders — handled without touching the CRM.
+          - generic [ref=e65]: ◆ 3× review volume
+  - generic [ref=e67]:
+    - generic [ref=e68]: "[PLACEHOLDER] Testimonial"
+    - blockquote [ref=e69]: “We stopped losing jobs because we stopped losing hours. My wife actually asked if I got a new job because I was home for dinner.”
+    - generic [ref=e70]: — [PLACEHOLDER] Owner · HVAC company · Birmingham metro
+  - generic [ref=e71]:
+    - generic [ref=e72]: Common questions
+    - heading "Before you book." [level=2] [ref=e73]
+    - generic [ref=e74]:
+      - button "Does this replace my dispatcher? −" [ref=e75] [cursor=pointer]:
+        - text: Does this replace my dispatcher?
+        - generic [ref=e76]: −
+      - generic [ref=e77]: No. It makes one dispatcher do the work of three, and takes the after-hours triage off whoever is drawing the short straw. You keep the human who knows the customers.
+    - button "What about ServiceTitan / Housecall Pro? +" [ref=e79] [cursor=pointer]:
+      - text: What about ServiceTitan / Housecall Pro?
+      - generic [ref=e80]: +
+    - button "How long until something is actually running? +" [ref=e82] [cursor=pointer]:
+      - text: How long until something is actually running?
+      - generic [ref=e83]: +
+    - button "What if my team hates it? +" [ref=e85] [cursor=pointer]:
+      - text: What if my team hates it?
+      - generic [ref=e86]: +
+  - generic [ref=e87]:
+    - heading "Ready to stop doing this by hand?" [level=2] [ref=e88]
+    - link "Book a call →" [ref=e89] [cursor=pointer]:
+      - /url: /contact
+  - contentinfo [ref=e90]:
+    - generic [ref=e91]:
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - generic [ref=e94]: d
+          - generic [ref=e95]: Developers Decide LLC
+        - paragraph [ref=e96]: AI automation consulting for small service businesses in Alabama. Hoover, AL.
+      - generic [ref=e97]:
+        - generic [ref=e98]: Industries
+        - link "HVAC" [ref=e99] [cursor=pointer]:
+          - /url: /hvac
+        - link "Construction" [ref=e100] [cursor=pointer]:
+          - /url: /construction
+        - link "Staffing" [ref=e101] [cursor=pointer]:
+          - /url: /staffing
+      - generic [ref=e102]:
+        - generic [ref=e103]: Resources
+        - link "Case study" [ref=e104] [cursor=pointer]:
+          - /url: /case-study
+        - link "Try it yourself" [ref=e105] [cursor=pointer]:
+          - /url: /try-it-yourself
+      - generic [ref=e106]:
+        - generic [ref=e107]: Contact
+        - link "solomon@devsdecide.com" [ref=e108] [cursor=pointer]:
+          - /url: mailto:solomon@devsdecide.com
+        - link "Book a call" [ref=e109] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=e110]:
+      - generic [ref=e111]: © 2026 Developers Decide LLC
+      - generic [ref=e112]: Hoover, Alabama
+  - button "Open Next.js Dev Tools" [ref=e118] [cursor=pointer]:
+    - img [ref=e119]
+  - alert [ref=e122]

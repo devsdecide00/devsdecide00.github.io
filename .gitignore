@@ -36,6 +36,10 @@ target/
 # testing
 /coverage
 
+# Next.js
+/.next/
+/out/
+
 # production
 /build
 

@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Surfaces */
+  --color-bg: #faf7f2;
+  --color-bg-deep: #f1ece2;
+  --color-ink: #1c1a17;
+  --color-ink-soft: #4b463d;
+  --color-ink-faint: #8a8174;
+  --color-rule: #e3dcc9;
+
+  /* Accent (oxblood) */
+  --color-accent: #8a2b2b;
+  --color-accent-deep: #5e1d1d;
+  --color-accent-soft: #f3e5e0;
+
+  /* Sunflower — dark band accent only */
+  --color-sun: #e8b63a;
+
+  /* Typography */
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+html {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+@keyframes ddpulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes ddbounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.3; }
+  40% { transform: translateY(-8px); opacity: 1; }
+}

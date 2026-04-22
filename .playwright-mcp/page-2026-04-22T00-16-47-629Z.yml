@@ -1,0 +1,277 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "d Developers Decide" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: d
+      - generic [ref=e5]: Developers Decide
+    - generic [ref=e6]:
+      - link "HVAC" [ref=e7] [cursor=pointer]:
+        - /url: /hvac
+      - link "Construction" [ref=e8] [cursor=pointer]:
+        - /url: /construction
+      - link "Staffing" [ref=e9] [cursor=pointer]:
+        - /url: /staffing
+      - link "Case study" [ref=e10] [cursor=pointer]:
+        - /url: /case-study
+      - link "Try it" [ref=e11] [cursor=pointer]:
+        - /url: /try-it-yourself
+      - link "Contact" [ref=e12] [cursor=pointer]:
+        - /url: /contact
+      - link "Book a call" [ref=e13] [cursor=pointer]:
+        - /url: /contact
+  - generic [ref=e14]:
+    - generic [ref=e15]: Live demo · no signup · powered by Claude
+    - heading "Don’t take my word for it. Watch AI solve your bottleneck in 10 seconds." [level=1] [ref=e17]:
+      - text: Don’t take my word for it.
+      - text: Watch AI solve your bottleneck in 10 seconds.
+    - paragraph [ref=e18]: Pick your industry, tell me what’s grinding, and an AI will sketch a custom automation right here. If it looks promising, we’ll build the real one together.
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]: 01 · Industry
+        - generic [ref=e23]:
+          - button "HVAC" [ref=e24] [cursor=pointer]
+          - button "Cleaning" [ref=e25] [cursor=pointer]
+          - button "Bookkeeping" [ref=e26] [cursor=pointer]
+          - button "Property Mgmt" [ref=e27] [cursor=pointer]
+          - button "Staffing" [ref=e28] [cursor=pointer]
+          - button "Construction" [ref=e29] [cursor=pointer]
+        - generic [ref=e30]: 02 · The bottleneck
+        - textbox [ref=e31]: Customers texting the owner at all hours
+        - generic [ref=e32]:
+          - button "Customers texting the owner at all hours" [ref=e33] [cursor=pointer]
+          - button "Scheduling conflicts between techs" [ref=e34] [cursor=pointer]
+          - button "Quote generation takes 45min each" [ref=e35] [cursor=pointer]
+        - button "Generate automation plan →" [ref=e36] [cursor=pointer]
+      - generic [ref=e38]:
+        - generic [ref=e39]: Waiting on you.
+        - text: Pick an industry, describe what’s eating the week, hit generate.
+    - generic [ref=e40]:
+      - generic [ref=e41]: ◆ 47 tools deployed across Alabama
+      - generic [ref=e42]: ◆ $180k median annual recovery
+      - generic [ref=e43]: ◆ Month-to-month · cancel anytime
+  - generic [ref=e45]:
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - generic [ref=e48]: How it works
+        - heading "From the demo above to a tool your team actually uses." [level=2] [ref=e49]
+      - paragraph [ref=e50]: Four steps, two weeks to your first deployed tool, no slide decks anywhere.
+    - generic [ref=e51]:
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - generic [ref=e54]: "01"
+          - generic [ref=e55]: STEP 1/4
+        - heading "Diagnose" [level=3] [ref=e56]
+        - paragraph [ref=e57]: A 30-minute call. Tell me about a typical Tuesday. I listen for what is repeated.
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - generic [ref=e60]: "02"
+          - generic [ref=e61]: STEP 2/4
+        - heading "Scope" [level=3] [ref=e62]
+        - paragraph [ref=e63]: One specific tool. Fixed price, two-week timeline, written in plain English.
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - generic [ref=e66]: "03"
+          - generic [ref=e67]: STEP 3/4
+        - heading "Build" [level=3] [ref=e68]
+        - paragraph [ref=e69]: I build against your real data and train your team until they own it.
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - generic [ref=e72]: "04"
+          - generic [ref=e73]: STEP 4/4
+        - heading "Stay" [level=3] [ref=e74]
+        - paragraph [ref=e75]: Monthly retainer. Fix breakages, find the next bottleneck, compound savings.
+  - generic [ref=e76]:
+    - generic [ref=e77]: Featured engagement
+    - heading "Not all automation is small." [level=2] [ref=e78]
+    - link "Case study · Legal services firm Automating billing sync across three enterprise systems. NetSuite · AgilityBlue · Relativity. We built Avalon — a custom integration platform that replaced manual data entry with automated, auditable, real-time sync. Read the full case study → Manual data entry Replaced across 3 systems Billing cycles Faster, auditable end-to-end Audit trail Every entity revision versioned Dry-run mode Preview changes before commit" [ref=e79] [cursor=pointer]:
+      - /url: /case-study
+      - generic [ref=e80]:
+        - generic [ref=e81]: Case study · Legal services firm
+        - heading "Automating billing sync across three enterprise systems." [level=3] [ref=e82]
+        - paragraph [ref=e83]:
+          - text: NetSuite · AgilityBlue · Relativity. We built
+          - emphasis [ref=e84]: Avalon
+          - text: — a custom integration platform that replaced manual data entry with automated, auditable, real-time sync.
+        - generic [ref=e85]: Read the full case study →
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - generic [ref=e88]: Manual data entry
+          - generic [ref=e89]: Replaced across 3 systems
+        - generic [ref=e90]:
+          - generic [ref=e91]: Billing cycles
+          - generic [ref=e92]: Faster, auditable end-to-end
+        - generic [ref=e93]:
+          - generic [ref=e94]: Audit trail
+          - generic [ref=e95]: Every entity revision versioned
+        - generic [ref=e96]:
+          - generic [ref=e97]: Dry-run mode
+          - generic [ref=e98]: Preview changes before commit
+  - generic [ref=e99]:
+    - generic [ref=e100]: Smaller builds
+    - heading "A few tools already running across Alabama." [level=2] [ref=e101]
+    - generic [ref=e102]:
+      - generic [ref=e103]:
+        - generic [ref=e104]: HVAC · Birmingham
+        - generic [ref=e105]: IntakeRelay
+        - paragraph [ref=e106]: Customer texts triaged, urgent ones routed to the on-call tech, routine ones auto-replied with scheduling link.
+        - generic [ref=e107]:
+          - generic [ref=e108]: Value delivered
+          - generic [ref=e109]: 14 hrs/wk
+      - generic [ref=e110]:
+        - generic [ref=e111]: Cleaning · Huntsville
+        - generic [ref=e112]: CrewShuffle
+        - paragraph [ref=e113]: Staff shift swaps reconciled from Slack into the master schedule. Client confirmations automatic. Zero owner involvement.
+        - generic [ref=e114]:
+          - generic [ref=e115]: Value delivered
+          - generic [ref=e116]: $3.4k/mo
+      - generic [ref=e117]:
+        - generic [ref=e118]: Bookkeeping · Hoover
+        - generic [ref=e119]: DocChaser
+        - paragraph [ref=e120]: Document requests and follow-ups tuned to how each client responds. Month-end went from 5 days to 2.
+        - generic [ref=e121]:
+          - generic [ref=e122]: Value delivered
+          - generic [ref=e123]: 3× capacity
+      - generic [ref=e124]:
+        - generic [ref=e125]: Property Mgmt · Mobile
+        - generic [ref=e126]: FixTriage
+        - paragraph [ref=e127]: Maintenance requests triaged by severity, dispatched to the right vendor, tenants updated automatically.
+        - generic [ref=e128]:
+          - generic [ref=e129]: Value delivered
+          - generic [ref=e130]: 22 hrs/wk
+      - generic [ref=e131]:
+        - generic [ref=e132]: Staffing · Montgomery
+        - generic [ref=e133]: FitCheck
+        - paragraph [ref=e134]: Candidates scored against open roles with reasoning. Top 5 surface with interview notes pre-drafted.
+        - generic [ref=e135]:
+          - generic [ref=e136]: Value delivered
+          - generic [ref=e137]: +31% placement
+      - generic [ref=e138]:
+        - generic [ref=e139]: Construction · Tuscaloosa
+        - generic [ref=e140]: BidBuilder
+        - paragraph [ref=e141]: Plans in, materials list generated, subs queried for pricing, draft bid on your desk in an hour.
+        - generic [ref=e142]:
+          - generic [ref=e143]: Value delivered
+          - generic [ref=e144]: 8 hrs → 45 min
+  - generic [ref=e146]:
+    - generic [ref=e147]:
+      - generic [ref=e148]: Pricing
+      - heading "Flat. Simple. Cancel anytime." [level=2] [ref=e149]
+      - paragraph [ref=e150]: Month-to-month. No setup fees. No year-long contracts.
+    - generic [ref=e151]:
+      - generic [ref=e152]:
+        - generic [ref=e153]: Starter
+        - generic [ref=e154]:
+          - generic [ref=e155]: $
+          - generic [ref=e156]: 1,500
+          - generic [ref=e157]: /mo
+        - paragraph [ref=e158]: One bottleneck, one tool, fast.
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - generic [ref=e161]: ✓
+            - text: Bottleneck discovery call
+          - generic [ref=e162]:
+            - generic [ref=e163]: ✓
+            - text: One AI tool built & deployed
+          - generic [ref=e164]:
+            - generic [ref=e165]: ✓
+            - text: Team training session
+          - generic [ref=e166]:
+            - generic [ref=e167]: ✓
+            - text: 30-day support window
+          - generic [ref=e168]:
+            - generic [ref=e169]: ✓
+            - text: Monthly check-in
+        - link "Get started →" [ref=e170] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e171]:
+        - generic [ref=e172]: MOST PICKED
+        - generic [ref=e173]: Growth
+        - generic [ref=e174]:
+          - generic [ref=e175]: $
+          - generic [ref=e176]: 2,500
+          - generic [ref=e177]: /mo
+        - paragraph [ref=e178]: Systematic monthly savings compounding.
+        - generic [ref=e179]:
+          - generic [ref=e180]:
+            - generic [ref=e181]: ✓
+            - text: Everything in Starter
+          - generic [ref=e182]:
+            - generic [ref=e183]: ✓
+            - text: Up to 3 active AI tools
+          - generic [ref=e184]:
+            - generic [ref=e185]: ✓
+            - text: Ongoing iteration
+          - generic [ref=e186]:
+            - generic [ref=e187]: ✓
+            - text: Unlimited support
+          - generic [ref=e188]:
+            - generic [ref=e189]: ✓
+            - text: Bi-weekly strategy calls
+          - generic [ref=e190]:
+            - generic [ref=e191]: ✓
+            - text: Priority response
+        - link "Get started →" [ref=e192] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e193]:
+        - generic [ref=e194]: Custom
+        - generic [ref=e196]: Let’s talk
+        - paragraph [ref=e197]: Multi-location or complex integrations.
+        - generic [ref=e198]:
+          - generic [ref=e199]:
+            - generic [ref=e200]: ✓
+            - text: Everything in Growth
+          - generic [ref=e201]:
+            - generic [ref=e202]: ✓
+            - text: Unlimited tools & scope
+          - generic [ref=e203]:
+            - generic [ref=e204]: ✓
+            - text: Dedicated Slack channel
+          - generic [ref=e205]:
+            - generic [ref=e206]: ✓
+            - text: Custom dashboards
+          - generic [ref=e207]:
+            - generic [ref=e208]: ✓
+            - text: On-site training
+        - link "Contact →" [ref=e209] [cursor=pointer]:
+          - /url: /contact
+  - generic [ref=e210]:
+    - heading "Or skip the demo. Just talk to me." [level=2] [ref=e211]:
+      - text: Or skip the demo.
+      - text: Just talk to me.
+    - paragraph [ref=e212]: 30 minutes. No pitch deck. If there’s nothing worth automating, I’ll tell you.
+    - link "Book a call →" [ref=e213] [cursor=pointer]:
+      - /url: /contact
+    - generic [ref=e214]: Or write → solomon@devsdecide.com
+  - contentinfo [ref=e215]:
+    - generic [ref=e216]:
+      - generic [ref=e217]:
+        - generic [ref=e218]:
+          - generic [ref=e219]: d
+          - generic [ref=e220]: Developers Decide LLC
+        - paragraph [ref=e221]: AI automation consulting for small service businesses in Alabama. Hoover, AL.
+      - generic [ref=e222]:
+        - generic [ref=e223]: Industries
+        - link "HVAC" [ref=e224] [cursor=pointer]:
+          - /url: /hvac
+        - link "Construction" [ref=e225] [cursor=pointer]:
+          - /url: /construction
+        - link "Staffing" [ref=e226] [cursor=pointer]:
+          - /url: /staffing
+      - generic [ref=e227]:
+        - generic [ref=e228]: Resources
+        - link "Case study" [ref=e229] [cursor=pointer]:
+          - /url: /case-study
+        - link "Try it yourself" [ref=e230] [cursor=pointer]:
+          - /url: /try-it-yourself
+      - generic [ref=e231]:
+        - generic [ref=e232]: Contact
+        - link "solomon@devsdecide.com" [ref=e233] [cursor=pointer]:
+          - /url: mailto:solomon@devsdecide.com
+        - link "Book a call" [ref=e234] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=e235]:
+      - generic [ref=e236]: © 2026 Developers Decide LLC
+      - generic [ref=e237]: Hoover, Alabama
+  - button "Open Next.js Dev Tools" [ref=e243] [cursor=pointer]:
+    - img [ref=e244]
+  - alert [ref=e247]

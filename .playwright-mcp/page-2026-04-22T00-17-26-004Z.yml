@@ -1,0 +1,117 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "d Developers Decide" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: d
+      - generic [ref=e5]: Developers Decide
+    - generic [ref=e6]:
+      - link "HVAC" [ref=e7] [cursor=pointer]:
+        - /url: /hvac
+      - link "Construction" [ref=e8] [cursor=pointer]:
+        - /url: /construction
+      - link "Staffing" [ref=e9] [cursor=pointer]:
+        - /url: /staffing
+      - link "Case study" [ref=e10] [cursor=pointer]:
+        - /url: /case-study
+      - link "Try it" [ref=e11] [cursor=pointer]:
+        - /url: /try-it-yourself
+      - link "Contact" [ref=e12] [cursor=pointer]:
+        - /url: /contact
+      - link "Book a call" [ref=e13] [cursor=pointer]:
+        - /url: /contact
+  - generic [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]: Book a call
+      - heading "Thirty minutes. No pitch." [level=1] [ref=e17]
+      - paragraph [ref=e18]: Tell me about a typical Tuesday at your business. I listen for what’s repeated. If there’s nothing worth automating, I’ll tell you.
+      - generic [ref=e19]:
+        - generic [ref=e20]: Direct
+        - generic [ref=e21]: solomon@devsdecide.com
+        - generic [ref=e22]: Hoover, Alabama · replies within one business day
+      - generic [ref=e23]:
+        - generic [ref=e24]: What to expect
+        - generic [ref=e25]:
+          - generic [ref=e26]: ◆
+          - text: 30 min Zoom or phone
+        - generic [ref=e27]:
+          - generic [ref=e28]: ◆
+          - text: I ask questions, you answer
+        - generic [ref=e29]:
+          - generic [ref=e30]: ◆
+          - text: You get a one-pager the next day
+        - generic [ref=e31]:
+          - generic [ref=e32]: ◆
+          - text: No follow-up spam, ever
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]: Your name
+          - textbox [ref=e37]
+        - generic [ref=e38]:
+          - generic [ref=e39]: Company
+          - textbox [ref=e40]
+      - generic [ref=e41]:
+        - generic [ref=e42]: Email
+        - textbox [ref=e43]
+      - generic [ref=e44]:
+        - generic [ref=e45]: Industry
+        - generic [ref=e46]:
+          - button "HVAC" [ref=e47] [cursor=pointer]
+          - button "Cleaning" [ref=e48] [cursor=pointer]
+          - button "Bookkeeping" [ref=e49] [cursor=pointer]
+          - button "Property Mgmt" [ref=e50] [cursor=pointer]
+          - button "Staffing" [ref=e51] [cursor=pointer]
+          - button "Construction" [ref=e52] [cursor=pointer]
+          - button "Other" [ref=e53] [cursor=pointer]
+      - generic [ref=e54]:
+        - generic [ref=e55]: What’s grinding?
+        - textbox "The most repetitive, soul-crushing part of your week…" [ref=e56]
+      - generic [ref=e57]:
+        - generic [ref=e58]: Rough budget
+        - generic [ref=e59]:
+          - generic [ref=e60] [cursor=pointer]:
+            - radio "Starter · $1,500/mo" [checked] [ref=e61]
+            - text: Starter · $1,500/mo
+          - generic [ref=e62] [cursor=pointer]:
+            - radio "Growth · $2,500/mo" [ref=e63]
+            - text: Growth · $2,500/mo
+          - generic [ref=e64] [cursor=pointer]:
+            - radio "Custom · let's scope it" [ref=e65]
+            - text: Custom · let's scope it
+          - generic [ref=e66] [cursor=pointer]:
+            - radio "Just exploring" [ref=e67]
+            - text: Just exploring
+      - button "Send it →" [ref=e68] [cursor=pointer]
+  - contentinfo [ref=e69]:
+    - generic [ref=e70]:
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - generic [ref=e73]: d
+          - generic [ref=e74]: Developers Decide LLC
+        - paragraph [ref=e75]: AI automation consulting for small service businesses in Alabama. Hoover, AL.
+      - generic [ref=e76]:
+        - generic [ref=e77]: Industries
+        - link "HVAC" [ref=e78] [cursor=pointer]:
+          - /url: /hvac
+        - link "Construction" [ref=e79] [cursor=pointer]:
+          - /url: /construction
+        - link "Staffing" [ref=e80] [cursor=pointer]:
+          - /url: /staffing
+      - generic [ref=e81]:
+        - generic [ref=e82]: Resources
+        - link "Case study" [ref=e83] [cursor=pointer]:
+          - /url: /case-study
+        - link "Try it yourself" [ref=e84] [cursor=pointer]:
+          - /url: /try-it-yourself
+      - generic [ref=e85]:
+        - generic [ref=e86]: Contact
+        - link "solomon@devsdecide.com" [ref=e87] [cursor=pointer]:
+          - /url: mailto:solomon@devsdecide.com
+        - link "Book a call" [ref=e88] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=e89]:
+      - generic [ref=e90]: © 2026 Developers Decide LLC
+      - generic [ref=e91]: Hoover, Alabama
+  - button "Open Next.js Dev Tools" [ref=e97] [cursor=pointer]:
+    - img [ref=e98]
+  - alert [ref=e101]
