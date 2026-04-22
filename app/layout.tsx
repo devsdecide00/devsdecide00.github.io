@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -83,6 +84,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );
