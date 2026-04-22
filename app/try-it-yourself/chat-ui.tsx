@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -25,6 +26,7 @@ export default function ChatUI() {
   const [convo, setConvo] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const [cfToken, setCfToken] = useState('');
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,12 +48,22 @@ export default function ChatUI() {
           mode: 'chat',
           scenario,
           persona,
+          cfToken,
           messages: next.map((m) => ({ role: m.role, content: m.text })),
         }),
       });
       if (res.status === 429) {
         const data = await res.json();
         setConvo([...next, { role: 'assistant', text: data.message ?? 'Too many messages — give it a minute before sending again.' }]);
+        setLoading(false);
+        return;
+      }
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        setConvo([
+          ...next,
+          { role: 'assistant', text: data?.message ?? 'Please complete the anti-bot check before using the live demo.' },
+        ]);
         setLoading(false);
         return;
       }
@@ -118,6 +130,17 @@ export default function ChatUI() {
           >
             ↻ Reset conversation
           </button>
+
+          <div>
+            <Turnstile
+              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+              options={{ action: 'ai_chat' }}
+              onSuccess={(token) => setCfToken(token)}
+              onExpire={() => setCfToken('')}
+              onError={() => setCfToken('')}
+            />
+            <div className="text-[12px] text-ink-faint mt-2">Quick human check so the live chat doesn&rsquo;t get farmed.</div>
+          </div>
         </div>
 
         <div className="bg-white border border-rule rounded-[20px] p-6 min-h-[560px] flex flex-col shadow-[0_20px_40px_-20px_rgba(26,24,20,0.1)]">
@@ -163,6 +186,7 @@ export default function ChatUI() {
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
+              maxLength={1000}
               placeholder="Type your side of the conversation…"
               className="flex-1 bg-bg border border-rule rounded-[10px] px-[14px] py-3 font-[inherit] text-[14px] outline-none"
             />

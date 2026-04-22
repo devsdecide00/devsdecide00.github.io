@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 
 interface Inquiry {
@@ -11,14 +11,15 @@ interface Inquiry {
 }
 
 export default function ThankYouContent() {
-  const [inquiry, setInquiry] = useState<Inquiry | null>(null);
-
-  useEffect(() => {
+  const [inquiry] = useState<Inquiry | null>(() => {
+    if (typeof window === 'undefined') return null;
     try {
       const raw = localStorage.getItem('dd_last_inquiry');
-      if (raw) setInquiry(JSON.parse(raw));
-    } catch {}
-  }, []);
+      return raw ? JSON.parse(raw) as Inquiry : null;
+    } catch {
+      return null;
+    }
+  });
 
   return (
     <section className="max-w-[820px] mx-auto py-[120px] px-10 text-center">

@@ -11,6 +11,8 @@ export default function ContactForm() {
   const router = useRouter();
   const [honeypot, setHoneypot] = useState('');
   const [cfToken, setCfToken] = useState('');
+  const [error, setError] = useState('');
+  const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     name: '',
     company: '',
@@ -24,13 +26,31 @@ export default function ContactForm() {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...form, honeypot, cfToken }),
-    });
-    try { localStorage.setItem('dd_last_inquiry', JSON.stringify(form)); } catch {}
-    router.push('/thank-you');
+    if (!cfToken || submitting) return;
+
+    setSubmitting(true);
+    setError('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, honeypot, cfToken }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        setError(data?.message ?? 'Something blocked the submission. Please try again.');
+        setSubmitting(false);
+        return;
+      }
+
+      try { localStorage.setItem('dd_last_inquiry', JSON.stringify(form)); } catch {}
+      router.push('/thank-you');
+    } catch {
+      setError('Connection hiccup. Please try again.');
+      setSubmitting(false);
+    }
   };
 
   const inputClass = 'w-full bg-bg border border-rule rounded-[10px] px-[14px] py-3 font-[inherit] text-[15px] text-ink outline-none';
@@ -50,17 +70,17 @@ export default function ContactForm() {
       <div className="grid grid-cols-2 gap-4 mb-4">
         <div>
           <label className={labelClass}>Your name</label>
-          <input required value={form.name} onChange={(e) => upd('name', e.target.value)} className={inputClass} />
+          <input required maxLength={120} value={form.name} onChange={(e) => upd('name', e.target.value)} className={inputClass} />
         </div>
         <div>
           <label className={labelClass}>Company</label>
-          <input required value={form.company} onChange={(e) => upd('company', e.target.value)} className={inputClass} />
+          <input required maxLength={120} value={form.company} onChange={(e) => upd('company', e.target.value)} className={inputClass} />
         </div>
       </div>
 
       <div className="mb-4">
         <label className={labelClass}>Email</label>
-        <input required type="email" value={form.email} onChange={(e) => upd('email', e.target.value)} className={inputClass} />
+        <input required type="email" maxLength={254} value={form.email} onChange={(e) => upd('email', e.target.value)} className={inputClass} />
       </div>
 
       <div className="mb-4">
@@ -84,6 +104,8 @@ export default function ContactForm() {
       <div className="mb-4">
         <label className={labelClass}>What&rsquo;s grinding?</label>
         <textarea
+          required
+          maxLength={2000}
           value={form.bottleneck}
           onChange={(e) => upd('bottleneck', e.target.value)}
           placeholder="The most repetitive, soul-crushing part of your week…"
@@ -110,16 +132,21 @@ export default function ContactForm() {
 
       <Turnstile
         siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+        options={{ action: 'contact_form' }}
         onSuccess={(token) => setCfToken(token)}
+        onExpire={() => setCfToken('')}
+        onError={() => setCfToken('')}
         className="mb-4"
       />
 
+      {error && <div className="mb-4 text-[13px] text-accent">{error}</div>}
+
       <button
         type="submit"
-        disabled={!cfToken}
+        disabled={!cfToken || submitting}
         className="w-full bg-accent text-white border-none py-4 rounded-xl font-[inherit] text-[15px] font-semibold cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Send it →
+        {submitting ? 'Sending…' : 'Send it →'}
       </button>
     </form>
   );

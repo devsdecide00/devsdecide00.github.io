@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 interface Plan {
   tool_name: string;
@@ -28,15 +29,20 @@ export default function HeroDemo() {
   const [bottleneck, setBottleneck] = useState(presets['HVAC'][0]);
   const [plan, setPlan] = useState<Plan | null>(null);
   const [loading, setLoading] = useState(false);
+  const [cfToken, setCfToken] = useState('');
+  const [error, setError] = useState('');
 
   const runDemo = async () => {
+    if (loading) return;
+
     setLoading(true);
     setPlan(null);
+    setError('');
     try {
       const res = await fetch('/api/ai', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mode: 'hero', industry, bottleneck }),
+        body: JSON.stringify({ mode: 'hero', industry, bottleneck, cfToken }),
       });
       if (res.status === 429) {
         setPlan({
@@ -50,6 +56,14 @@ export default function HeroDemo() {
         setLoading(false);
         return;
       }
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        setError(data?.message ?? 'Please complete the anti-bot check before trying the live demo.');
+        setLoading(false);
+        return;
+      }
+
       const data = await res.json();
       const match = data.text?.match(/\{[\s\S]*\}/);
       if (match) setPlan(JSON.parse(match[0]));
@@ -107,6 +121,7 @@ export default function HeroDemo() {
             <textarea
               value={bottleneck}
               onChange={(e) => setBottleneck(e.target.value)}
+              maxLength={500}
               className="w-full bg-bg border border-rule rounded-[10px] p-[14px] font-[inherit] text-[15px] text-ink resize-none outline-none min-h-[90px] leading-[1.5]"
             />
             <div className="flex flex-wrap gap-1.5 mt-2.5">
@@ -128,6 +143,18 @@ export default function HeroDemo() {
             >
               {loading ? 'Analyzing bottleneck…' : 'Generate automation plan →'}
             </button>
+
+            <div className="mt-4">
+              <Turnstile
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                options={{ action: 'ai_hero' }}
+                onSuccess={(token) => setCfToken(token)}
+                onExpire={() => setCfToken('')}
+                onError={() => setCfToken('')}
+              />
+              <div className="text-[12px] text-ink-faint mt-2">Quick human check so bots can&rsquo;t burn the demo.</div>
+              {error && <div className="text-[13px] text-accent mt-2">{error}</div>}
+            </div>
           </div>
 
           {/* Right: result */}
