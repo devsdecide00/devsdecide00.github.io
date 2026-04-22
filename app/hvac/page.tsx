@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     siteName: 'Developers Decide',
     type: 'website',
   },
+  alternates: {
+    canonical: 'https://devsdecide.com/hvac',
+  },
 };
 
 export default function HVACPage() {

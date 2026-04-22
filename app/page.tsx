@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import Nav from './components/nav';
 import Footer from './components/footer';
 import HeroDemo from './components/hero-demo';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://devsdecide.com/',
+  },
+};
 
 const processSteps = [
   { n: '01', t: 'Diagnose', d: 'A 30-minute call. Tell me about a typical Tuesday. I listen for what is repeated.' },

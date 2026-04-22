@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     siteName: 'Developers Decide',
     type: 'website',
   },
+  alternates: {
+    canonical: 'https://devsdecide.com/try-it-yourself',
+  },
 };
 
 export default function TryItYourselfPage() {
