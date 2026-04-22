@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import Nav from '../components/nav';
 import Footer from '../components/footer';
 import ContactForm from './contact-form';
@@ -49,7 +50,9 @@ export default function ContactPage() {
             )}
           </div>
         </div>
-        <ContactForm />
+        <Suspense fallback={<div className="bg-white border border-rule rounded-[20px] p-9 animate-pulse h-[600px]" />}>
+          <ContactForm />
+        </Suspense>
       </section>
       <Footer />
     </>

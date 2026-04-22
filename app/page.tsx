@@ -203,7 +203,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <Link
-                  href="/contact"
+                  href={`/contact?plan=${p.name}`}
                   className={`block text-center no-underline w-full py-[14px] rounded-full text-[14px] font-medium ${
                     p.featured
                       ? 'bg-sun text-ink'

@@ -194,7 +194,7 @@ export default function HeroDemo() {
                 </div>
 
                 <Link
-                  href="/contact"
+                  href={`/contact?industry=${encodeURIComponent(industry)}&bottleneck=${encodeURIComponent(bottleneck)}`}
                   className="block text-center no-underline mt-auto w-full bg-ink text-bg py-[13px] rounded-[10px] font-[inherit] text-[14px] font-medium"
                 >
                   Book a call to get your custom plan →
@@ -235,7 +235,7 @@ export default function HeroDemo() {
                 </div>
 
                 <Link
-                  href="/contact"
+                  href={`/contact?industry=${encodeURIComponent(industry)}&bottleneck=${encodeURIComponent(bottleneck)}`}
                   className="block text-center no-underline mt-4 w-full bg-ink text-bg py-[13px] rounded-[10px] font-[inherit] text-[14px] font-medium"
                 >
                   Book a call to build the real one →

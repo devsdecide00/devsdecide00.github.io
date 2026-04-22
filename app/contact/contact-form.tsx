@@ -1,14 +1,21 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Turnstile } from '@marsidev/react-turnstile';
 
 const industries = ['HVAC', 'Cleaning', 'Bookkeeping', 'Property Mgmt', 'Staffing', 'Construction', 'Other'];
 const budgets = ['Starter · $1,500/mo', 'Growth · $2,500/mo', "Custom · let's scope it", 'Just exploring'];
 
+const planToBudget: Record<string, string> = {
+  Starter: 'Starter · $1,500/mo',
+  Growth: 'Growth · $2,500/mo',
+  Custom: "Custom · let's scope it",
+};
+
 export default function ContactForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [honeypot, setHoneypot] = useState('');
   const [cfToken, setCfToken] = useState('');
   const [error, setError] = useState('');
@@ -17,9 +24,9 @@ export default function ContactForm() {
     name: '',
     company: '',
     email: '',
-    industry: 'HVAC',
-    bottleneck: '',
-    budget: 'Starter · $1,500/mo',
+    industry: searchParams.get('industry') ?? 'HVAC',
+    bottleneck: searchParams.get('bottleneck') ?? '',
+    budget: planToBudget[searchParams.get('plan') ?? ''] ?? 'Starter · $1,500/mo',
   });
 
   const upd = (k: string, v: string) => setForm((f) => ({ ...f, [k]: v }));
