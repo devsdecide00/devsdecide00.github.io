@@ -39,6 +39,7 @@ target/
 # Next.js
 /.next/
 /out/
+tsconfig.tsbuildinfo
 
 # production
 /build
