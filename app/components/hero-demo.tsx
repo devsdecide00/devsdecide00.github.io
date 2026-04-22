@@ -69,10 +69,13 @@ export default function HeroDemo() {
   return (
     <section className="max-w-[1240px] mx-auto py-[70px] px-10 pb-20">
 
-      <h1 className="font-display text-[clamp(56px,7vw,104px)] leading-[1.1] tracking-[-2.5px] m-0 mb-9 font-normal max-w-[1100px] pb-[0.15em]">
+      <h1 className="text-[13px] tracking-[1.5px] uppercase text-ink-faint m-0 mb-4 font-normal">
+        AI automation for Alabama small businesses — built around your bottleneck.
+      </h1>
+      <h2 className="font-display text-[clamp(56px,7vw,104px)] leading-[1.1] tracking-[-2.5px] m-0 mb-9 font-normal max-w-[1100px] pb-[0.15em]">
         Don&rsquo;t take my word for it.<br />
         <span className="italic text-accent">Watch AI solve</span> your bottleneck in 10 seconds.
-      </h1>
+      </h2>
 
       <p className="text-[19px] text-ink-soft leading-[1.55] m-0 mb-12 max-w-[620px]">
         Pick your industry, tell me what&rsquo;s grinding, and an AI will sketch a custom automation right here.
