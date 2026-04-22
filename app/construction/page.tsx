@@ -39,8 +39,7 @@ export default function ConstructionPage() {
         { name: 'OwnerWeekly', desc: "PM dictates a 3-minute voice note. Owner gets a polished PDF with photos, progress %, and next week's plan by Friday noon.", impact: '100% on-time reporting' },
         { name: 'ChangeCatch', desc: 'Watches plan revisions, flags scope changes, drafts the change-order with dollar impact before the owner asks.', impact: '+$8k/mo captured' },
       ]}
-      testimonial={{ quote: "We were leaving money on the table every time an owner changed scope. Now the change order is already drafted when we bring it up. Closes the conversation.", attribution: '[PLACEHOLDER] GC · Mid-size commercial firm · Tuscaloosa' }}
-      faqs={[
+faqs={[
         { q: 'Do you integrate with Procore / Buildertrend?', a: 'Yes. The automations read and write to whatever project management system you already run. No migration, no new logins for your team.' },
         { q: 'Will this work for residential too?', a: 'The same tools scale down. Smaller projects, same bottlenecks — bid prep, sub scheduling, customer updates.' },
         { q: 'What about drawings and PDFs with weird formatting?', a: 'AI reads messy plans, spec sheets, and marked-up PDFs reliably. It surfaces ambiguity instead of guessing — you approve before anything goes out.' },

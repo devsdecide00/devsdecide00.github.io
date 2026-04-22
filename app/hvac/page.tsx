@@ -39,8 +39,7 @@ export default function HVACPage() {
         { name: 'QuoteDraft', desc: "Tech dictates site notes; a polished quote with line items and photos lands in the customer's inbox before the truck pulls away.", impact: '45 min → 4 min per quote' },
         { name: 'FollowLoop', desc: 'Post-service check-ins, review requests, seasonal maintenance reminders — handled without touching the CRM.', impact: '3× review volume' },
       ]}
-      testimonial={{ quote: "We stopped losing jobs because we stopped losing hours. My wife actually asked if I got a new job because I was home for dinner.", attribution: '[PLACEHOLDER] Owner · HVAC company · Birmingham metro' }}
-      faqs={[
+faqs={[
         { q: 'Does this replace my dispatcher?', a: 'No. It makes one dispatcher do the work of three, and takes the after-hours triage off whoever is drawing the short straw. You keep the human who knows the customers.' },
         { q: 'What about ServiceTitan / Housecall Pro?', a: 'We integrate with whatever you use. The automation sits alongside your existing CRM — nobody has to learn a new tool or migrate data.' },
         { q: 'How long until something is actually running?', a: 'First tool deployed in two weeks. You pick which bottleneck hurts the most; we start there.' },

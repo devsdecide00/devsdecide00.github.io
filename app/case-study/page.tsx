@@ -5,10 +5,10 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Legal Billing Integration Case Study | Developers Decide',
-  description: 'How we built Avalon — a custom integration platform automating billing sync across NetSuite, AgilityBlue, and Relativity for a legal services firm.',
+  description: 'How we built Conduit — a custom integration platform automating billing sync across NetSuite, AgilityBlue, and Relativity for a legal services firm.',
   openGraph: {
     title: 'Automating Legal Billing Across Three Enterprise Systems | Developers Decide',
-    description: 'How we built Avalon — a custom integration platform replacing manual data entry across NetSuite, AgilityBlue, and Relativity.',
+    description: 'How we built Conduit — a custom integration platform replacing manual data entry across NetSuite, AgilityBlue, and Relativity.',
     url: 'https://devsdecide.com/case-study',
     siteName: 'Developers Decide',
     type: 'website',
@@ -105,14 +105,14 @@ export default function CaseStudyPage() {
       <section className="max-w-[1240px] mx-auto py-[100px] px-10">
         <div className="text-[12px] tracking-[2px] uppercase text-accent mb-4">The solution</div>
         <h2 className="font-display text-[clamp(40px,5vw,72px)] leading-[1.05] tracking-[-1.8px] m-0 mb-10 font-normal max-w-[900px]">
-          We built <span className="italic text-accent">Avalon.</span>
+          We built <span className="italic text-accent">Conduit.</span>
         </h2>
         <div className="bg-ink text-bg rounded-[20px] p-12 grid grid-cols-[1.3fr_1fr] gap-[60px] items-center">
           <div>
             <div className="text-[11px] tracking-[2px] uppercase text-sun mb-4">Custom integration platform</div>
             <p className="text-[17px] leading-[1.6] m-0 mb-5 opacity-90">
               A Spring Boot service with a React admin dashboard that serves as the connective tissue between all
-              three platforms. On a configurable schedule — nightly, end-of-month, or on demand — Avalon pulls,
+              three platforms. On a configurable schedule — nightly, end-of-month, or on demand — Conduit pulls,
               transforms, and writes records with a complete audit history of every change.
             </p>
             <p className="text-[17px] leading-[1.6] m-0 opacity-90">
@@ -144,7 +144,7 @@ export default function CaseStudyPage() {
         <div className="max-w-[1240px] mx-auto">
           <div className="text-[12px] tracking-[2px] uppercase text-accent mb-4">Key capabilities</div>
           <h2 className="font-display text-[clamp(36px,4.5vw,56px)] leading-[1.05] tracking-[-1.3px] m-0 mb-10 font-normal max-w-[800px]">
-            What Avalon actually does, <span className="italic">every night.</span>
+            What Conduit actually does, <span className="italic">every night.</span>
           </h2>
           <div className="grid grid-cols-2 gap-5">
             {capabilities.map(([name, desc], i) => (
@@ -167,7 +167,7 @@ export default function CaseStudyPage() {
         <div className="max-w-[900px] mx-auto text-center">
           <div className="text-[12px] tracking-[2px] uppercase text-sun mb-6">The outcome</div>
           <blockquote className="font-display text-[clamp(36px,4.5vw,56px)] leading-[1.2] tracking-[-1px] m-0 italic font-normal">
-            &ldquo;Every data point that Avalon now moves automatically used to require a person to move it by
+            &ldquo;Every data point that Conduit now moves automatically used to require a person to move it by
             hand.&rdquo;
           </blockquote>
           <p className="text-[16px] leading-[1.6] opacity-75 mt-8 mx-auto max-w-[640px]">

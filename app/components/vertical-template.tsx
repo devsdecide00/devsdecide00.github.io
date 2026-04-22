@@ -34,7 +34,7 @@ interface VerticalTemplateProps {
   industry: string;
   bottlenecks: Bottleneck[];
   tools: Tool[];
-  testimonial: Testimonial;
+  testimonial?: Testimonial;
   faqs: Faq[];
 }
 
@@ -116,15 +116,17 @@ export default function VerticalTemplate({
       </section>
 
       {/* Testimonial */}
-      <section className="py-20 px-10 bg-ink text-bg">
-        <div className="max-w-[900px] mx-auto text-center">
-          <div className="text-[12px] tracking-[2px] uppercase text-sun mb-5">[PLACEHOLDER] Testimonial</div>
-          <blockquote className="font-display text-[clamp(32px,4vw,48px)] leading-[1.2] tracking-[-1px] m-0 italic font-normal">
-            &ldquo;{testimonial.quote}&rdquo;
-          </blockquote>
-          <div className="text-[14px] opacity-60 mt-6">— {testimonial.attribution}</div>
-        </div>
-      </section>
+      {testimonial && (
+        <section className="py-20 px-10 bg-ink text-bg">
+          <div className="max-w-[900px] mx-auto text-center">
+            <div className="text-[12px] tracking-[2px] uppercase text-sun mb-5">Testimonial</div>
+            <blockquote className="font-display text-[clamp(32px,4vw,48px)] leading-[1.2] tracking-[-1px] m-0 italic font-normal">
+              &ldquo;{testimonial.quote}&rdquo;
+            </blockquote>
+            <div className="text-[14px] opacity-60 mt-6">— {testimonial.attribution}</div>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="max-w-[860px] mx-auto py-20 px-10">

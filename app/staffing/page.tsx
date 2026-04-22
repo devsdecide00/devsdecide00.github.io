@@ -39,8 +39,7 @@ export default function StaffingPage() {
         { name: 'TimeReconcile', desc: "Pulls timesheets, flags mismatches between candidate and client submissions, drafts the clarifying email you'd write anyway.", impact: 'Friday night → Friday 3pm' },
         { name: 'PlacementPulse', desc: '30-60-90 check-ins with every placement. Surfaces flight risks, celebrates wins, gives you language for the next conversation.', impact: '2× retention at 90 days' },
       ]}
-      testimonial={{ quote: "My recruiters spent half their time on résumé triage. Now they spend it on the phone with candidates. Our placement count doubled in a quarter.", attribution: '[PLACEHOLDER] Ops director · Staffing firm · Montgomery' }}
-      faqs={[
+faqs={[
         { q: 'Will this work with Bullhorn / JobDiva?', a: 'Yes. Automations read and write to your existing ATS. Recruiters stay in the tool they know.' },
         { q: 'How do you prevent bias in candidate scoring?', a: "Every score comes with explicit reasoning tied to the job description. Recruiters see the why and can override — AI surfaces candidates, it doesn't decide for you." },
         { q: 'What about compliance and data privacy?', a: "Candidate data stays in your systems. We don't train on your data, don't retain it, don't share it. Happy to sign DPAs." },

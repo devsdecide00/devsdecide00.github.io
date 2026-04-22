@@ -107,7 +107,7 @@ export default function HomePage() {
               <span className="italic text-sun">three enterprise systems.</span>
             </h3>
             <p className="text-[16px] leading-[1.55] m-0 mb-6 opacity-85">
-              NetSuite · AgilityBlue · Relativity. We built <em>Avalon</em> — a custom integration platform that
+              NetSuite · AgilityBlue · Relativity. We built <em>Conduit</em> — a custom integration platform that
               replaced manual data entry with automated, auditable, real-time sync.
             </p>
             <span className="inline-block bg-sun text-ink px-[22px] py-3 rounded-full text-[14px] font-medium">
