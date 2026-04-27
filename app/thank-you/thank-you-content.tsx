@@ -22,7 +22,7 @@ export default function ThankYouContent() {
   });
 
   return (
-    <section className="max-w-[820px] mx-auto py-[120px] px-10 text-center">
+    <section className="max-w-[820px] mx-auto py-16 sm:py-[120px] px-5 sm:px-10 text-center">
       <div className="inline-block px-[18px] py-2 rounded-full bg-accent-soft text-accent text-[12px] tracking-[1.5px] uppercase mb-7">
         Received ✓
       </div>
@@ -49,12 +49,14 @@ export default function ThankYouContent() {
         </div>
       )}
 
-      <Link href="/try-it-yourself" className="inline-block no-underline bg-ink text-bg px-[30px] py-[15px] rounded-full text-[14px] font-medium mr-3">
-        Try the live demo →
-      </Link>
-      <Link href="/" className="inline-block no-underline text-ink px-[30px] py-[15px] text-[14px]">
-        ← Back home
-      </Link>
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <Link href="/try-it-yourself" className="inline-block no-underline bg-ink text-bg px-[30px] py-[15px] rounded-full text-[14px] font-medium">
+          Try the live demo →
+        </Link>
+        <Link href="/" className="inline-block no-underline text-ink px-[30px] py-[15px] text-[14px]">
+          ← Back home
+        </Link>
+      </div>
     </section>
   );
 }

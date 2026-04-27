@@ -81,7 +81,7 @@ export default function HeroDemo() {
   };
 
   return (
-    <section className="max-w-[1240px] mx-auto py-[70px] px-10 pb-20">
+    <section className="max-w-[1240px] mx-auto py-10 sm:py-[70px] px-5 sm:px-10 pb-14 sm:pb-20">
 
       <h1 className="text-[13px] tracking-[1.5px] uppercase text-ink-faint m-0 mb-4 font-normal">
         AI automation for Alabama small businesses — built around your bottleneck.
@@ -91,13 +91,13 @@ export default function HeroDemo() {
         <span className="italic text-accent">Watch AI solve</span> your bottleneck in 10 seconds.
       </h2>
 
-      <p className="text-[19px] text-ink-soft leading-[1.55] m-0 mb-12 max-w-[620px]">
+      <p className="text-[16px] sm:text-[19px] text-ink-soft leading-[1.55] m-0 mb-10 sm:mb-12 max-w-[620px]">
         Pick your industry, tell me what&rsquo;s grinding, and an AI will sketch a custom automation right here.
         If it looks promising, we&rsquo;ll build the real one together.
       </p>
 
-      <div className="bg-white border border-rule rounded-[20px] p-8 shadow-[0_30px_60px_-20px_rgba(26,24,20,0.12),0_8px_20px_-8px_rgba(26,24,20,0.06)]">
-        <div className="grid grid-cols-2 gap-10">
+      <div className="bg-white border border-rule rounded-[20px] p-5 sm:p-8 shadow-[0_30px_60px_-20px_rgba(26,24,20,0.12),0_8px_20px_-8px_rgba(26,24,20,0.06)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
           {/* Left: controls */}
           <div>
             <div className="text-[11px] tracking-[1.5px] uppercase text-ink-faint mb-3">01 · Industry</div>
@@ -158,7 +158,7 @@ export default function HeroDemo() {
           </div>
 
           {/* Right: result */}
-          <div className="bg-bg rounded-[14px] p-7 border border-rule min-h-[380px] flex flex-col">
+          <div className="bg-bg rounded-[14px] p-5 sm:p-7 border border-rule min-h-[320px] md:min-h-[380px] flex flex-col">
             {!plan && !loading && (
               <div className="text-ink-faint text-[14px] m-auto text-center max-w-[240px]">
                 <div className="font-display italic text-[28px] text-ink mb-3">Waiting on you.</div>
@@ -246,7 +246,7 @@ export default function HeroDemo() {
         </div>
       </div>
 
-      <div className="flex gap-10 mt-9 text-[13px] text-ink-faint flex-wrap">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 mt-7 sm:mt-9 text-[13px] text-ink-faint">
         <div>◆ 47 tools deployed across Alabama</div>
         <div>◆ $180k median annual recovery</div>
         <div>◆ Month-to-month · cancel anytime</div>

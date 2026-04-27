@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-rule px-10 pt-12 pb-8 bg-bg">
-      <div className="max-w-[1240px] mx-auto grid grid-cols-[2fr_1fr_1fr_1fr] gap-10 mb-10">
+    <footer className="border-t border-rule px-5 sm:px-10 pt-12 pb-8 bg-bg">
+      <div className="max-w-[1240px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-8 lg:gap-10 mb-10">
         <div>
           <div className="flex items-center gap-3 mb-[14px]">
             <div className="w-7 h-7 bg-ink rounded-lg flex items-center justify-center text-bg font-display text-lg italic">
@@ -44,7 +44,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-[1240px] mx-auto pt-6 border-t border-rule flex justify-between text-[12px] text-ink-faint">
+      <div className="max-w-[1240px] mx-auto pt-6 border-t border-rule flex flex-col sm:flex-row justify-between gap-1 text-[12px] text-ink-faint">
         <span>© 2026 Developers Decide LLC</span>
         <span>Hoover, Alabama</span>
       </div>

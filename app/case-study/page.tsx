@@ -49,7 +49,7 @@ export default function CaseStudyPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="max-w-[1240px] mx-auto pt-[70px] pb-10 px-10">
+      <section className="max-w-[1240px] mx-auto pt-10 sm:pt-[70px] pb-10 px-5 sm:px-10">
         <div className="text-[12px] tracking-[2px] uppercase text-accent mb-4">Case study · Legal services firm</div>
         <h1 className="font-display text-[clamp(56px,7vw,104px)] leading-[1.1] tracking-[-2.5px] m-0 mb-10 font-normal max-w-[1100px] pb-[0.15em]">
           Automating legal billing sync across{' '}
@@ -59,7 +59,7 @@ export default function CaseStudyPage() {
           How we built a custom enterprise integration platform that replaced manual data entry across three legal
           tech systems with fully automated, auditable, real-time syncing.
         </p>
-        <div className="grid grid-cols-4 gap-0 pt-7 border-t border-rule">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 pt-7 border-t border-rule">
           {[['Industry', 'Legal services'], ['Systems', '3 enterprise platforms'], ['Stack', 'Spring Boot · React'], ['Outcome', 'Fully automated']].map(
             ([k, v], i) => (
               <div
@@ -75,7 +75,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* The challenge */}
-      <section className="bg-bg-deep border-t border-rule py-20 px-10 mt-[60px]">
+      <section className="bg-bg-deep border-t border-rule py-14 sm:py-20 px-5 sm:px-10 mt-10 sm:mt-[60px]">
         <div className="max-w-[1240px] mx-auto">
           <div className="text-[12px] tracking-[2px] uppercase text-accent mb-4">The challenge</div>
           <h2 className="font-display text-[clamp(36px,4.5vw,56px)] leading-[1.05] tracking-[-1.3px] m-0 mb-5 font-normal max-w-[860px]">
@@ -87,7 +87,7 @@ export default function CaseStudyPage() {
             <strong className="text-ink">Relativity</strong> for e-discovery. Each is purpose-built and excellent for
             its domain — but keeping them in sync was a human job, and it compounded.
           </p>
-          <div className="grid grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {challenges.map((b, i) => (
               <div key={i} className="bg-white rounded-[14px] p-6 border border-rule">
                 <div className="font-display text-[44px] text-accent leading-none italic mb-[10px]">
@@ -102,12 +102,12 @@ export default function CaseStudyPage() {
       </section>
 
       {/* The solution */}
-      <section className="max-w-[1240px] mx-auto py-[100px] px-10">
+      <section className="max-w-[1240px] mx-auto py-16 sm:py-[100px] px-5 sm:px-10">
         <div className="text-[12px] tracking-[2px] uppercase text-accent mb-4">The solution</div>
         <h2 className="font-display text-[clamp(40px,5vw,72px)] leading-[1.05] tracking-[-1.8px] m-0 mb-10 font-normal max-w-[900px]">
           We built <span className="italic text-accent">Conduit.</span>
         </h2>
-        <div className="bg-ink text-bg rounded-[20px] p-12 grid grid-cols-[1.3fr_1fr] gap-[60px] items-center">
+        <div className="bg-ink text-bg rounded-[20px] p-7 sm:p-12 grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-8 md:gap-[60px] items-center">
           <div>
             <div className="text-[11px] tracking-[2px] uppercase text-sun mb-4">Custom integration platform</div>
             <p className="text-[17px] leading-[1.6] m-0 mb-5 opacity-90">
@@ -140,13 +140,13 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Key capabilities */}
-      <section className="bg-bg-deep border-t border-rule py-20 px-10">
+      <section className="bg-bg-deep border-t border-rule py-14 sm:py-20 px-5 sm:px-10">
         <div className="max-w-[1240px] mx-auto">
           <div className="text-[12px] tracking-[2px] uppercase text-accent mb-4">Key capabilities</div>
           <h2 className="font-display text-[clamp(36px,4.5vw,56px)] leading-[1.05] tracking-[-1.3px] m-0 mb-10 font-normal max-w-[800px]">
             What Conduit actually does, <span className="italic">every night.</span>
           </h2>
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {capabilities.map(([name, desc], i) => (
               <div key={i} className="bg-white rounded-2xl p-7 border border-rule flex gap-5">
                 <div className="w-12 h-12 rounded-xl bg-accent-soft text-accent flex items-center justify-center font-display text-[22px] italic shrink-0">
@@ -163,7 +163,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Pull quote */}
-      <section className="py-[100px] px-10 bg-ink text-bg">
+      <section className="py-16 sm:py-[100px] px-5 sm:px-10 bg-ink text-bg">
         <div className="max-w-[900px] mx-auto text-center">
           <div className="text-[12px] tracking-[2px] uppercase text-sun mb-6">The outcome</div>
           <blockquote className="font-display text-[clamp(36px,4.5vw,56px)] leading-[1.2] tracking-[-1px] m-0 italic font-normal">
@@ -183,12 +183,12 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Tech stack */}
-      <section className="max-w-[1240px] mx-auto py-[100px] px-10">
+      <section className="max-w-[1240px] mx-auto py-16 sm:py-[100px] px-5 sm:px-10">
         <div className="text-[12px] tracking-[2px] uppercase text-accent mb-4">Tech stack</div>
         <h2 className="font-display text-[clamp(36px,4.5vw,56px)] leading-[1.05] tracking-[-1.3px] m-0 mb-10 font-normal">
           What it&rsquo;s built on.
         </h2>
-        <div className="grid grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {stack.map(([k, items]) => (
             <div key={k} className="bg-white border border-rule rounded-2xl p-6">
               <div className="font-display text-[22px] tracking-[-0.4px] text-ink italic mb-4">{k}</div>
@@ -205,7 +205,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-[100px] px-10 text-center">
+      <section className="py-16 sm:py-[100px] px-5 sm:px-10 text-center">
         <h2 className="font-display text-[clamp(44px,6vw,80px)] leading-[1.05] tracking-[-2.5px] m-0 mb-5 font-normal max-w-[900px] mx-auto">
           Have a similar <span className="italic text-accent">integration challenge?</span>
         </h2>

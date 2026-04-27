@@ -64,7 +64,7 @@ export default function ContactForm() {
   const labelClass = 'block text-[11px] tracking-[1.5px] uppercase text-ink-faint mb-2';
 
   return (
-    <form onSubmit={onSubmit} className="bg-white border border-rule rounded-[20px] p-9">
+    <form onSubmit={onSubmit} className="bg-white border border-rule rounded-[20px] p-6 sm:p-9">
       <input
         name="website"
         value={honeypot}
@@ -74,7 +74,7 @@ export default function ContactForm() {
         aria-hidden="true"
         style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}
       />
-      <div className="grid grid-cols-2 gap-4 mb-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
         <div>
           <label className={labelClass}>Your name</label>
           <input required maxLength={120} value={form.name} onChange={(e) => upd('name', e.target.value)} className={inputClass} />

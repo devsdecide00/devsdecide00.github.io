@@ -23,10 +23,10 @@ export default function ContactPage() {
   return (
     <>
       <Nav />
-      <section className="max-w-[1080px] mx-auto pt-[70px] pb-[100px] px-10 grid grid-cols-[1fr_1.2fr] gap-20">
+      <section className="max-w-[1080px] mx-auto pt-10 sm:pt-[70px] pb-16 sm:pb-[100px] px-5 sm:px-10 grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-10 md:gap-20">
         <div>
           <div className="text-[12px] tracking-[2px] uppercase text-accent mb-4">Book a call</div>
-          <h1 className="font-display text-[72px] leading-[1.05] tracking-[-2.5px] m-0 mb-7 font-normal">
+          <h1 className="font-display text-[clamp(44px,8vw,72px)] leading-[1.05] tracking-[-2.5px] m-0 mb-7 font-normal">
             Thirty minutes. <span className="italic text-accent">No pitch.</span>
           </h1>
           <p className="text-[17px] text-ink-soft leading-[1.6] m-0 mb-9">

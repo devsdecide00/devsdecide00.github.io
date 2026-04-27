@@ -59,9 +59,9 @@ export default function HomePage() {
       <HeroDemo />
 
       {/* Process */}
-      <section className="bg-bg-deep border-t border-rule py-[100px] px-10">
+      <section className="bg-bg-deep border-t border-rule py-16 sm:py-[100px] px-5 sm:px-10">
         <div className="max-w-[1240px] mx-auto">
-          <div className="flex justify-between items-end mb-[60px] gap-10 flex-wrap">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-10 sm:mb-[60px] gap-6 lg:gap-10">
             <div>
               <div className="text-[12px] tracking-[2px] uppercase text-accent mb-4">How it works</div>
               <h2 className="font-display text-[clamp(40px,5vw,72px)] leading-none tracking-[-1.8px] m-0 font-normal max-w-[700px]">
@@ -73,7 +73,7 @@ export default function HomePage() {
               Four steps, two weeks to your first deployed tool, no slide decks anywhere.
             </p>
           </div>
-          <div className="grid grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {processSteps.map((s, i) => (
               <div key={i} className="bg-white rounded-2xl p-[26px] border border-rule">
                 <div className="flex justify-between items-center mb-5">
@@ -91,14 +91,14 @@ export default function HomePage() {
       </section>
 
       {/* Featured case study */}
-      <section className="max-w-[1240px] mx-auto py-[100px] px-10">
+      <section className="max-w-[1240px] mx-auto py-16 sm:py-[100px] px-5 sm:px-10">
         <div className="text-[12px] tracking-[2px] uppercase text-accent mb-4">Featured engagement</div>
         <h2 className="font-display text-[clamp(40px,5vw,72px)] leading-none tracking-[-1.8px] m-0 mb-10 font-normal max-w-[900px]">
           Not all automation is <span className="italic">small.</span>
         </h2>
         <Link
           href="/case-study"
-          className="block no-underline bg-ink text-bg rounded-[20px] p-12 grid grid-cols-[1.3fr_1fr] gap-[60px] items-center transition-transform duration-200 hover:-translate-y-0.5"
+          className="block no-underline bg-ink text-bg rounded-[20px] p-7 sm:p-12 grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-8 md:gap-[60px] items-center transition-transform duration-200 hover:-translate-y-0.5"
         >
           <div>
             <div className="text-[11px] tracking-[2px] uppercase text-sun mb-4">Case study · Legal services firm</div>
@@ -131,12 +131,12 @@ export default function HomePage() {
       </section>
 
       {/* Gallery */}
-      <section className="max-w-[1240px] mx-auto pb-[100px] px-10">
+      <section className="max-w-[1240px] mx-auto pb-16 sm:pb-[100px] px-5 sm:px-10">
         <div className="text-[12px] tracking-[2px] uppercase text-accent mb-4">Smaller builds</div>
         <h2 className="font-display text-[clamp(40px,5vw,64px)] leading-none tracking-[-1.8px] m-0 mb-10 font-normal max-w-[900px]">
           A few tools <span className="italic">already running</span> across Alabama.
         </h2>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {gallery.map((w, i) => (
             <div key={i} className="bg-white rounded-2xl p-[26px] border border-rule flex flex-col min-h-[240px]">
               <div className="text-[10px] tracking-[1.5px] uppercase text-ink-faint mb-[14px]">{w.tag}</div>
@@ -152,7 +152,7 @@ export default function HomePage() {
       </section>
 
       {/* Pricing */}
-      <section className="py-[100px] px-10 bg-bg-deep border-t border-rule">
+      <section className="py-16 sm:py-[100px] px-5 sm:px-10 bg-bg-deep border-t border-rule">
         <div className="max-w-[1240px] mx-auto">
           <div className="text-center mb-14">
             <div className="text-[12px] tracking-[2px] uppercase text-accent mb-4">Pricing</div>
@@ -161,13 +161,13 @@ export default function HomePage() {
             </h2>
             <p className="text-[16px] text-ink-soft m-0">Month-to-month. No setup fees. No year-long contracts.</p>
           </div>
-          <div className="grid grid-cols-3 gap-5 max-w-[1100px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1100px] mx-auto">
             {pricingTiers.map((p, i) => (
               <div
                 key={i}
                 className={`rounded-[20px] p-8 relative ${
                   p.featured
-                    ? 'bg-ink text-bg -translate-y-2 shadow-[0_30px_60px_-20px_rgba(26,24,20,0.3)]'
+                    ? 'bg-ink text-bg md:-translate-y-2 shadow-[0_30px_60px_-20px_rgba(26,24,20,0.3)]'
                     : 'bg-white text-ink border border-rule'
                 }`}
               >
@@ -219,7 +219,7 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-[120px] px-10 text-center max-w-[900px] mx-auto">
+      <section className="py-16 sm:py-[120px] px-5 sm:px-10 text-center max-w-[900px] mx-auto">
         <h2 className="font-display text-[clamp(56px,8vw,112px)] leading-[1.05] tracking-[-3px] m-0 mb-7 font-normal">
           Or skip the demo.<br />
           <span className="italic text-accent">Just talk to me.</span>
