@@ -17,8 +17,8 @@ export default function NotFound() {
         <Link href="/" className="inline-block no-underline bg-ink text-bg px-7 py-[14px] rounded-full text-[14px] font-medium mr-2.5">
           Home →
         </Link>
-        <Link href="/try-it-yourself" className="inline-block no-underline text-ink px-7 py-[14px] text-[14px] border border-ink rounded-full">
-          Try the demo
+        <Link href="/contact" className="inline-block no-underline text-ink px-7 py-[14px] text-[14px] border border-ink rounded-full">
+          Book assessment
         </Link>
       </section>
       <Footer />

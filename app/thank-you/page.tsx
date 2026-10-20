@@ -5,7 +5,7 @@ import ThankYouContent from './thank-you-content';
 
 export const metadata: Metadata = {
   title: 'Message Received | Developers Decide',
-  description: 'Your inquiry is in. Expect a reply within one business day with a few times for a 30-minute call.',
+  description: 'Your inquiry is in. Expect a reply within one business day with a few times for your 45-minute assessment call.',
   openGraph: {
     title: 'Message Received | Developers Decide',
     description: 'Your inquiry is in. Expect a reply within one business day.',

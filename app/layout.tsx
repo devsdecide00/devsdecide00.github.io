@@ -1,39 +1,34 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Newsreader } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
+import { PROMO, REGULAR_PRICE, formatPrice } from "@/lib/offer";
 
-const inter = Inter({
+const newsreader = Newsreader({
   subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: "400",
+  variable: "--font-newsreader",
   style: ["normal", "italic"],
+  axes: ["opsz"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://devsdecide.com'),
-  title: 'AI Automation for Alabama Small Business | Developers Decide',
-  description: 'Developers Decide builds AI automation tools for Alabama small businesses — HVAC, construction, staffing, and more. Flat-rate, month-to-month.',
+  title: 'AI Tools Assessment for Small Business | Developers Decide',
+  description: "One 45-minute conversation, 3 to 7 AI tools you can use right away, and 5 to 10 hours back every week. If I can't find 5 hours, you get your money back.",
   openGraph: {
-    title: 'AI Automation for Alabama Small Business | Developers Decide',
-    description: 'Developers Decide builds AI automation tools for Alabama small businesses — HVAC, construction, staffing, and more. Flat-rate, month-to-month.',
+    title: 'AI Tools Assessment for Small Business | Developers Decide',
+    description: "One 45-minute conversation, 3 to 7 AI tools you can use right away, and 5 to 10 hours back every week. If I can't find 5 hours, you get your money back.",
     url: 'https://devsdecide.com',
     siteName: 'Developers Decide',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Automation for Alabama Small Business | Developers Decide',
-    description: 'Developers Decide builds AI automation tools for Alabama small businesses. Flat-rate, month-to-month.',
+    title: 'AI Tools Assessment for Small Business | Developers Decide',
+    description: "One 45-minute conversation, 3 to 7 AI tools you can use right away, and 5 to 10 hours back every week. If I can't find 5 hours, you get your money back.",
   },
 };
 
@@ -45,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${instrumentSerif.variable} h-full antialiased`}
+      className={`${newsreader.variable} h-full antialiased`}
     >
       <head>
         <Script
@@ -69,7 +64,7 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'LocalBusiness',
               name: 'Developers Decide LLC',
-              description: 'AI automation consulting for small service businesses in Alabama.',
+              description: 'AI tools assessments that save small business owners 5 to 10 hours a week.',
               url: 'https://devsdecide.com',
               email: 'solomon@devsdecide.com',
               address: {
@@ -79,8 +74,8 @@ export default function RootLayout({
                 addressCountry: 'US',
               },
               areaServed: 'Alabama',
-              serviceType: 'AI Automation Consulting',
-              priceRange: '$1,500–$2,500/mo',
+              serviceType: 'AI Tools Assessment',
+              priceRange: `${formatPrice(PROMO.price)}–${formatPrice(REGULAR_PRICE)}`,
             }),
           }}
         />

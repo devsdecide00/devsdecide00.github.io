@@ -52,11 +52,11 @@ export default function OgImage() {
             flexWrap: 'wrap',
           }}
         >
-          AI automation for&nbsp;
-          <span style={{ fontStyle: 'italic', color: '#8a2b2b' }}>Alabama small business.</span>
+          Get 5 to 10 hours of your week&nbsp;
+          <span style={{ fontStyle: 'italic', color: '#8a2b2b' }}>back.</span>
         </div>
         <div style={{ fontSize: 24, color: '#4b463d', lineHeight: 1.5, display: 'flex' }}>
-          HVAC · Construction · Staffing · and more · Hoover, AL
+          One 45-minute conversation. 3 to 7 AI tools you can use right away.
         </div>
       </div>
 
@@ -70,7 +70,7 @@ export default function OgImage() {
         }}
       >
         <span style={{ fontSize: 18, color: '#8a8174' }}>devsdecide.com</span>
-        <span style={{ fontSize: 18, color: '#8a2b2b' }}>Flat-rate · Month-to-month · Cancel anytime</span>
+        <span style={{ fontSize: 18, color: '#8a2b2b' }}>5 hours or your money back</span>
       </div>
     </div>,
     { ...size }

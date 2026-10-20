@@ -7,7 +7,7 @@ interface Inquiry {
   name: string;
   company: string;
   industry: string;
-  budget: string;
+  teamSize: string;
 }
 
 export default function ThankYouContent() {
@@ -31,14 +31,14 @@ export default function ThankYouContent() {
         <span className="italic text-accent">Now I listen.</span>
       </h1>
       <p className="text-[18px] text-ink-soft mx-auto mb-10 leading-[1.55] max-w-[580px]">
-        You&rsquo;ll hear from me within one business day — usually faster. I&rsquo;ll propose a few times for a
-        30-minute call.
+        You&rsquo;ll hear from me within one business day, usually faster, with a few times for your 45-minute
+        assessment call.
       </p>
 
       {inquiry && (
         <div className="bg-white border border-rule rounded-[14px] p-6 text-left max-w-[520px] mx-auto mb-10">
           <div className="text-[11px] tracking-[1.5px] uppercase text-ink-faint mb-3">What I received</div>
-          {([['Company', inquiry.company], ['Industry', inquiry.industry], ['Budget', inquiry.budget]] as const).map(
+          {([['Company', inquiry.company], ['Industry', inquiry.industry], ['Team size', inquiry.teamSize]] as const).map(
             ([k, v]) => (
               <div key={k} className="flex justify-between py-2 border-b border-rule text-[13px]">
                 <span className="text-ink-faint">{k}</span>
@@ -51,7 +51,7 @@ export default function ThankYouContent() {
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
         <Link href="/try-it-yourself" className="inline-block no-underline bg-ink text-bg px-[30px] py-[15px] rounded-full text-[14px] font-medium">
-          Try the live demo →
+          Try a sample call →
         </Link>
         <Link href="/" className="inline-block no-underline text-ink px-[30px] py-[15px] text-[14px]">
           ← Back home

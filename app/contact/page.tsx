@@ -3,13 +3,16 @@ import { Suspense } from 'react';
 import Nav from '../components/nav';
 import Footer from '../components/footer';
 import ContactForm from './contact-form';
+import { PROMO, currentPrice, formatPrice, promoActive } from '@/lib/offer';
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: 'Book a Call | Developers Decide',
-  description: '30 minutes, no pitch. Tell me about a typical Tuesday — I listen for what\'s worth automating. Serving Alabama small businesses.',
+  title: 'Book Your AI Tools Assessment | Developers Decide',
+  description: 'One 45-minute conversation. 3 to 7 AI tools you can use right away. 5 hours a week back, or your money back.',
   openGraph: {
-    title: 'Book a Call | Developers Decide',
-    description: '30 minutes, no pitch. Tell me about a typical Tuesday — I listen for what\'s worth automating.',
+    title: 'Book Your AI Tools Assessment | Developers Decide',
+    description: 'One 45-minute conversation. 3 to 7 AI tools you can use right away. 5 hours a week back, or your money back.',
     url: 'https://devsdecide.com/contact',
     siteName: 'Developers Decide',
     type: 'website',
@@ -23,37 +26,22 @@ export default function ContactPage() {
   return (
     <>
       <Nav />
-      <section className="max-w-[1080px] mx-auto pt-10 sm:pt-[70px] pb-16 sm:pb-[100px] px-5 sm:px-10 grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-10 md:gap-20">
-        <div>
-          <div className="text-[12px] tracking-[2px] uppercase text-accent mb-4">Book a call</div>
-          <h1 className="font-display text-[clamp(44px,8vw,72px)] leading-[1.05] tracking-[-2.5px] m-0 mb-7 font-normal">
-            Thirty minutes. <span className="italic text-accent">No pitch.</span>
-          </h1>
-          <p className="text-[17px] text-ink-soft leading-[1.6] m-0 mb-9">
-            Tell me about a typical Tuesday at your business. I listen for what&rsquo;s repeated. If there&rsquo;s
-            nothing worth automating, I&rsquo;ll tell you.
-          </p>
-          <div className="bg-bg-deep rounded-[14px] p-[22px] mb-5">
-            <div className="text-[11px] tracking-[1.5px] uppercase text-ink-faint mb-3">Direct</div>
-            <div className="text-[15px] text-ink mb-1.5">solomon@devsdecide.com</div>
-            <div className="text-[13px] text-ink-soft">Hoover, Alabama · replies within one business day</div>
-          </div>
-          <div className="bg-bg-deep rounded-[14px] p-[22px]">
-            <div className="text-[11px] tracking-[1.5px] uppercase text-ink-faint mb-3">What to expect</div>
-            {['30 min Zoom or phone', 'I ask questions, you answer', 'You get a one-pager the next day', 'No follow-up spam, ever'].map(
-              (x) => (
-                <div key={x} className="text-[13px] py-[5px] text-ink-soft flex gap-2.5">
-                  <span className="text-accent">◆</span>
-                  {x}
-                </div>
-              )
-            )}
-          </div>
-        </div>
-        <Suspense fallback={<div className="bg-white border border-rule rounded-[20px] p-9 animate-pulse h-[600px]" />}>
+      <main className="max-w-[680px] mx-auto w-full px-5 pt-14 sm:pt-24">
+        <h1 className="font-display text-[clamp(40px,8vw,56px)] leading-[1.08] tracking-[-1.2px] font-normal m-0 mb-6">
+          Book a call
+        </h1>
+        <p className="text-[19px] sm:text-[20px] leading-[1.6] text-ink-soft m-0 mb-10">
+          Tell me a little about your business. I&rsquo;ll reply within a day with a few times for a 45-minute call, in
+          person or on Zoom.{' '}
+          {promoActive()
+            ? `${formatPrice(PROMO.price)} for my first ${PROMO.spots} clients, through ${PROMO.endsLabel}.`
+            : `${formatPrice(currentPrice())}, one time.`}{' '}
+          5 hours a week back, or your money back.
+        </p>
+        <Suspense fallback={<div className="h-[560px]" />}>
           <ContactForm />
         </Suspense>
-      </section>
+      </main>
       <Footer />
     </>
   );

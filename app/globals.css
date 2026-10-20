@@ -2,24 +2,24 @@
 
 @theme inline {
   /* Surfaces */
-  --color-bg: #faf7f2;
-  --color-bg-deep: #f1ece2;
-  --color-ink: #1c1a17;
-  --color-ink-soft: #4b463d;
-  --color-ink-faint: #8a8174;
-  --color-rule: #e3dcc9;
+  --color-bg: #ffffff;
+  --color-bg-deep: #f6f6f4;
+  --color-ink: #161616;
+  --color-ink-soft: #4a4a48;
+  --color-ink-faint: #6b6b67;
+  --color-rule: #e6e6e2;
 
-  /* Accent (oxblood) */
+  /* Accent (oxblood): links and the primary button only */
   --color-accent: #8a2b2b;
   --color-accent-deep: #5e1d1d;
-  --color-accent-soft: #f3e5e0;
+  --color-accent-soft: #f6ecea;
 
-  /* Sunflower — dark band accent only */
+  /* Sunflower: case study dark band only */
   --color-sun: #e8b63a;
 
   /* Typography */
-  --font-display: "Instrument Serif", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: var(--font-newsreader), Georgia, serif;
+  --font-sans: var(--font-newsreader), Georgia, serif;
 }
 
 html {

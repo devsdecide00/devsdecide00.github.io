@@ -4,14 +4,7 @@ import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Turnstile } from '@marsidev/react-turnstile';
 
-const industries = ['HVAC', 'Cleaning', 'Bookkeeping', 'Property Mgmt', 'Staffing', 'Construction', 'Other'];
-const budgets = ['Starter · $1,500/mo', 'Growth · $2,500/mo', "Custom · let's scope it", 'Just exploring'];
-
-const planToBudget: Record<string, string> = {
-  Starter: 'Starter · $1,500/mo',
-  Growth: 'Growth · $2,500/mo',
-  Custom: "Custom · let's scope it",
-};
+const teamSizes = ['Just me', '2–5', '6–10', '11–20', '20+'];
 
 export default function ContactForm() {
   const router = useRouter();
@@ -24,9 +17,9 @@ export default function ContactForm() {
     name: '',
     company: '',
     email: '',
-    industry: searchParams.get('industry') ?? 'HVAC',
+    industry: '',
+    teamSize: '2–5',
     bottleneck: searchParams.get('bottleneck') ?? '',
-    budget: planToBudget[searchParams.get('plan') ?? ''] ?? 'Starter · $1,500/mo',
   });
 
   const upd = (k: string, v: string) => setForm((f) => ({ ...f, [k]: v }));
@@ -60,11 +53,12 @@ export default function ContactForm() {
     }
   };
 
-  const inputClass = 'w-full bg-bg border border-rule rounded-[10px] px-[14px] py-3 font-[inherit] text-[15px] text-ink outline-none';
-  const labelClass = 'block text-[11px] tracking-[1.5px] uppercase text-ink-faint mb-2';
+  const inputClass =
+    'w-full bg-bg border border-rule rounded-lg px-4 py-3 font-[inherit] text-[18px] text-ink outline-none focus:border-ink focus:ring-2 focus:ring-ink/10';
+  const labelClass = 'block text-[17px] text-ink mb-2';
 
   return (
-    <form onSubmit={onSubmit} className="bg-white border border-rule rounded-[20px] p-6 sm:p-9">
+    <form onSubmit={onSubmit}>
       <input
         name="website"
         value={honeypot}
@@ -76,65 +70,56 @@ export default function ContactForm() {
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
         <div>
-          <label className={labelClass}>Your name</label>
-          <input required maxLength={120} value={form.name} onChange={(e) => upd('name', e.target.value)} className={inputClass} />
+          <label htmlFor="name" className={labelClass}>Your name</label>
+          <input id="name" required maxLength={120} value={form.name} onChange={(e) => upd('name', e.target.value)} className={inputClass} />
         </div>
         <div>
-          <label className={labelClass}>Company</label>
-          <input required maxLength={120} value={form.company} onChange={(e) => upd('company', e.target.value)} className={inputClass} />
+          <label htmlFor="company" className={labelClass}>Company <span className="text-ink-faint">(optional)</span></label>
+          <input id="company" maxLength={120} value={form.company} onChange={(e) => upd('company', e.target.value)} className={inputClass} />
         </div>
       </div>
 
       <div className="mb-4">
-        <label className={labelClass}>Email</label>
-        <input required type="email" maxLength={254} value={form.email} onChange={(e) => upd('email', e.target.value)} className={inputClass} />
+        <label htmlFor="email" className={labelClass}>Email</label>
+        <input id="email" required type="email" maxLength={254} value={form.email} onChange={(e) => upd('email', e.target.value)} className={inputClass} />
       </div>
 
       <div className="mb-4">
-        <label className={labelClass}>Industry</label>
-        <div className="flex flex-wrap gap-1.5">
-          {industries.map((ind) => (
+        <label htmlFor="industry" className={labelClass}>What does your business do?</label>
+        <input id="industry" required maxLength={80} value={form.industry} onChange={(e) => upd('industry', e.target.value)} placeholder="e.g. HVAC, bookkeeping" className={inputClass} />
+      </div>
+
+      <div className="mb-4">
+        <div className={labelClass}>Team size</div>
+        <div role="radiogroup" className="flex flex-wrap gap-1.5">
+          {teamSizes.map((t) => (
             <button
               type="button"
-              key={ind}
-              onClick={() => upd('industry', ind)}
-              className={`px-[13px] py-[7px] rounded-full text-[12px] cursor-pointer font-[inherit] border ${
-                form.industry === ind ? 'bg-ink text-bg border-ink' : 'bg-transparent text-ink-soft border-rule'
+              key={t}
+              role="radio"
+              aria-checked={form.teamSize === t}
+              onClick={() => upd('teamSize', t)}
+              className={`px-3 py-[11px] rounded-lg text-[16px] cursor-pointer font-[inherit] border ${
+                form.teamSize === t ? 'bg-ink text-bg border-ink' : 'bg-transparent text-ink-soft border-rule'
               }`}
             >
-              {ind}
+              {t}
             </button>
           ))}
         </div>
       </div>
 
-      <div className="mb-4">
-        <label className={labelClass}>What&rsquo;s grinding?</label>
+      <div className="mb-7">
+        <label htmlFor="bottleneck" className={labelClass}>What eats your week?</label>
         <textarea
+          id="bottleneck"
           required
           maxLength={2000}
           value={form.bottleneck}
           onChange={(e) => upd('bottleneck', e.target.value)}
-          placeholder="The most repetitive, soul-crushing part of your week…"
+          placeholder="The tasks you or your team repeat every week…"
           className={`${inputClass} min-h-[120px] resize-y leading-[1.5]`}
         />
-      </div>
-
-      <div className="mb-7">
-        <label className={labelClass}>Rough budget</label>
-        <div className="flex flex-col gap-1.5">
-          {budgets.map((b) => (
-            <label
-              key={b}
-              className={`flex items-center gap-2.5 text-[13px] px-3 py-2 border rounded-lg cursor-pointer ${
-                form.budget === b ? 'border-ink bg-bg' : 'border-rule bg-white'
-              }`}
-            >
-              <input type="radio" checked={form.budget === b} onChange={() => upd('budget', b)} />
-              {b}
-            </label>
-          ))}
-        </div>
       </div>
 
       <Turnstile
@@ -146,14 +131,14 @@ export default function ContactForm() {
         className="mb-4"
       />
 
-      {error && <div className="mb-4 text-[13px] text-accent">{error}</div>}
+      {error && <div className="mb-4 text-[16px] text-accent">{error}</div>}
 
       <button
         type="submit"
         disabled={!cfToken || submitting}
-        className="w-full bg-accent text-white border-none py-4 rounded-xl font-[inherit] text-[15px] font-semibold cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full sm:w-auto bg-accent text-white border-none px-7 py-4 rounded-lg font-[inherit] text-[18px] cursor-pointer hover:bg-accent-deep transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {submitting ? 'Sending…' : 'Send it →'}
+        {submitting ? 'Sending…' : 'Request a call'}
       </button>
     </form>
   );

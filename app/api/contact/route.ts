@@ -33,10 +33,10 @@ export async function POST(req: NextRequest) {
   const company = clampSingleLine(body.company, 120);
   const email = clampSingleLine(body.email, 254).toLowerCase();
   const industry = clampSingleLine(body.industry, 80);
-  const budget = clampSingleLine(body.budget, 80);
+  const teamSize = clampSingleLine(body.teamSize, 20);
   const bottleneck = clampText(body.bottleneck, 2000);
 
-  if (!name || !company || !industry || !budget || !bottleneck) {
+  if (!name || !industry || !teamSize || !bottleneck) {
     return NextResponse.json({ error: 'invalid_input', message: 'Please complete every required field.' }, { status: 400 });
   }
 
@@ -52,14 +52,14 @@ export async function POST(req: NextRequest) {
     from: 'Contact Form <website@devsdecide.com>',
     to: 'solomon@devsdecide.com',
     replyTo: email,
-    subject: `New inquiry from ${name} — ${company}`,
+    subject: `Assessment request from ${name}${company ? ` — ${company}` : ''}`,
     text: `Name: ${name}
 Company: ${company}
 Email: ${email}
 Industry: ${industry}
-Budget: ${budget}
+Team size: ${teamSize}
 
-What's grinding:
+What eats their week:
 ${bottleneck}`,
   });
 
