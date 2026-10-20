@@ -22,41 +22,32 @@ export default function ThankYouContent() {
   });
 
   return (
-    <section className="max-w-[820px] mx-auto py-16 sm:py-[120px] px-5 sm:px-10 text-center">
-      <div className="inline-block px-[18px] py-2 rounded-full bg-accent-soft text-accent text-[12px] tracking-[1.5px] uppercase mb-7">
-        Received ✓
+    <section className="max-w-[720px] mx-auto w-full pt-12 sm:pt-20 pb-20 px-5">
+      <div className="w-16 h-16 rounded-full bg-mint border-[3px] border-ink flex items-center justify-center text-[30px] font-extrabold mb-8 rotate-[-6deg]">
+        ✓
       </div>
-      <h1 className="font-display text-[clamp(56px,8vw,104px)] leading-[1.05] tracking-[-3px] m-0 mb-7 font-normal">
-        Got it{inquiry?.name ? `, ${inquiry.name.split(' ')[0]}` : ''}.{' '}
-        <span className="italic text-accent">Now I listen.</span>
+      <h1 className="font-extrabold text-[clamp(48px,12vw,84px)] leading-[0.92] tracking-[-2.5px] m-0 mb-6 [font-stretch:88%]">
+        Got it{inquiry?.name ? `, ${inquiry.name.split(' ')[0]}` : ''}.
       </h1>
-      <p className="text-[18px] text-ink-soft mx-auto mb-10 leading-[1.55] max-w-[580px]">
-        You&rsquo;ll hear from me within one business day, usually faster, with a few times for your 45-minute
-        assessment call.
+      <p className="text-[19px] sm:text-[21px] leading-[1.5] text-ink-soft m-0 mb-10 max-w-[560px]">
+        You&rsquo;ll hear from me within one business day, usually sooner, with a few times for your 45-minute call.
       </p>
 
       {inquiry && (
-        <div className="bg-white border border-rule rounded-[14px] p-6 text-left max-w-[520px] mx-auto mb-10">
-          <div className="text-[11px] tracking-[1.5px] uppercase text-ink-faint mb-3">What I received</div>
-          {([['Company', inquiry.company], ['Industry', inquiry.industry], ['Team size', inquiry.teamSize]] as const).map(
-            ([k, v]) => (
-              <div key={k} className="flex justify-between py-2 border-b border-rule text-[13px]">
-                <span className="text-ink-faint">{k}</span>
-                <span className="text-ink">{v}</span>
-              </div>
-            )
-          )}
-        </div>
+        <dl className="bg-bg-deep border-[3px] border-ink rounded-[22px] p-6 m-0 mb-10 max-w-[520px]">
+          <div className="font-extrabold text-[20px] mb-3">What I received</div>
+          {([['Company', inquiry.company || '—'], ['Business', inquiry.industry], ['Team size', inquiry.teamSize]] as const).map(([k, v]) => (
+            <div key={k} className="flex justify-between gap-4 py-2 border-b-2 border-ink/10 last:border-b-0 text-[17px]">
+              <dt className="text-ink-faint">{k}</dt>
+              <dd className="m-0 font-semibold text-right">{v}</dd>
+            </div>
+          ))}
+        </dl>
       )}
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <Link href="/try-it-yourself" className="inline-block no-underline bg-ink text-bg px-[30px] py-[15px] rounded-full text-[14px] font-medium">
-          Try a sample call →
-        </Link>
-        <Link href="/" className="inline-block no-underline text-ink px-[30px] py-[15px] text-[14px]">
-          ← Back home
-        </Link>
-      </div>
+      <Link href="/" className="inline-block no-underline text-ink font-bold text-[18px] underline decoration-accent decoration-[3px] underline-offset-4">
+        Back to the homepage
+      </Link>
     </section>
   );
 }

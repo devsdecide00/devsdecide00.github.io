@@ -9,16 +9,16 @@
   --color-ink-faint: #6f6385;
   --color-rule: #e4dded;
 
-  /* Pumpkin: primary actions and the work we take off your plate */
-  --color-accent: #ff6a13;
-  --color-accent-deep: #e05200;
-  --color-accent-soft: #ffe2cf;
+  /* Burnt orange: primary actions and the work we take off your plate */
+  --color-accent: #e8641e;
+  --color-accent-deep: #c94f10;
+  --color-accent-soft: #f8dfcf;
 
-  /* Butter: stickers and stamps */
-  --color-sun: #ffd84a;
+  /* Honey: stickers and stamps */
+  --color-sun: #f2cd62;
 
-  /* Mint: time you get back */
-  --color-mint: #a8f0c6;
+  /* Sage: time you get back */
+  --color-mint: #c5e3cc;
 
   /* Typography */
   --font-display: var(--font-bricolage), system-ui, sans-serif;

@@ -7,7 +7,6 @@ export default function Footer() {
         <span className="text-white/70">Developers Decide LLC, Hoover, Alabama</span>
         <span className="flex gap-6">
           <a href="mailto:solomon@devsdecide.com" className="text-white no-underline hover:underline py-1">Email</a>
-          <Link href="/try-it-yourself" className="text-white no-underline hover:underline py-1">Sample call</Link>
           <Link href="/case-study" className="text-white no-underline hover:underline py-1">Past work</Link>
         </span>
       </div>

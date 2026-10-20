@@ -5,6 +5,7 @@ import Footer from './components/footer';
 import Portrait from './components/portrait';
 import WeekPlanner from './components/week-planner';
 import Stamp from './components/stamp';
+import ToolExamples from './components/tool-examples';
 import { PROMO, REGULAR_PRICE, currentPrice, formatPrice, promoActive } from '@/lib/offer';
 
 export const metadata: Metadata = {
@@ -69,6 +70,15 @@ export default function HomePage() {
           )}
         </div>
         <WeekPlanner className="mx-1 sm:mx-0" />
+      </section>
+
+      {/* What the tools do */}
+      <section className={`${wrap} pb-20 sm:pb-28`}>
+        <h2 className={`${h2} mb-4`}>What the tools actually do</h2>
+        <p className="text-[19px] sm:text-[20px] leading-[1.5] text-ink-soft m-0 mb-10 max-w-[620px]">
+          A few of the kinds of tools I recommend. Your shortlist depends on where your week actually goes.
+        </p>
+        <ToolExamples />
       </section>
 
       {/* How it works */}

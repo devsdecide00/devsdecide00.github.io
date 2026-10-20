@@ -18,7 +18,7 @@ export default function WeekPlanner({ className = '' }: { className?: string }) 
 
   return (
     <div className={`relative bg-white border-[3px] border-ink rounded-[22px] shadow-hard-lg p-4 sm:p-5 ${className}`}>
-      <div className="font-extrabold text-[20px] tracking-[-0.3px] mb-3 pr-24">Your week</div>
+      <div className="font-extrabold text-[20px] tracking-[-0.3px] mb-3 pr-24">An example week</div>
 
       <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
         {week.map(([day, blocks]) => (
