@@ -26,11 +26,11 @@ export default function ContactPage() {
   return (
     <>
       <Nav />
-      <main className="max-w-[680px] mx-auto w-full px-5 pt-14 sm:pt-24">
-        <h1 className="font-display text-[clamp(40px,8vw,56px)] leading-[1.08] tracking-[-1.2px] font-normal m-0 mb-6">
+      <main className="max-w-[720px] mx-auto w-full px-5 pt-10 sm:pt-16 pb-20">
+        <h1 className="font-extrabold text-[clamp(48px,12vw,84px)] leading-[0.92] tracking-[-2.5px] m-0 mb-5 [font-stretch:88%]">
           Book a call
         </h1>
-        <p className="text-[19px] sm:text-[20px] leading-[1.6] text-ink-soft m-0 mb-10">
+        <p className="text-[19px] sm:text-[21px] leading-[1.5] text-ink-soft m-0 mb-10">
           Tell me a little about your business. I&rsquo;ll reply within a day with a few times for a 45-minute call, in
           person or on Zoom.{' '}
           {promoActive()

@@ -3,23 +3,29 @@
 @theme inline {
   /* Surfaces */
   --color-bg: #ffffff;
-  --color-bg-deep: #f6f6f4;
-  --color-ink: #161616;
-  --color-ink-soft: #4a4a48;
-  --color-ink-faint: #6b6b67;
-  --color-rule: #e6e6e2;
+  --color-bg-deep: #f5f1fa;
+  --color-ink: #24123a;
+  --color-ink-soft: #4d3d63;
+  --color-ink-faint: #6f6385;
+  --color-rule: #e4dded;
 
-  /* Accent (oxblood): links and the primary button only */
-  --color-accent: #8a2b2b;
-  --color-accent-deep: #5e1d1d;
-  --color-accent-soft: #f6ecea;
+  /* Pumpkin: primary actions and the work we take off your plate */
+  --color-accent: #ff6a13;
+  --color-accent-deep: #e05200;
+  --color-accent-soft: #ffe2cf;
 
-  /* Sunflower: case study dark band only */
-  --color-sun: #e8b63a;
+  /* Butter: stickers and stamps */
+  --color-sun: #ffd84a;
+
+  /* Mint: time you get back */
+  --color-mint: #a8f0c6;
 
   /* Typography */
-  --font-display: var(--font-newsreader), Georgia, serif;
-  --font-sans: var(--font-newsreader), Georgia, serif;
+  --font-display: var(--font-bricolage), system-ui, sans-serif;
+  --font-sans: var(--font-bricolage), system-ui, sans-serif;
+
+  --shadow-hard: 4px 4px 0 0 #24123a;
+  --shadow-hard-lg: 8px 8px 0 0 #24123a;
 }
 
 html {
@@ -31,6 +37,23 @@ html {
 body {
   background: var(--color-bg);
   color: var(--color-ink);
+}
+
+/* Week planner: admin blocks lift off to reveal free time, then the total pops in. Plays once. */
+@keyframes planner-free {
+  to { opacity: 0; transform: translateY(-10px) rotate(-8deg); }
+}
+@keyframes planner-pop {
+  0% { transform: scale(0) rotate(-20deg); }
+  70% { transform: scale(1.15) rotate(6deg); }
+  100% { transform: scale(1) rotate(4deg); }
+}
+.planner-admin { animation: planner-free 0.45s cubic-bezier(.5,0,.75,0) both; }
+.planner-pop { animation: planner-pop 0.5s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .planner-admin { animation: none; opacity: 0; }
+  .planner-pop { animation: none; transform: rotate(4deg); }
 }
 
 @keyframes ddpulse {

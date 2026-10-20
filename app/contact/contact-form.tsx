@@ -54,11 +54,11 @@ export default function ContactForm() {
   };
 
   const inputClass =
-    'w-full bg-bg border border-rule rounded-lg px-4 py-3 font-[inherit] text-[18px] text-ink outline-none focus:border-ink focus:ring-2 focus:ring-ink/10';
-  const labelClass = 'block text-[17px] text-ink mb-2';
+    'w-full bg-white border-[3px] border-ink rounded-xl px-4 py-3 font-[inherit] text-[18px] text-ink outline-none transition-shadow focus:shadow-hard';
+  const labelClass = 'block text-[17px] font-bold text-ink mb-2';
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="bg-bg-deep border-[3px] border-ink rounded-[22px] shadow-hard-lg p-5 sm:p-8">
       <input
         name="website"
         value={honeypot}
@@ -99,8 +99,8 @@ export default function ContactForm() {
               role="radio"
               aria-checked={form.teamSize === t}
               onClick={() => upd('teamSize', t)}
-              className={`px-3 py-[11px] rounded-lg text-[16px] cursor-pointer font-[inherit] border ${
-                form.teamSize === t ? 'bg-ink text-bg border-ink' : 'bg-transparent text-ink-soft border-rule'
+              className={`px-3 py-[10px] rounded-full text-[16px] font-bold cursor-pointer font-[inherit] border-[3px] ${
+                form.teamSize === t ? 'bg-ink text-white border-ink' : 'bg-white text-ink border-ink'
               }`}
             >
               {t}
@@ -136,7 +136,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={!cfToken || submitting}
-        className="w-full sm:w-auto bg-accent text-white border-none px-7 py-4 rounded-lg font-[inherit] text-[18px] cursor-pointer hover:bg-accent-deep transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full sm:w-auto bg-accent text-ink font-bold border-[3px] border-ink rounded-full shadow-hard px-8 py-3.5 font-[inherit] text-[18px] cursor-pointer active:translate-x-1 active:translate-y-1 active:shadow-none disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {submitting ? 'Sending…' : 'Request a call'}
       </button>

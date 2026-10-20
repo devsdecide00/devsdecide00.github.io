@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Newsreader } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { PROMO, REGULAR_PRICE, formatPrice } from "@/lib/offer";
 
-const newsreader = Newsreader({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-newsreader",
-  style: ["normal", "italic"],
-  axes: ["opsz"],
+  variable: "--font-bricolage",
+  axes: ["opsz", "wdth"],
   display: "swap",
 });
 
@@ -40,7 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${newsreader.variable} h-full antialiased`}
+      className={`${bricolage.variable} h-full antialiased`}
     >
       <head>
         <Script

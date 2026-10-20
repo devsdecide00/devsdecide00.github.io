@@ -2,13 +2,13 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="max-w-[680px] mx-auto w-full px-5 pt-16 pb-12 mt-auto">
-      <div className="border-t border-rule pt-6 flex flex-col sm:flex-row sm:justify-between gap-2 text-[15px] text-ink-faint">
-        <span>Developers Decide LLC · Hoover, Alabama</span>
-        <span className="flex gap-5">
-          <a href="mailto:solomon@devsdecide.com" className="text-ink-faint py-2 sm:py-0">Email</a>
-          <Link href="/try-it-yourself" className="text-ink-faint py-2 sm:py-0">Sample call</Link>
-          <Link href="/case-study" className="text-ink-faint py-2 sm:py-0">Past work</Link>
+    <footer className="bg-ink text-white mt-auto">
+      <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row sm:justify-between gap-4 text-[16px]">
+        <span className="text-white/70">Developers Decide LLC, Hoover, Alabama</span>
+        <span className="flex gap-6">
+          <a href="mailto:solomon@devsdecide.com" className="text-white no-underline hover:underline py-1">Email</a>
+          <Link href="/try-it-yourself" className="text-white no-underline hover:underline py-1">Sample call</Link>
+          <Link href="/case-study" className="text-white no-underline hover:underline py-1">Past work</Link>
         </span>
       </div>
     </footer>
