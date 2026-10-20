@@ -22,6 +22,7 @@ export default function Portrait({ className = 'w-24 h-24' }: { className?: stri
       alt="Solomon"
       width={480}
       height={480}
+      sizes="112px"
       priority
       className={`${className} rounded-full object-cover border-[3px] border-ink shrink-0`}
     />
