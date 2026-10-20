@@ -39,17 +39,21 @@ body {
   color: var(--color-ink);
 }
 
-/* Week planner: admin blocks lift off to reveal free time, then the total pops in. Plays once. */
+/* Week planner: admin blocks lift off to reveal free time, the total pops in, then it all resets.
+   One 11s cycle; per-block delays (week-planner.tsx) keep the stagger on every loop. */
 @keyframes planner-free {
-  to { opacity: 0; transform: translateY(-10px) rotate(-8deg); }
+  0% { opacity: 1; transform: none; }
+  4.5%, 61% { opacity: 0; transform: translateY(-10px) rotate(-8deg); }
+  65.5%, 100% { opacity: 1; transform: none; }
 }
 @keyframes planner-pop {
   0% { transform: scale(0) rotate(-20deg); }
-  70% { transform: scale(1.15) rotate(6deg); }
-  100% { transform: scale(1) rotate(4deg); }
+  3.2% { transform: scale(1.15) rotate(6deg); }
+  4.5%, 32% { transform: scale(1) rotate(4deg); }
+  35%, 100% { transform: scale(0) rotate(-20deg); }
 }
-.planner-admin { animation: planner-free 0.45s cubic-bezier(.5,0,.75,0) both; }
-.planner-pop { animation: planner-pop 0.5s ease-out both; }
+.planner-admin { animation: planner-free 11s cubic-bezier(.5,0,.75,0) infinite both; }
+.planner-pop { animation: planner-pop 11s ease-out infinite both; }
 
 @media (prefers-reduced-motion: reduce) {
   .planner-admin { animation: none; opacity: 0; }

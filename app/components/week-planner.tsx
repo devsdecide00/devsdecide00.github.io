@@ -10,11 +10,11 @@ const week: [string, Block[]][] = [
 ];
 
 const START = 0.9; // seconds before the first block lifts
-const STEP = 0.22;
+const STEP = 0.3;
 
 export default function WeekPlanner({ className = '' }: { className?: string }) {
   let n = 0;
-  const popDelay = START + 7 * STEP + 0.2;
+  const popDelay = START + 6 * STEP + 0.7; // just after the last block lifts
 
   return (
     <div className={`relative bg-white border-[3px] border-ink rounded-[22px] shadow-hard-lg p-4 sm:p-5 ${className}`}>
