@@ -13,21 +13,25 @@ const bricolage = Bricolage_Grotesque({
   display: "swap",
 });
 
+const title = 'Get 5 Hours a Week Back | Developers Decide';
+const description =
+  'One 45-minute conversation. 3 to 7 AI tools you can use this week, and 5 hours a week back or your money back. Book a call.';
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://devsdecide.com'),
-  title: 'AI Tools Assessment for Small Business | Developers Decide',
-  description: "One 45-minute conversation, 3 to 7 AI tools you can use right away, and 5 to 10 hours back every week. If I can't find 5 hours, you get your money back.",
+  title,
+  description,
   openGraph: {
-    title: 'AI Tools Assessment for Small Business | Developers Decide',
-    description: "One 45-minute conversation, 3 to 7 AI tools you can use right away, and 5 to 10 hours back every week. If I can't find 5 hours, you get your money back.",
+    title,
+    description,
     url: 'https://devsdecide.com',
-    siteName: 'Developers Decide',
+    siteName: 'Devs Decide',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Tools Assessment for Small Business | Developers Decide',
-    description: "One 45-minute conversation, 3 to 7 AI tools you can use right away, and 5 to 10 hours back every week. If I can't find 5 hours, you get your money back.",
+    title,
+    description,
   },
 };
 
@@ -63,7 +67,8 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'LocalBusiness',
               name: 'Developers Decide LLC',
-              description: 'AI tools assessments that save small business owners 5 to 10 hours a week.',
+              alternateName: 'Devs Decide',
+              description: 'A 45-minute AI tools assessment. 5 hours a week back, or your money back.',
               url: 'https://devsdecide.com',
               email: 'solomon@devsdecide.com',
               address: {

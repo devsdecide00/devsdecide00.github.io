@@ -7,15 +7,24 @@ import { PROMO, currentPrice, formatPrice, promoActive } from '@/lib/offer';
 
 export const revalidate = 3600;
 
+const title = 'Book a 45-Minute AI Tools Call | Developers Decide';
+const description =
+  'Tell me about your business. A 45-minute call, 3 to 7 AI tools, and 5 hours a week back or your money back. Book a call.';
+
 export const metadata: Metadata = {
-  title: 'Book Your AI Tools Assessment | Developers Decide',
-  description: 'One 45-minute conversation. 3 to 7 AI tools you can use right away. 5 hours a week back, or your money back.',
+  title: { absolute: title },
+  description,
   openGraph: {
-    title: 'Book Your AI Tools Assessment | Developers Decide',
-    description: 'One 45-minute conversation. 3 to 7 AI tools you can use right away. 5 hours a week back, or your money back.',
+    title,
+    description,
     url: 'https://devsdecide.com/contact',
-    siteName: 'Developers Decide',
+    siteName: 'Devs Decide',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
   },
   alternates: {
     canonical: 'https://devsdecide.com/contact',

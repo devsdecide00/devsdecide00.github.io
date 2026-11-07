@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import QRCode from 'qrcode';
 import Deck from './deck';
+import PitchBookQr from './book-qr';
 import Portrait from '../components/portrait';
 import WeekPlanner from '../components/week-planner';
 import Stamp from '../components/stamp';
@@ -114,10 +115,7 @@ export default async function PitchPage() {
     [
       'plum',
       <>
-        <div
-          className="bg-white rounded-[22px] border-[3px] border-white p-5 w-[min(62vw,260px)] mb-10"
-          dangerouslySetInnerHTML={{ __html: qr }}
-        />
+        <PitchBookQr svg={qr} />
         <h2 className={big}>Scan to book a call.</h2>
         <p className={sub}>solomon@devsdecide.com</p>
       </>,

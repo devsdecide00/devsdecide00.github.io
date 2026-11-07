@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Turnstile } from '@marsidev/react-turnstile';
+import { trackGenerateLead } from '@/lib/analytics';
 
 const teamSizes = ['Just me', '2–5', '6–10', '11–20', '20+'];
 
@@ -46,7 +47,13 @@ export default function ContactForm() {
       }
 
       try { localStorage.setItem('dd_last_inquiry', JSON.stringify(form)); } catch {}
-      router.push('/thank-you');
+      const go = () => router.push('/thank-you');
+      // Honeypot hits return 200 so bots still land on thank-you, but they are not leads.
+      if (honeypot) {
+        go();
+        return;
+      }
+      trackGenerateLead({ industry: form.industry, team_size: form.teamSize }, go);
     } catch {
       setError('Connection hiccup. Please try again.');
       setSubmitting(false);

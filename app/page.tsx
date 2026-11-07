@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Nav, { buttonClass } from './components/nav';
+import BookCallLink from './components/book-call-link';
 import Footer from './components/footer';
 import Portrait from './components/portrait';
 import WeekPlanner from './components/week-planner';
@@ -8,9 +9,27 @@ import Stamp from './components/stamp';
 import ToolExamples from './components/tool-examples';
 import { PROMO, REGULAR_PRICE, currentPrice, formatPrice, promoActive } from '@/lib/offer';
 
+const title = 'Get 5 Hours a Week Back | Developers Decide';
+const description =
+  'One 45-minute conversation. 3 to 7 AI tools you can use this week, and 5 hours a week back or your money back. Book a call.';
+
 export const metadata: Metadata = {
+  title: { absolute: title },
+  description,
   alternates: {
     canonical: 'https://devsdecide.com/',
+  },
+  openGraph: {
+    title,
+    description,
+    url: 'https://devsdecide.com',
+    siteName: 'Devs Decide',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
   },
 };
 
@@ -59,9 +78,9 @@ export default function HomePage() {
             One 45-minute conversation. A shortlist of AI tools you can use this week. If I can&rsquo;t find you 5 hours,
             you don&rsquo;t pay.
           </p>
-          <Link href="/contact" className={buttonClass}>
+          <BookCallLink location="home_hero" className={buttonClass}>
             Book a call
-          </Link>
+          </BookCallLink>
           {promo && (
             <p className="text-[16px] text-ink-soft mt-5 mb-0">
               Fall founding price: <strong className="text-ink">{formatPrice(PROMO.price)}</strong> for the first {PROMO.spots} owners, through{' '}
@@ -135,9 +154,9 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
-            <Link href="/contact" className={buttonClass}>
+            <BookCallLink location="home_pricing" className={buttonClass}>
               Book a call
-            </Link>
+            </BookCallLink>
           </div>
         </div>
       </section>
@@ -186,12 +205,12 @@ export default function HomePage() {
           <p className="text-[19px] sm:text-[21px] leading-[1.5] m-0 mb-8 max-w-[520px]">
             Tell me a little about your business and I&rsquo;ll reply within a day with a few times that work.
           </p>
-          <Link
-            href="/contact"
+          <BookCallLink
+            location="home_closing"
             className="inline-block no-underline bg-white text-ink font-bold border-[3px] border-ink rounded-full shadow-hard px-7 py-3.5 text-[18px] active:translate-x-1 active:translate-y-1 active:shadow-none"
           >
             Book a call
-          </Link>
+          </BookCallLink>
           <p className="text-[17px] mt-6 mb-0">
             Or email{' '}
             <a href="mailto:solomon@devsdecide.com" className="text-ink font-semibold">
