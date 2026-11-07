@@ -1,6 +1,24 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Nav, { buttonClass } from './components/nav';
 import Footer from './components/footer';
+
+export const metadata: Metadata = {
+  title: { absolute: 'Page not found | Developers Decide' },
+  description: 'This page may have moved or never existed.',
+  robots: { index: false, follow: false },
+  openGraph: {
+    title: 'Page not found | Developers Decide',
+    description: 'This page may have moved or never existed.',
+    siteName: 'Devs Decide',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Page not found | Developers Decide',
+    description: 'This page may have moved or never existed.',
+  },
+};
 
 export default function NotFound() {
   return (

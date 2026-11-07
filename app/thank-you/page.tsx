@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'Message Received | Developers Decide',
     description: 'Your inquiry is in. Expect a reply within one business day.',
     url: 'https://devsdecide.com/thank-you',
-    siteName: 'Developers Decide',
+    siteName: 'Devs Decide',
     type: 'website',
   },
   robots: { index: false },

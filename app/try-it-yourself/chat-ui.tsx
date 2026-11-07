@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { trackCtaClick } from '@/lib/analytics';
 import { Turnstile } from '@marsidev/react-turnstile';
 
 interface Message {
@@ -245,6 +246,7 @@ export default function ChatUI() {
         </div>
         <Link
           href="/contact"
+          onClick={() => trackCtaClick('Book a call →', 'try_it_yourself')}
           className="inline-block no-underline bg-ink text-bg px-7 py-[14px] rounded-full text-[14px] font-medium mt-2"
         >
           Book a call →

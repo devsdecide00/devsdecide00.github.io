@@ -1,17 +1,27 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Nav, { buttonClass } from '../components/nav';
+import BookCallLink from '../components/book-call-link';
 import Footer from '../components/footer';
 
+const title = 'Legal Billing Case Study | Developers Decide';
+const description =
+  'Manual billing sync across NetSuite, AgilityBlue, and Relativity, fully automated. Most businesses need a 45-minute call instead. Book a call.';
+
 export const metadata: Metadata = {
-  title: 'Legal Billing Integration Case Study | Developers Decide',
-  description: 'How we built Conduit — a custom integration platform automating billing sync across NetSuite, AgilityBlue, and Relativity for a legal services firm.',
+  title: { absolute: title },
+  description,
   openGraph: {
-    title: 'Automating Legal Billing Across Three Enterprise Systems | Developers Decide',
-    description: 'How we built Conduit — a custom integration platform replacing manual data entry across NetSuite, AgilityBlue, and Relativity.',
+    title,
+    description,
     url: 'https://devsdecide.com/case-study',
-    siteName: 'Developers Decide',
+    siteName: 'Devs Decide',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
   },
   alternates: {
     canonical: 'https://devsdecide.com/case-study',
@@ -113,6 +123,11 @@ export default function CaseStudyPage() {
             </ul>
           </div>
         </div>
+        <div className="mt-10 sm:mt-12">
+          <BookCallLink location="case_study_built" className={buttonClass}>
+            Book a call
+          </BookCallLink>
+        </div>
       </section>
 
       <section className="bg-ink text-white">
@@ -140,9 +155,9 @@ export default function CaseStudyPage() {
           They need the right off-the-shelf tools, set up well. That&rsquo;s what the 45-minute assessment finds.
         </p>
         <div className="flex flex-wrap gap-4">
-          <Link href="/contact" className={buttonClass}>
+          <BookCallLink location="case_study_closing" className={buttonClass}>
             Book a call
-          </Link>
+          </BookCallLink>
           <Link href="/" className="inline-block no-underline text-ink font-bold text-[18px] px-2 py-3.5 underline decoration-accent decoration-[3px] underline-offset-4">
             How the assessment works
           </Link>
