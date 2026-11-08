@@ -1,6 +1,6 @@
 type Block = { label: string; size: 1 | 2; admin?: boolean };
 
-// Each admin block is one hour; seven of them add up to the "+7 hrs" sticker.
+// Highlighted blocks are admin work in an example week. They are not a client result.
 const week: [string, Block[]][] = [
   ['Mon', [{ label: 'Inbox', size: 1, admin: true }, { label: 'Jobs', size: 2 }, { label: 'Quotes', size: 1, admin: true }]],
   ['Tue', [{ label: 'Crew', size: 1 }, { label: 'Booking', size: 1, admin: true }, { label: 'Jobs', size: 2 }]],
@@ -14,11 +14,10 @@ const STEP = 0.3;
 
 export default function WeekPlanner({ className = '' }: { className?: string }) {
   let n = 0;
-  const popDelay = START + 6 * STEP + 0.7; // just after the last block lifts
 
   return (
     <div className={`relative bg-white border-[3px] border-ink rounded-[22px] shadow-hard-lg p-4 sm:p-5 ${className}`}>
-      <div className="font-extrabold text-[20px] tracking-[-0.3px] mb-3 pr-24">An example week</div>
+      <div className="font-extrabold text-[20px] tracking-[-0.3px] mb-3">An example week</div>
 
       <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
         {week.map(([day, blocks]) => (
@@ -51,15 +50,6 @@ export default function WeekPlanner({ className = '' }: { className?: string }) 
             })}
           </div>
         ))}
-      </div>
-
-      <div
-        className="planner-pop absolute -top-10 -right-2 sm:-right-5 bg-sun border-[3px] border-ink rounded-full w-[88px] h-[88px] flex flex-col items-center justify-center leading-none shadow-hard"
-        style={{ animationDelay: `${popDelay}s` }}
-        aria-label="7 hours back"
-      >
-        <span className="font-extrabold text-[30px] tracking-[-1px]">+7</span>
-        <span className="text-[13px] font-bold mt-0.5">hrs back</span>
       </div>
     </div>
   );

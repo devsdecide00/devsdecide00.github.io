@@ -7,11 +7,19 @@ import Portrait from './components/portrait';
 import WeekPlanner from './components/week-planner';
 import Stamp from './components/stamp';
 import ToolExamples from './components/tool-examples';
-import { PROMO, REGULAR_PRICE, currentPrice, formatPrice, promoActive } from '@/lib/offer';
+import {
+  currentPrice,
+  formatPrice,
+  foundingFaqAnswer,
+  heroFounding,
+  priceCardDetail,
+  priceLabel,
+  showFoundingFaq,
+} from '@/lib/offer';
 
 const title = 'Get 5 Hours a Week Back | Developers Decide';
 const description =
-  'One 45-minute conversation. 3 to 7 AI tools you can use this week, and 5 hours a week back or your money back. Book a call.';
+  'A paid AI Tools Assessment for small businesses. A 45-minute interview, a written report with 3 to 7 tools, and a review call. Full refund if I can\'t find 5 hours a week.';
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -36,33 +44,50 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 const steps = [
-  ['Talk for 45 minutes', 'Tell me how the business runs. I listen for the work that repeats, and we set up your first tool before we hang up.'],
-  ['Get your shortlist', '3 to 7 AI tools picked for your bottlenecks, with what each costs, how long setup takes, and the hours it saves.'],
-  ['Start this week', 'A 4-day plan, a call to walk through it, and a check-in at 30 days to count the hours.'],
+  ['Talk for 45 minutes', 'Tell me how the business runs. I ask about the work that repeats and where your week goes.'],
+  [
+    'Get your report',
+    'A written report with 3 to 7 off-the-shelf tools picked for your bottlenecks. What each costs, how much effort setup takes, the time you could get back, and a quick-start plan.',
+  ],
+  ['Go over it together', 'A review call to walk through the report and answer questions. Then you start with the quick-start plan.'],
 ];
 
-const included = ['45-minute call', 'First tool set up live', 'Written shortlist', '4-day plan', 'Walkthrough call', '30-day check-in'];
-
-const faqs = [
-  {
-    q: 'What kind of tools?',
-    a: 'Off-the-shelf software you can sign up for today: AI assistants, meeting note-takers, inbox and scheduling tools, quoting tools, simple automations between apps you already use. Nothing custom.',
-  },
-  { q: 'Do I need to be technical?', a: 'No. We set up the first tool together on the call. The rest come with setup notes written for a busy owner.' },
-  { q: 'Do the tool companies pay you?', a: 'No. I recommend what fits, including free options when they’re good enough.' },
-  {
-    q: 'Why the founding price?',
-    a: `My first ${PROMO.spots} clients get a steep discount in exchange for honest feedback and, if it works, a short case study. After ${PROMO.endsLabel} it goes to ${formatPrice(REGULAR_PRICE)}.`,
-  },
-  { q: 'In person or remote?', a: 'Either. I’m in Hoover and happy to come to you anywhere around Birmingham. Otherwise, Zoom.' },
-];
+const included = ['45-minute interview', 'Written report', '3 to 7 tool picks', 'Costs and setup effort', 'Quick-start plan', 'Review call'];
 
 const h2 = 'font-extrabold text-[clamp(36px,7vw,60px)] leading-[0.98] tracking-[-1.5px] m-0';
 const wrap = 'max-w-[1120px] mx-auto px-5 sm:px-8';
 
 export default function HomePage() {
-  const promo = promoActive();
   const price = formatPrice(currentPrice());
+  const founding = heroFounding();
+  const faqs = [
+    {
+      q: 'What kind of tools?',
+      a: 'Off-the-shelf software you can sign up for today: AI assistants, meeting note-takers, inbox and scheduling tools, quoting tools, simple automations between apps you already use. Off-the-shelf only. Custom software is a separate project.',
+    },
+    {
+      q: 'Do I need to be technical?',
+      a: 'No. Every tool in the report comes with plain setup steps written for a busy owner. If you’d rather I set them up for you, that’s priced separately and quoted after the report.',
+    },
+    { q: 'Do the tool companies pay you?', a: 'No. I recommend what fits, including free options when they’re good enough.' },
+    ...(showFoundingFaq()
+      ? [
+          {
+            q: 'Why the founding price?',
+            a: foundingFaqAnswer(),
+          },
+        ]
+      : []),
+    {
+      q: 'When do I pay?',
+      a: `When you book, before the interview. If I can’t find realistic ways to save at least 5 hours a week, I refund the full ${price}.`,
+    },
+    {
+      q: 'Is setup included?',
+      a: `No. The ${price} covers the interview, the written report and the review call. If you want help setting tools up, I’ll quote it after the report.`,
+    },
+    { q: 'In person or remote?', a: 'Either. I’m in Hoover and happy to come to you anywhere around Birmingham. Otherwise, Zoom.' },
+  ];
 
   return (
     <>
@@ -75,16 +100,15 @@ export default function HomePage() {
             Get 5&nbsp;hours of your week back.
           </h1>
           <p className="text-[20px] sm:text-[22px] leading-[1.45] text-ink-soft m-0 mb-8 max-w-[500px]">
-            One 45-minute conversation. A shortlist of AI tools you can use this week. If I can&rsquo;t find you 5 hours,
-            you don&rsquo;t pay.
+            A paid 45-minute assessment. A written report with AI tools you can use this week. If I can&rsquo;t find
+            realistic ways to save at least 5 hours a week, you get a full refund.
           </p>
           <BookCallLink location="home_hero" className={buttonClass}>
-            Book a call
+            Book your assessment
           </BookCallLink>
-          {promo && (
+          {founding && (
             <p className="text-[16px] text-ink-soft mt-5 mb-0">
-              Fall founding price: <strong className="text-ink">{formatPrice(PROMO.price)}</strong> for the first {PROMO.spots} owners, through{' '}
-              {PROMO.endsLabel}.
+              {founding.lead} <strong className="text-ink">{founding.price}</strong> {founding.rest}
             </p>
           )}
         </div>
@@ -95,7 +119,7 @@ export default function HomePage() {
       <section className={`${wrap} pb-20 sm:pb-28`}>
         <h2 className={`${h2} mb-4`}>What the tools actually do</h2>
         <p className="text-[19px] sm:text-[20px] leading-[1.5] text-ink-soft m-0 mb-10 max-w-[620px]">
-          A few of the kinds of tools I recommend. Your shortlist depends on where your week actually goes.
+          A few of the kinds of tools I recommend. Your report depends on where your week actually goes.
         </p>
         <ToolExamples />
       </section>
@@ -125,11 +149,10 @@ export default function HomePage() {
         <div className={`${wrap} py-20 sm:py-28 flex flex-col md:flex-row md:items-center gap-10 md:gap-16`}>
           <Stamp id="stamp-home" className="w-[min(52vw,220px)] h-[min(52vw,220px)]" />
           <div>
-            <h2 className={`${h2} mb-6`}>No 5 hours, no charge.</h2>
+            <h2 className={`${h2} mb-6`}>No 5 hours, full refund.</h2>
             <p className="text-[19px] sm:text-[21px] leading-[1.55] text-white/85 m-0 max-w-[560px]">
-              If I can&rsquo;t find at least 5 hours a week, you get a full refund on the spot. If you follow the plan and
-              aren&rsquo;t saving 5 hours a week by our 30-day check-in, you get a full refund then. You keep the
-              shortlist either way.
+              You pay {price} when you book. If the assessment can&rsquo;t find realistic ways to save at least 5 hours
+              a week, I refund the full {price}. You keep the report either way.
             </p>
           </div>
         </div>
@@ -139,23 +162,24 @@ export default function HomePage() {
       <section className={`${wrap} py-20 sm:py-28`}>
         <div className="max-w-[760px] relative bg-white border-[3px] border-ink rounded-[22px] shadow-hard-lg grid grid-cols-1 sm:grid-cols-[auto_1fr]">
           <div className="p-7 sm:p-9 bg-sun rounded-t-[19px] sm:rounded-tr-none sm:rounded-l-[19px] border-b-[3px] sm:border-b-0 sm:border-r-[3px] border-dashed border-ink">
-            <div className="font-bold text-[17px] mb-1">{promo ? 'Fall founding price' : 'The Time-Back Audit'}</div>
+            <div className="font-bold text-[17px] mb-1">{priceLabel()}</div>
             <div className="font-extrabold text-[72px] leading-none tracking-[-2px]">{price}</div>
-            <div className="text-[16px] mt-2 max-w-[220px]">
-              {promo ? `First ${PROMO.spots} owners, through ${PROMO.endsLabel}. Then ${formatPrice(REGULAR_PRICE)}.` : 'One time. No subscription.'}
-            </div>
+            <div className="text-[16px] mt-2 max-w-[240px]">{priceCardDetail()}</div>
           </div>
           <div className="p-7 sm:p-9">
-            <div className="font-extrabold text-[22px] mb-4">Everything included</div>
-            <ul className="list-none m-0 p-0 flex flex-wrap gap-2 mb-7">
+            <div className="font-extrabold text-[22px] mb-4">What you get</div>
+            <ul className="list-none m-0 p-0 flex flex-wrap gap-2 mb-4">
               {included.map((x) => (
                 <li key={x} className="bg-mint border-2 border-ink rounded-full px-3.5 py-1.5 text-[15px] font-semibold">
                   {x}
                 </li>
               ))}
             </ul>
+            <p className="text-[16px] leading-[1.45] text-ink-soft m-0 mb-7">
+              Want me to set the tools up for you? That&rsquo;s separate, quoted after the report.
+            </p>
             <BookCallLink location="home_pricing" className={buttonClass}>
-              Book a call
+              Book your assessment
             </BookCallLink>
           </div>
         </div>
@@ -172,7 +196,7 @@ export default function HomePage() {
               <Link href="/case-study" className="text-ink font-semibold underline decoration-accent decoration-[3px] underline-offset-4">
                 a billing integration for a legal services firm
               </Link>
-              . Most small businesses don&rsquo;t need that. They need the right off-the-shelf tools, set up well.
+              . Most small businesses don&rsquo;t need that. They need the right off-the-shelf tools and a clear plan to start.
             </p>
           </div>
         </div>
@@ -203,13 +227,13 @@ export default function HomePage() {
             Let&rsquo;s find your 5&nbsp;hours.
           </h2>
           <p className="text-[19px] sm:text-[21px] leading-[1.5] m-0 mb-8 max-w-[520px]">
-            Tell me a little about your business and I&rsquo;ll reply within a day with a few times that work.
+            Tell me a little about your business. I&rsquo;ll reply within a day with times for your interview and how to pay.
           </p>
           <BookCallLink
             location="home_closing"
             className="inline-block no-underline bg-white text-ink font-bold border-[3px] border-ink rounded-full shadow-hard px-7 py-3.5 text-[18px] active:translate-x-1 active:translate-y-1 active:shadow-none"
           >
-            Book a call
+            Book your assessment
           </BookCallLink>
           <p className="text-[17px] mt-6 mb-0">
             Or email{' '}

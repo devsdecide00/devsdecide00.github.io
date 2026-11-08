@@ -4,7 +4,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
-import { PROMO, REGULAR_PRICE, formatPrice } from "@/lib/offer";
+import { OFFER_NAME, currentPrice, formatPrice } from "@/lib/offer";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -15,7 +15,7 @@ const bricolage = Bricolage_Grotesque({
 
 const title = 'Get 5 Hours a Week Back | Developers Decide';
 const description =
-  'One 45-minute conversation. 3 to 7 AI tools you can use this week, and 5 hours a week back or your money back. Book a call.';
+  'A paid AI Tools Assessment for small businesses. A 45-minute interview, a written report with 3 to 7 tools, and a review call. Full refund if I can\'t find 5 hours a week.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://devsdecide.com'),
@@ -68,7 +68,8 @@ export default function RootLayout({
               '@type': 'LocalBusiness',
               name: 'Developers Decide LLC',
               alternateName: 'Devs Decide',
-              description: 'A 45-minute AI tools assessment. 5 hours a week back, or your money back.',
+              description:
+                'A paid AI Tools Assessment for small businesses. Full refund if it can\'t find realistic ways to save at least 5 hours a week.',
               url: 'https://devsdecide.com',
               email: 'solomon@devsdecide.com',
               address: {
@@ -78,8 +79,8 @@ export default function RootLayout({
                 addressCountry: 'US',
               },
               areaServed: 'Alabama',
-              serviceType: 'AI Tools Assessment',
-              priceRange: `${formatPrice(PROMO.price)}–${formatPrice(REGULAR_PRICE)}`,
+              serviceType: OFFER_NAME,
+              priceRange: formatPrice(currentPrice()),
             }),
           }}
         />

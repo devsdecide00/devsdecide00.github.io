@@ -123,8 +123,8 @@ export default function ChatUI() {
         A <span className="italic text-accent">practice discovery call</span>, run by AI.
       </h1>
       <p className="text-[17px] text-ink-soft leading-[1.6] m-0 mb-10 max-w-[680px]">
-        Pick a scenario and a persona. You play the business owner; the AI plays me. When it names a tool, book a
-        real call and we&rsquo;ll build the real one.
+        Pick a scenario and a persona. You play the business owner; the AI plays me. Want the real version for your
+        business? Book your assessment.
       </p>
 
       <div className="grid grid-cols-[1fr_2fr] gap-8 items-start">
@@ -246,10 +246,10 @@ export default function ChatUI() {
         </div>
         <Link
           href="/contact"
-          onClick={() => trackCtaClick('Book a call →', 'try_it_yourself')}
+          onClick={() => trackCtaClick('Book your assessment', 'try_it_yourself')}
           className="inline-block no-underline bg-ink text-bg px-7 py-[14px] rounded-full text-[14px] font-medium mt-2"
         >
-          Book a call →
+          Book your assessment
         </Link>
       </div>
     </section>

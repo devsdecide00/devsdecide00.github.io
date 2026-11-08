@@ -6,7 +6,7 @@ import Footer from '../components/footer';
 
 const title = 'Legal Billing Case Study | Developers Decide';
 const description =
-  'Manual billing sync across NetSuite, AgilityBlue, and Relativity, fully automated. Most businesses need a 45-minute call instead. Book a call.';
+  'Manual billing sync across NetSuite, AgilityBlue, and Relativity, fully automated. Most businesses don\'t need a custom build. They need the right tools and a plan.';
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -125,7 +125,7 @@ export default function CaseStudyPage() {
         </div>
         <div className="mt-10 sm:mt-12">
           <BookCallLink location="case_study_built" className={buttonClass}>
-            Book a call
+            Book your assessment
           </BookCallLink>
         </div>
       </section>
@@ -152,11 +152,11 @@ export default function CaseStudyPage() {
       <section className={`${wrap} py-16 sm:py-24`}>
         <h2 className={`${h2} mb-5 max-w-[760px]`}>Most businesses don&rsquo;t need a custom build.</h2>
         <p className="text-[19px] leading-[1.5] text-ink-soft m-0 mb-8 max-w-[600px]">
-          They need the right off-the-shelf tools, set up well. That&rsquo;s what the 45-minute assessment finds.
+          They need the right off-the-shelf tools and a plan to start. That&rsquo;s what the AI Tools Assessment finds.
         </p>
         <div className="flex flex-wrap gap-4">
           <BookCallLink location="case_study_closing" className={buttonClass}>
-            Book a call
+            Book your assessment
           </BookCallLink>
           <Link href="/" className="inline-block no-underline text-ink font-bold text-[18px] px-2 py-3.5 underline decoration-accent decoration-[3px] underline-offset-4">
             How the assessment works

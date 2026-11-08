@@ -5,11 +5,12 @@ import PitchBookQr from './book-qr';
 import Portrait from '../components/portrait';
 import WeekPlanner from '../components/week-planner';
 import Stamp from '../components/stamp';
-import { PROMO, REGULAR_PRICE, formatPrice, promoActive } from '@/lib/offer';
+import { currentPrice, formatPrice, pitchPriceDetail, priceLabel } from '@/lib/offer';
 
 export const metadata: Metadata = {
-  title: 'Get 5–10 Hours Back | Developers Decide',
-  description: 'One 45-minute conversation. 3 to 7 AI tools you can use right away. 5 hours a week back, or your money back.',
+  title: 'Get 5 Hours a Week Back | Developers Decide',
+  description:
+    'A paid AI Tools Assessment. A 45-minute interview, a written report with 3 to 7 tools, and a review call. Full refund if I can\'t find 5 hours a week.',
   robots: { index: false },
 };
 
@@ -36,7 +37,7 @@ const big = 'font-extrabold text-[clamp(52px,14.5vw,120px)] leading-[0.92] track
 const sub = 'text-[21px] sm:text-[26px] leading-[1.35] m-0 mt-5 opacity-85 max-w-[560px]';
 
 export default async function PitchPage() {
-  const promo = promoActive();
+  const pitchDetail = pitchPriceDetail();
   const qr = await QRCode.toString(BOOK_URL, {
     type: 'svg',
     margin: 0,
@@ -49,7 +50,7 @@ export default async function PitchPage() {
       <>
         <Portrait className="w-28 h-28 mb-8" />
         <h1 className={big}>Hi, I&rsquo;m Solomon.</h1>
-        <p className={sub}>I help small business owners get 5 to 10 hours of their week back with AI.</p>
+        <p className={sub}>I help small business owners find hours they can get back with AI.</p>
       </>,
     ],
     [
@@ -79,30 +80,26 @@ export default async function PitchPage() {
     [
       'butter',
       <>
-        <h2 className={big}>Your first AI tool is set up before we hang&nbsp;up.</h2>
-        <p className={sub}>Then a shortlist of 3 to 7 more you can start this week. Nothing custom.</p>
+        <h2 className={big}>A written report with 3 to 7 tools.</h2>
+        <p className={sub}>What each costs, how much setup takes, and a plan to start this week. Then we go over it together.</p>
       </>,
     ],
     [
       'plum',
       <>
         <Stamp id="stamp-pitch" className="w-[min(50vw,220px)] h-[min(50vw,220px)] mb-10" />
-        <h2 className={big}>No 5 hours, no charge.</h2>
-        <p className={sub}>Not saving 5 hours a week by day 30? Every dollar back.</p>
+        <h2 className={big}>No 5 hours, full refund.</h2>
+        <p className={sub}>If I can&rsquo;t find realistic ways to save 5 hours a week, you get every dollar back.</p>
       </>,
     ],
     [
       'mint',
       <>
-        <div className="font-bold text-[22px] mb-2">{promo ? 'Fall founding price' : 'One time'}</div>
+        <div className="font-bold text-[22px] mb-2">{priceLabel()}</div>
         <div className="font-extrabold text-[clamp(96px,32vw,220px)] leading-[0.85] tracking-[-5px] [font-stretch:85%]">
-          {formatPrice(promo ? PROMO.price : REGULAR_PRICE)}
+          {formatPrice(currentPrice())}
         </div>
-        {promo && (
-          <p className={sub}>
-            For my first {PROMO.spots} owners, through {PROMO.endsLabel}. Then {formatPrice(REGULAR_PRICE)}.
-          </p>
-        )}
+        {pitchDetail && <p className={sub}>{pitchDetail}</p>}
       </>,
     ],
     [
@@ -116,7 +113,7 @@ export default async function PitchPage() {
       'plum',
       <>
         <PitchBookQr svg={qr} />
-        <h2 className={big}>Scan to book a call.</h2>
+        <h2 className={big}>Scan to book your assessment.</h2>
         <p className={sub}>solomon@devsdecide.com</p>
       </>,
     ],

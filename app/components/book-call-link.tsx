@@ -13,10 +13,10 @@ type BookCallLinkProps = {
 export default function BookCallLink({
   location,
   className,
-  children = 'Book a call',
+  children = 'Book your assessment',
   ctaText,
 }: BookCallLinkProps) {
-  const label = ctaText ?? (typeof children === 'string' ? children : 'Book a call');
+  const label = ctaText ?? (typeof children === 'string' ? children : 'Book your assessment');
 
   return (
     <Link href="/contact" className={className} onClick={() => trackCtaClick(label, location)}>
