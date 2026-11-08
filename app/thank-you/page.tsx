@@ -5,10 +5,10 @@ import ThankYouContent from './thank-you-content';
 
 export const metadata: Metadata = {
   title: 'Message Received | Developers Decide',
-  description: 'Your inquiry is in. Expect a reply within one business day with a few times for your 45-minute assessment call.',
+  description: 'Your request is in. Expect a reply within one business day with times for your assessment interview.',
   openGraph: {
     title: 'Message Received | Developers Decide',
-    description: 'Your inquiry is in. Expect a reply within one business day.',
+    description: 'Your request is in. Expect a reply within one business day with times for your assessment interview.',
     url: 'https://devsdecide.com/thank-you',
     siteName: 'Devs Decide',
     type: 'website',

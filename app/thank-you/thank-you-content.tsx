@@ -30,7 +30,7 @@ export default function ThankYouContent() {
         Got it{inquiry?.name ? `, ${inquiry.name.split(' ')[0]}` : ''}.
       </h1>
       <p className="text-[19px] sm:text-[21px] leading-[1.5] text-ink-soft m-0 mb-10 max-w-[560px]">
-        You&rsquo;ll hear from me within one business day, usually sooner, with a few times for your 45-minute call.
+        You&rsquo;ll hear from me within one business day, usually sooner, with times for your 45-minute interview and how to pay.
       </p>
 
       {inquiry && (

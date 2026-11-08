@@ -145,7 +145,7 @@ export default function ContactForm() {
         disabled={!cfToken || submitting}
         className="w-full sm:w-auto bg-accent text-ink font-bold border-[3px] border-ink rounded-full shadow-hard px-8 py-3.5 font-[inherit] text-[18px] cursor-pointer active:translate-x-1 active:translate-y-1 active:shadow-none disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {submitting ? 'Sending…' : 'Request a call'}
+        {submitting ? 'Sending…' : 'Request my assessment'}
       </button>
     </form>
   );

@@ -3,13 +3,13 @@ import { Suspense } from 'react';
 import Nav from '../components/nav';
 import Footer from '../components/footer';
 import ContactForm from './contact-form';
-import { PROMO, currentPrice, formatPrice, promoActive } from '@/lib/offer';
+import { contactPriceSentence } from '@/lib/offer';
 
 export const revalidate = 3600;
 
-const title = 'Book a 45-Minute AI Tools Call | Developers Decide';
+const title = 'Book Your AI Tools Assessment | Developers Decide';
 const description =
-  'Tell me about your business. A 45-minute call, 3 to 7 AI tools, and 5 hours a week back or your money back. Book a call.';
+  'Book your AI Tools Assessment. $500 paid upfront. A 45-minute interview, a written report and a review call. Full refund if I can\'t find 5 hours a week.';
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -37,15 +37,12 @@ export default function ContactPage() {
       <Nav />
       <main className="max-w-[720px] mx-auto w-full px-5 pt-10 sm:pt-16 pb-20">
         <h1 className="font-extrabold text-[clamp(48px,12vw,84px)] leading-[0.92] tracking-[-2.5px] m-0 mb-5 [font-stretch:88%]">
-          Book a call
+          Book your assessment
         </h1>
         <p className="text-[19px] sm:text-[21px] leading-[1.5] text-ink-soft m-0 mb-10">
-          Tell me a little about your business. I&rsquo;ll reply within a day with a few times for a 45-minute call, in
-          person or on Zoom.{' '}
-          {promoActive()
-            ? `${formatPrice(PROMO.price)} for my first ${PROMO.spots} clients, through ${PROMO.endsLabel}.`
-            : `${formatPrice(currentPrice())}, one time.`}{' '}
-          5 hours a week back, or your money back.
+          Tell me a little about your business. I&rsquo;ll reply within a day with times for your 45-minute interview, in
+          person or on Zoom, and how to pay. {contactPriceSentence()} If I can&rsquo;t find realistic ways to save at
+          least 5 hours a week, you get a full refund.
         </p>
         <Suspense fallback={<div className="h-[560px]" />}>
           <ContactForm />

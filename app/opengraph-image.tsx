@@ -52,11 +52,11 @@ export default function OgImage() {
             flexWrap: 'wrap',
           }}
         >
-          Get 5 to 10 hours of your week&nbsp;
+          Get 5 hours of your week&nbsp;
           <span style={{ fontStyle: 'italic', color: '#8a2b2b' }}>back.</span>
         </div>
         <div style={{ fontSize: 24, color: '#4b463d', lineHeight: 1.5, display: 'flex' }}>
-          One 45-minute conversation. 3 to 7 AI tools you can use right away.
+          A paid 45-minute assessment. A written plan with 3 to 7 tools.
         </div>
       </div>
 
@@ -70,7 +70,7 @@ export default function OgImage() {
         }}
       >
         <span style={{ fontSize: 18, color: '#8a8174' }}>devsdecide.com</span>
-        <span style={{ fontSize: 18, color: '#8a2b2b' }}>5 hours or your money back</span>
+        <span style={{ fontSize: 18, color: '#8a2b2b' }}>5 hours found or a full refund</span>
       </div>
     </div>,
     { ...size }

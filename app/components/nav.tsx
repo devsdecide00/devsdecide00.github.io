@@ -14,7 +14,7 @@ export default function Nav() {
         location="nav"
         className="no-underline bg-accent text-ink font-bold border-[3px] border-ink rounded-full shadow-hard px-4 py-2 text-[15px] active:translate-x-1 active:translate-y-1 active:shadow-none"
       >
-        Book a call
+        Book assessment
       </BookCallLink>
     </nav>
   );
