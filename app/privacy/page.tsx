@@ -40,8 +40,7 @@ export default function PrivacyPage() {
         </p>
         <p className={p}>
           Your browser also keeps a copy of your submission so the thank-you page can show it back to you. It stays on
-          your device and is not sent anywhere else. You can remove it by clearing this site&rsquo;s data in your
-          browser.
+          your device, is not sent anywhere else, and is deleted when you close the tab.
         </p>
 
         <h2 className={h2}>The &ldquo;Try it yourself&rdquo; demo</h2>

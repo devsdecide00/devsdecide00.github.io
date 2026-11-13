@@ -14,7 +14,7 @@ export default function ThankYouContent() {
   const [inquiry] = useState<Inquiry | null>(() => {
     if (typeof window === 'undefined') return null;
     try {
-      const raw = localStorage.getItem('dd_last_inquiry');
+      const raw = sessionStorage.getItem('dd_last_inquiry');
       return raw ? JSON.parse(raw) as Inquiry : null;
     } catch {
       return null;

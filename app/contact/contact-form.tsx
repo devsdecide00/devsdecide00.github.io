@@ -46,7 +46,10 @@ export default function ContactForm() {
         return;
       }
 
-      try { localStorage.setItem('dd_last_inquiry', JSON.stringify(form)); } catch {}
+      try {
+        localStorage.removeItem('dd_last_inquiry'); // clear copies saved by older versions
+        sessionStorage.setItem('dd_last_inquiry', JSON.stringify(form));
+      } catch {}
       const go = () => router.push('/thank-you');
       // Honeypot hits return 200 so bots still land on thank-you, but they are not leads.
       if (honeypot) {
