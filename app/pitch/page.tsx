@@ -114,7 +114,7 @@ export default async function PitchPage() {
       <>
         <PitchBookQr svg={qr} />
         <h2 className={big}>Scan to book your assessment.</h2>
-        <p className={sub}>solomon@devsdecide.com</p>
+        <p className={sub}>support@devsdecide.com</p>
       </>,
     ],
   ];

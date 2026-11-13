@@ -101,7 +101,7 @@ export default function PrivacyPage() {
         <h2 className={h2}>Your choices</h2>
         <p className={p}>
           To see, correct, or delete the information you sent us, email{' '}
-          <a className={a} href="mailto:solomon@devsdecide.com">solomon@devsdecide.com</a>. We&rsquo;ll respond within
+          <a className={a} href="mailto:support@devsdecide.com">support@devsdecide.com</a>. We&rsquo;ll respond within
           one month.
         </p>
 
@@ -116,7 +116,7 @@ export default function PrivacyPage() {
         <h2 className={h2}>Contact</h2>
         <p className={p}>
           Developers Decide LLC, Hoover, Alabama.{' '}
-          <a className={a} href="mailto:solomon@devsdecide.com">solomon@devsdecide.com</a>
+          <a className={a} href="mailto:support@devsdecide.com">support@devsdecide.com</a>
         </p>
       </main>
       <Footer />

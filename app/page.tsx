@@ -238,8 +238,8 @@ export default function HomePage() {
           </BookCallLink>
           <p className="text-[17px] mt-6 mb-0">
             Or email{' '}
-            <a href="mailto:solomon@devsdecide.com" className="text-ink font-semibold">
-              solomon@devsdecide.com
+            <a href="mailto:support@devsdecide.com" className="text-ink font-semibold">
+              support@devsdecide.com
             </a>
           </p>
         </div>

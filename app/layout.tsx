@@ -71,7 +71,7 @@ export default function RootLayout({
               description:
                 'A paid AI Tools Assessment for small businesses. Full refund if it can\'t find realistic ways to save at least 5 hours a week.',
               url: 'https://devsdecide.com',
-              email: 'solomon@devsdecide.com',
+              email: 'support@devsdecide.com',
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Hoover',
