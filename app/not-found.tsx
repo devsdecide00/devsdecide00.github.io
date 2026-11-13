@@ -24,6 +24,7 @@ export default function NotFound() {
   return (
     <>
       <Nav />
+      <main>
       <section className="max-w-[720px] mx-auto w-full pt-12 sm:pt-20 pb-20 px-5">
         <div className="inline-block bg-sun border-[3px] border-ink rounded-full px-5 py-2 font-extrabold text-[22px] rotate-[-4deg] mb-8">
           404
@@ -38,6 +39,7 @@ export default function NotFound() {
           Go to the homepage
         </Link>
       </section>
+      </main>
       <Footer />
     </>
   );

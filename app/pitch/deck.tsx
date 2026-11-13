@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 
 // Full-screen, swipeable slides. Native scroll-snap handles touch; arrow keys and space handle laptops.
 export default function Deck({ children }: { children: React.ReactNode }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -22,8 +22,8 @@ export default function Deck({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <div ref={ref} className="fixed inset-0 overflow-y-auto snap-y snap-mandatory overscroll-none scroll-smooth [scrollbar-width:none]">
+    <main ref={ref} className="fixed inset-0 overflow-y-auto snap-y snap-mandatory overscroll-none scroll-smooth [scrollbar-width:none]">
       {children}
-    </div>
+    </main>
   );
 }

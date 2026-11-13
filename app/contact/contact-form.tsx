@@ -96,25 +96,27 @@ export default function ContactForm() {
         <input id="industry" required maxLength={80} value={form.industry} onChange={(e) => upd('industry', e.target.value)} placeholder="e.g. HVAC, bookkeeping" className={inputClass} />
       </div>
 
-      <div className="mb-4">
-        <div className={labelClass}>Team size</div>
-        <div role="radiogroup" className="flex flex-wrap gap-1.5">
+      <fieldset className="mb-4 border-0 p-0 m-0">
+        <legend className={labelClass}>Team size</legend>
+        <div className="flex flex-wrap gap-1.5">
           {teamSizes.map((t) => (
-            <button
-              type="button"
+            <label
               key={t}
-              role="radio"
-              aria-checked={form.teamSize === t}
-              onClick={() => upd('teamSize', t)}
-              className={`px-3 py-[10px] rounded-full text-[16px] font-bold cursor-pointer font-[inherit] border-[3px] ${
-                form.teamSize === t ? 'bg-ink text-white border-ink' : 'bg-white text-ink border-ink'
-              }`}
+              className="px-3 py-[10px] rounded-full text-[16px] font-bold cursor-pointer border-[3px] border-ink bg-white text-ink has-checked:bg-ink has-checked:text-white has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink"
             >
+              <input
+                type="radio"
+                name="teamSize"
+                value={t}
+                checked={form.teamSize === t}
+                onChange={() => upd('teamSize', t)}
+                className="sr-only"
+              />
               {t}
-            </button>
+            </label>
           ))}
         </div>
-      </div>
+      </fieldset>
 
       <div className="mb-7">
         <label htmlFor="bottleneck" className={labelClass}>What eats your week?</label>
@@ -138,7 +140,7 @@ export default function ContactForm() {
         className="mb-4"
       />
 
-      {error && <div className="mb-4 text-[16px] text-accent">{error}</div>}
+      {error && <div role="alert" className="mb-4 text-[16px] text-accent-deep">{error}</div>}
 
       <button
         type="submit"

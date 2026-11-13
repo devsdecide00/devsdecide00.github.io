@@ -92,6 +92,7 @@ export default function HomePage() {
   return (
     <>
       <Nav />
+      <main>
 
       {/* Hero: the planner is the star */}
       <section className={`${wrap} pt-10 sm:pt-16 pb-20 sm:pb-28 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-14 lg:gap-16 items-center`}>
@@ -244,6 +245,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      </main>
       <Footer />
     </>
   );

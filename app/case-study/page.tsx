@@ -64,6 +64,7 @@ export default function CaseStudyPage() {
   return (
     <>
       <Nav />
+      <main>
 
       <section className={`${wrap} pt-10 sm:pt-16 pb-16 sm:pb-20`}>
         <p className="text-[18px] font-bold text-accent-deep m-0 mb-4">Past work: a legal services firm</p>
@@ -164,6 +165,7 @@ export default function CaseStudyPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
     </>
   );

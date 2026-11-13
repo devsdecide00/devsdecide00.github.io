@@ -20,7 +20,9 @@ export default function ThankYouPage() {
   return (
     <>
       <Nav />
-      <ThankYouContent />
+      <main>
+        <ThankYouContent />
+      </main>
       <Footer />
     </>
   );

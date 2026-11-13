@@ -118,7 +118,7 @@ export default function ChatUI() {
 
   return (
     <section className="max-w-[1240px] mx-auto py-14 px-10">
-      <div className="text-[12px] tracking-[2px] uppercase text-accent mb-4">Try it yourself · live</div>
+      <div className="text-[12px] tracking-[2px] uppercase text-accent-deep mb-4">Try it yourself · live</div>
       <h1 className="font-display text-[clamp(48px,6vw,88px)] leading-[1.05] tracking-[-2.5px] m-0 mb-6 font-normal max-w-[1000px]">
         A <span className="italic text-accent">practice discovery call</span>, run by AI.
       </h1>
@@ -183,7 +183,7 @@ export default function ChatUI() {
         </div>
 
         <div className="bg-white border border-rule rounded-[20px] p-6 min-h-[560px] flex flex-col shadow-[0_20px_40px_-20px_rgba(26,24,20,0.1)]">
-          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto pr-2 flex flex-col gap-[14px] min-h-[400px] max-h-[500px]">
+          <div ref={scrollContainerRef} role="log" aria-live="polite" aria-label="Conversation" className="flex-1 overflow-y-auto pr-2 flex flex-col gap-[14px] min-h-[400px] max-h-[500px]">
             {convo.length === 0 && (
               <div className="text-ink-faint text-[14px] m-auto text-center max-w-[320px]">
                 <div className="font-display italic text-[28px] text-ink mb-3">Start talking.</div>
@@ -194,7 +194,7 @@ export default function ChatUI() {
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div
                   className={`max-w-[78%] px-4 py-3 rounded-[14px] text-[14px] leading-[1.5] ${
-                    m.role === 'user' ? 'bg-accent text-white' : 'bg-bg text-ink'
+                    m.role === 'user' ? 'bg-accent-deep text-white' : 'bg-bg text-ink'
                   }`}
                 >
                   <div className="text-[10px] tracking-[1.2px] uppercase opacity-60 mb-1">
@@ -205,10 +205,12 @@ export default function ChatUI() {
               </div>
             ))}
             {loading && (
-              <div className="flex gap-1 px-4 py-2.5">
+              <div role="status" className="flex gap-1 px-4 py-2.5">
+                <span className="sr-only">Solomon is typing…</span>
                 {[0, 1, 2].map((i) => (
                   <div
                     key={i}
+                    aria-hidden="true"
                     className="w-1.5 h-1.5 rounded-full bg-ink-faint"
                     style={{ animation: `ddbounce 1.2s ease infinite ${i * 0.15}s` }}
                   />
@@ -225,8 +227,9 @@ export default function ChatUI() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               maxLength={1000}
+              aria-label="Your message"
               placeholder="Type your side of the conversation…"
-              className="flex-1 bg-bg border border-rule rounded-[10px] px-[14px] py-3 font-[inherit] text-[14px] outline-none"
+              className="flex-1 bg-bg border border-rule rounded-[10px] px-[14px] py-3 font-[inherit] text-[14px] outline-none focus-visible:ring-2 focus-visible:ring-ink"
             />
             <button
               type="submit"
