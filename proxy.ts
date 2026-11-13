@@ -1,8 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { limitRequest } from './lib/abuse-prevention';
+import { GEO_BLOCKED_HTML, isGeoBlocked } from './lib/geo-block';
 
 export async function proxy(req: NextRequest) {
   const path = req.nextUrl.pathname;
+
+  if (
+    isGeoBlocked(
+      req.headers.get('x-vercel-ip-country'),
+      req.headers.get('x-vercel-ip-country-region'),
+      req.headers.get('user-agent')
+    )
+  ) {
+    return new NextResponse(GEO_BLOCKED_HTML, {
+      status: 451,
+      headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' },
+    });
+  }
 
   if (path === '/api/ai') {
     const { success, limit, remaining, reset } = await limitRequest(req, 'ai');
@@ -42,5 +56,5 @@ export async function proxy(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/api/ai', '/api/contact'],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
 };

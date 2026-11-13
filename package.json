@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --experimental-strip-types --test lib/offer.test.ts"
+    "test": "node --experimental-strip-types --test lib/offer.test.ts lib/geo-block.test.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.91.1",

@@ -103,7 +103,7 @@ export default function PrivacyPage() {
         <p className={p}>
           To see, correct, or delete the information you sent us, email{' '}
           <a className={a} href="mailto:solomon@devsdecide.com">solomon@devsdecide.com</a>. We&rsquo;ll respond within
-          30 days.
+          one month.
         </p>
 
         <h2 className={h2}>Children</h2>
