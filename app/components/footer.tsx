@@ -8,6 +8,7 @@ export default function Footer() {
         <span className="flex gap-6">
           <a href="mailto:solomon@devsdecide.com" className="text-white no-underline hover:underline py-1">Email</a>
           <Link href="/case-study" className="text-white no-underline hover:underline py-1">Past work</Link>
+          <Link href="/privacy" className="text-white no-underline hover:underline py-1">Privacy</Link>
         </span>
       </div>
     </footer>
