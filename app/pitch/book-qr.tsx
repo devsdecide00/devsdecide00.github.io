@@ -8,7 +8,7 @@ export default function PitchBookQr({ svg }: { svg: string }) {
       href="/contact"
       aria-label="Scan to book your assessment"
       onClick={() => trackCtaClick('Scan to book your assessment', 'pitch')}
-      className="block no-underline text-inherit bg-white rounded-[22px] border-[3px] border-white p-6 w-[min(62vw,260px)] mb-8"
+      className="block no-underline text-inherit bg-white rounded-card border-[3px] border-white p-6 w-[min(62vw,260px)] mb-8"
       dangerouslySetInnerHTML={{ __html: svg }}
     />
   );

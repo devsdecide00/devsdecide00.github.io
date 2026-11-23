@@ -6,7 +6,7 @@ export const buttonClass =
 
 export default function Nav() {
   return (
-    <nav className="max-w-[1120px] mx-auto w-full flex items-center justify-between px-4 sm:px-8 pt-6 pb-2">
+    <nav className="max-w-page mx-auto w-full flex items-center justify-between px-4 sm:px-8 pt-6 pb-2">
       <Link href="/" className="no-underline text-ink font-extrabold text-body py-2">
         Developers Decide
       </Link>

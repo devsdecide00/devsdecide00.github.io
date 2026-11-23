@@ -1,9 +1,9 @@
 // Three common kinds of tools, each with a tiny drawing of the tool doing the work.
 // These are examples of categories, not client results.
 
-const card = 'bg-white border-[3px] border-ink rounded-[22px] shadow-hard overflow-hidden flex flex-col';
+const card = 'bg-white border-[3px] border-ink rounded-card shadow-hard overflow-hidden flex flex-col';
 const scene = 'h-[190px] border-b-[3px] border-ink p-6 flex flex-col justify-center gap-2';
-const bubble = 'bg-white border-2 border-ink rounded-2xl px-4 py-2 text-caption max-w-[88%]';
+const bubble = 'bg-white border-2 border-ink rounded-control px-4 py-2 text-caption max-w-[88%]';
 
 function EmailScene() {
   return (
@@ -23,7 +23,7 @@ function EmailScene() {
 function NotesScene() {
   return (
     <div className={`${scene} bg-mint`}>
-      <div className="bg-white border-2 border-ink rounded-2xl p-4 text-caption">
+      <div className="bg-white border-2 border-ink rounded-control p-4 text-caption">
         <div className="font-bold mb-2">Call with Miller Plumbing</div>
         {['Send revised estimate', 'Book site visit Thu', 'Follow-up email sent'].map((t, i) => (
           <div key={t} className="flex items-center gap-2 py-1">

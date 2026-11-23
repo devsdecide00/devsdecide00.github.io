@@ -16,7 +16,7 @@ export default function WeekPlanner({ className = '' }: { className?: string }) 
   let n = 0;
 
   return (
-    <div className={`relative bg-white border-[3px] border-ink rounded-[22px] shadow-hard-lg p-4 sm:p-6 ${className}`}>
+    <div className={`relative bg-white border-[3px] border-ink rounded-card shadow-hard-lg p-4 sm:p-6 ${className}`}>
       <div className="font-extrabold text-title mb-4">An example week</div>
 
       <div className="grid grid-cols-5 gap-2 sm:gap-2">
@@ -28,7 +28,7 @@ export default function WeekPlanner({ className = '' }: { className?: string }) 
               const label = 'text-micro sm:text-caption font-semibold';
               if (!b.admin) {
                 return (
-                  <div key={i} className={`${h} rounded-lg bg-bg-deep border-2 border-ink/10 flex items-center justify-center ${label} text-ink-soft`}>
+                  <div key={i} className={`${h} rounded-control bg-bg-deep border-2 border-ink/10 flex items-center justify-center ${label} text-ink-soft`}>
                     {b.label}
                   </div>
                 );
@@ -36,11 +36,11 @@ export default function WeekPlanner({ className = '' }: { className?: string }) 
               const delay = START + n++ * STEP;
               return (
                 <div key={i} className={`${h} relative`}>
-                  <div className={`absolute inset-0 rounded-lg bg-mint border-2 border-ink flex items-center justify-center ${label}`}>
+                  <div className={`absolute inset-0 rounded-control bg-mint border-2 border-ink flex items-center justify-center ${label}`}>
                     Free
                   </div>
                   <div
-                    className={`planner-admin absolute inset-0 rounded-lg bg-accent border-2 border-ink flex items-center justify-center ${label}`}
+                    className={`planner-admin absolute inset-0 rounded-control bg-accent border-2 border-ink flex items-center justify-center ${label}`}
                     style={{ animationDelay: `${delay}s` }}
                   >
                     {b.label}

@@ -57,7 +57,7 @@ const stack = [
   'NetSuite REST', 'AgilityBlue OData', 'Relativity REST', 'Docker', 'GitLab CI/CD', 'New Relic',
 ];
 
-const wrap = 'max-w-[1120px] mx-auto px-4 sm:px-8';
+const wrap = 'max-w-page mx-auto px-4 sm:px-8';
 const h2 = 'font-extrabold text-h2 m-0';
 
 export default function CaseStudyPage() {
@@ -68,16 +68,16 @@ export default function CaseStudyPage() {
 
       <section className={`${wrap} pt-12 sm:pt-16 pb-16 sm:pb-16`}>
         <p className="text-body font-bold text-accent-deep m-0 mb-4">Past work: a legal services firm</p>
-        <h1 className="font-extrabold text-display m-0 mb-6 max-w-[900px] [font-stretch:88%]">
+        <h1 className="font-extrabold text-display m-0 mb-6 max-w-headline [font-stretch:88%]">
           Three billing systems that finally talk to each other.
         </h1>
-        <p className="text-lead text-ink-soft m-0 mb-8 max-w-[640px]">
+        <p className="text-lead text-ink-soft m-0 mb-8 max-w-measure">
           A custom integration that replaced manual data entry across NetSuite, AgilityBlue and Relativity with
           automated, auditable syncing.
         </p>
         <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 m-0">
           {facts.map(([k, v]) => (
-            <div key={k} className="bg-bg-deep border-[3px] border-ink rounded-2xl p-6">
+            <div key={k} className="bg-bg-deep border-[3px] border-ink rounded-card p-6">
               <dt className="text-small font-bold text-ink-faint mb-1">{k}</dt>
               <dd className="m-0 text-body font-bold">{v}</dd>
             </div>
@@ -86,7 +86,7 @@ export default function CaseStudyPage() {
       </section>
 
       <section className="bg-bg-deep border-y-[3px] border-ink">
-        <div className={`${wrap} py-16 sm:py-16`}>
+        <div className={`${wrap} py-16 sm:py-24`}>
           <h2 className={`${h2} mb-8`}>The problem</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {problems.map(([t, d]) => (
@@ -102,7 +102,7 @@ export default function CaseStudyPage() {
       <section className={`${wrap} py-16 sm:py-24`}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div>
-            <h2 className={`${h2} mb-6`}>What we built</h2>
+            <h2 className={`${h2} mb-4`}>What we built</h2>
             <p className="text-body text-ink-soft m-0 mb-4">
               Conduit is a Spring Boot service with a React dashboard that sits between all three platforms. On a
               schedule, or on demand, it pulls, transforms and writes records, keeping a complete history of every
@@ -113,7 +113,7 @@ export default function CaseStudyPage() {
               what will change in NetSuite first.
             </p>
           </div>
-          <div className="bg-white border-[3px] border-ink rounded-[22px] shadow-hard-lg p-6 sm:p-8">
+          <div className="bg-white border-[3px] border-ink rounded-card shadow-hard-lg p-6 sm:p-8">
             <h3 className="font-extrabold text-title m-0 mb-4">What it does</h3>
             <ul className="list-none m-0 p-0 flex flex-wrap gap-2">
               {capabilities.map((c) => (
@@ -133,10 +133,10 @@ export default function CaseStudyPage() {
 
       <section className="bg-ink text-white">
         <div className={`${wrap} py-16 sm:py-24`}>
-          <p className="font-extrabold text-h2 m-0 mb-6 max-w-[900px]">
+          <p className="font-extrabold text-h2 m-0 mb-4 max-w-headline">
             Every record Conduit moves today used to be moved by a person, by hand.
           </p>
-          <p className="text-body text-white/80 m-0 max-w-[640px]">
+          <p className="text-body text-white/80 m-0 max-w-measure">
             Faster billing cycles, fewer discrepancies, and an ops team working in one dashboard instead of copying data
             between three systems.
           </p>
@@ -151,8 +151,8 @@ export default function CaseStudyPage() {
       </section>
 
       <section className={`${wrap} py-16 sm:py-24`}>
-        <h2 className={`${h2} mb-6 max-w-[760px]`}>Most businesses don&rsquo;t need a custom build.</h2>
-        <p className="text-body text-ink-soft m-0 mb-8 max-w-[600px]">
+        <h2 className={`${h2} mb-4 max-w-column`}>Most businesses don&rsquo;t need a custom build.</h2>
+        <p className="text-body text-ink-soft m-0 mb-8 max-w-measure">
           They need the right off-the-shelf tools and a plan to start. That&rsquo;s what the AI Tools Assessment finds.
         </p>
         <div className="flex flex-wrap gap-4">

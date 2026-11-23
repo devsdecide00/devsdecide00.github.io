@@ -35,7 +35,7 @@ export default function ContactPage() {
   return (
     <>
       <Nav />
-      <main className="max-w-[720px] mx-auto w-full px-4 pt-12 sm:pt-16 pb-16">
+      <main className="max-w-column mx-auto w-full px-4 sm:px-8 pt-12 sm:pt-16 pb-16">
         <h1 className="font-extrabold text-display m-0 mb-6 [font-stretch:88%]">
           Book your assessment
         </h1>

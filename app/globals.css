@@ -24,6 +24,17 @@
   --font-display: var(--font-bricolage), system-ui, sans-serif;
   --font-sans: var(--font-bricolage), system-ui, sans-serif;
 
+  /* Layout widths (STYLE.md). max-w-page / column / measure / headline. */
+  --container-page: 1120px;
+  --container-column: 720px;
+  --container-measure: 560px;
+  --container-headline: 900px;
+
+  /* Radii (STYLE.md). rounded-card / card-inner / control, plus rounded-full. */
+  --radius-card: 22px;
+  --radius-card-inner: 19px; /* card radius minus its 3px border */
+  --radius-control: 12px;
+
   /* Type scale (STYLE.md). Use only these sizes. */
   --text-micro: 12px;
   --text-micro--line-height: 1.4;

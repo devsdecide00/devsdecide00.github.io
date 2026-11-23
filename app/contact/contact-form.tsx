@@ -64,11 +64,11 @@ export default function ContactForm() {
   };
 
   const inputClass =
-    'w-full bg-white border-[3px] border-ink rounded-xl px-4 py-4 font-[inherit] text-body text-ink outline-none transition-shadow focus:shadow-hard';
+    'w-full bg-white border-[3px] border-ink rounded-control px-4 py-4 font-[inherit] text-body text-ink outline-none transition-shadow focus:shadow-hard';
   const labelClass = 'block text-body font-bold text-ink mb-2';
 
   return (
-    <form onSubmit={onSubmit} className="bg-bg-deep border-[3px] border-ink rounded-[22px] shadow-hard-lg p-6 sm:p-8">
+    <form onSubmit={onSubmit} className="bg-bg-deep border-[3px] border-ink rounded-card shadow-hard-lg p-6 sm:p-8">
       <input
         name="website"
         value={honeypot}
@@ -148,7 +148,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={!cfToken || submitting}
-        className="w-full sm:w-auto bg-accent text-ink font-bold border-[3px] border-ink rounded-full shadow-hard px-8 py-4 font-[inherit] text-body cursor-pointer active:translate-x-1 active:translate-y-1 active:shadow-none disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full sm:w-auto bg-accent text-ink font-bold border-[3px] border-ink rounded-full shadow-hard px-6 py-4 font-[inherit] text-body cursor-pointer active:translate-x-1 active:translate-y-1 active:shadow-none disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {submitting ? 'Sending…' : 'Request my assessment'}
       </button>

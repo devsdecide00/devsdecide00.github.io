@@ -35,7 +35,7 @@ const tones = {
 type Tone = keyof typeof tones;
 
 const big = 'font-extrabold text-jumbo m-0 [font-stretch:88%] text-balance';
-const sub = 'text-lead sm:text-h3 m-0 mt-6 max-w-[560px]';
+const sub = 'text-lead sm:text-h3 m-0 mt-6 max-w-measure';
 
 export default async function PitchPage() {
   const pitchDetail = pitchPriceDetail();
@@ -57,7 +57,7 @@ export default async function PitchPage() {
     [
       'pumpkin',
       <>
-        <div className="flex flex-wrap gap-2 mb-8 max-w-[520px]">
+        <div className="flex flex-wrap gap-2 mb-8 max-w-measure">
           {['Inbox', 'Quotes', 'Booking', 'Follow-ups', 'Invoices', 'Same questions again'].map((t, i) => (
             <span
               key={t}
@@ -74,7 +74,7 @@ export default async function PitchPage() {
     [
       'white',
       <>
-        <WeekPlanner className="mb-8 max-w-[480px]" />
+        <WeekPlanner className="mb-8 max-w-measure" />
         <h2 className={big}>45 minutes. I find the hours.</h2>
       </>,
     ],
@@ -124,7 +124,7 @@ export default async function PitchPage() {
     <Deck>
       {slides.map(([tone, content], i) => (
         <section key={i} id={`s${i}`} className={`h-[100dvh] snap-start snap-always ${tones[tone]}`}>
-          <div className="h-full max-w-[860px] mx-auto flex flex-col px-6 sm:px-16 pt-[max(24px,env(safe-area-inset-top))] pb-[max(24px,env(safe-area-inset-bottom))]">
+          <div className="h-full max-w-headline mx-auto flex flex-col px-6 sm:px-16 pt-[max(24px,env(safe-area-inset-top))] pb-[max(24px,env(safe-area-inset-bottom))]">
             <div className="flex justify-between items-center text-small font-bold py-2">
               <span>Developers Decide</span>
               <span>

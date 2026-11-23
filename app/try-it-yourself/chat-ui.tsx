@@ -118,12 +118,12 @@ export default function ChatUI() {
   };
 
   return (
-    <section className="max-w-[1240px] mx-auto py-12 px-4 sm:px-12">
+    <section className="max-w-page mx-auto pt-12 sm:pt-16 pb-16 px-4 sm:px-8">
       <div className="text-micro tracking-widest uppercase text-accent-deep mb-4">Try it yourself · live</div>
-      <h1 className="font-display text-display m-0 mb-6 font-normal max-w-[1000px]">
+      <h1 className="font-display text-display m-0 mb-6 font-normal max-w-headline">
         A <span className="italic text-accent">practice discovery call</span>, run by AI.
       </h1>
-      <p className="text-body text-ink-soft m-0 mb-8 max-w-[680px]">
+      <p className="text-body text-ink-soft m-0 mb-8 max-w-measure">
         Pick a scenario and a persona. You play the business owner; the AI plays me. Want the real version for your
         business? Book your assessment.
       </p>
@@ -137,7 +137,7 @@ export default function ChatUI() {
                 <button
                   key={s}
                   onClick={() => { setScenario(s); reset(s, persona); }}
-                  className={`text-left px-4 py-2 rounded-[10px] text-caption cursor-pointer font-[inherit] border ${
+                  className={`text-left px-4 py-2 rounded-control text-caption cursor-pointer font-[inherit] border ${
                     scenario === s ? 'bg-ink text-bg border-ink' : 'bg-white text-ink-soft border-rule'
                   }`}
                 >
@@ -166,7 +166,7 @@ export default function ChatUI() {
 
           <button
             onClick={reset}
-            className="bg-transparent text-ink-faint border border-dashed border-rule py-2 rounded-lg text-caption flex items-center justify-center gap-1 cursor-pointer font-[inherit]"
+            className="bg-transparent text-ink-faint border border-dashed border-rule py-2 rounded-control text-caption flex items-center justify-center gap-1 cursor-pointer font-[inherit]"
           >
             <RotateCcw size={16} /> Reset conversation
           </button>
@@ -183,10 +183,10 @@ export default function ChatUI() {
           </div>
         </div>
 
-        <div className="bg-white border border-rule rounded-[20px] p-6 min-h-[560px] flex flex-col shadow-[0_20px_40px_-20px_rgba(26,24,20,0.1)]">
+        <div className="bg-white border border-rule rounded-card p-6 min-h-[560px] flex flex-col shadow-[0_20px_40px_-20px_rgba(26,24,20,0.1)]">
           <div ref={scrollContainerRef} role="log" aria-live="polite" aria-label="Conversation" className="flex-1 overflow-y-auto pr-2 flex flex-col gap-4 min-h-[400px] max-h-[500px]">
             {convo.length === 0 && (
-              <div className="text-ink-faint text-caption m-auto text-center max-w-[320px]">
+              <div className="text-ink-faint text-caption m-auto text-center max-w-80">
                 <div className="font-display italic text-h3 text-ink mb-4">Start talking.</div>
                 Say anything. &ldquo;Hey, we&rsquo;re drowning in X&rdquo; works fine.
               </div>
@@ -194,7 +194,7 @@ export default function ChatUI() {
             {convo.map((m, i) => (
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div
-                  className={`max-w-[78%] px-4 py-4 rounded-[14px] text-caption ${
+                  className={`max-w-[78%] px-4 py-4 rounded-control text-caption ${
                     m.role === 'user' ? 'bg-accent-deep text-white' : 'bg-bg text-ink'
                   }`}
                 >
@@ -230,12 +230,12 @@ export default function ChatUI() {
               maxLength={1000}
               aria-label="Your message"
               placeholder="Type your side of the conversation…"
-              className="flex-1 bg-bg border border-rule rounded-[10px] px-4 py-4 font-[inherit] text-caption outline-none focus-visible:ring-2 focus-visible:ring-ink"
+              className="flex-1 bg-bg border border-rule rounded-control px-4 py-4 font-[inherit] text-caption outline-none focus-visible:ring-2 focus-visible:ring-ink"
             />
             <button
               type="submit"
               disabled={loading || !input.trim()}
-              className="bg-ink text-bg border-none px-4 rounded-[10px] font-[inherit] text-caption font-medium cursor-pointer disabled:cursor-wait"
+              className="bg-ink text-bg border-none px-4 rounded-control font-[inherit] text-caption font-medium cursor-pointer disabled:cursor-wait"
             >
               Send
             </button>
@@ -243,7 +243,7 @@ export default function ChatUI() {
         </div>
       </div>
 
-      <div className="text-center mt-16 p-12 bg-bg-deep rounded-2xl">
+      <div className="text-center mt-16 p-12 bg-bg-deep rounded-card">
         <div className="font-display text-h3 m-0 mb-4 font-normal">
           Done practicing?{' '}
           <span className="italic text-accent-deep">Let&rsquo;s do the real one.</span>

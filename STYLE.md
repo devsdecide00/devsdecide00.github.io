@@ -21,7 +21,31 @@ Every margin, padding, and gap is a multiple of 8px. 4px is allowed only for tig
 
 - Use Tailwind's scale (`p-6`, `gap-4`), not arbitrary values (`p-[13px]`, `mt-[18px]`). Arbitrary spacing is allowed only for `env(safe-area-inset-*)`.
 - Related things sit closer together than unrelated things. Spacing is how grouping is shown.
-- Once a value is chosen for a role, reuse it: every card gets the same padding, every section heading the same gap below it.
+- Once a value is chosen for a role, reuse it. The roles:
+
+| Role | Classes |
+|------|---------|
+| Page gutter | `px-4 sm:px-8` |
+| Page top (first section) | `pt-12 sm:pt-16` |
+| Section vertical padding | `py-16 sm:py-24` (or `pb-` only when the section above already has bottom padding) |
+| Page `<h1>` / display headline → lead | `mb-6` |
+| Section heading → its intro paragraph | `mb-4` |
+| Section heading (+ intro) → content | `mb-8` |
+| Card title → paragraph | `mb-2` |
+| Card title → chips/list | `mb-4` |
+| Card padding | `p-6 sm:p-8` |
+| Primary button | `px-6 py-4`; small button `px-4 py-2` |
+
+**Widths:** only these. Narrow content in a wide page is centered (`mx-auto`), never pinned left beside empty space.
+
+| Class | Width | Use |
+|-------|-------|-----|
+| `max-w-page` | 1120px | page container, nav, footer |
+| `max-w-headline` | 900px | long display headlines, deck slides |
+| `max-w-column` | 720px | reading pages (privacy, contact, thank-you), price card, bio, FAQ |
+| `max-w-measure` | 560px | lead and intro paragraphs |
+
+**Radii:** `rounded-card` (22px; `rounded-*-card-inner` for corners inside a 3px border), `rounded-control` (12px: inputs, chat bubbles, mock UI), `rounded-full` (buttons, chips, avatars). Nothing else.
 
 ## 2. Typography: one font, fixed scale
 
@@ -106,7 +130,7 @@ Generated UI tends to show every piece of information with every decoration. Bef
 
 ## Checklist before shipping UI
 
-- [ ] All spacing on the 8px grid; no new arbitrary `[Npx]` spacing
+- [ ] All spacing on the 8px grid and matches its role in the table; no `max-w-[…]`, `rounded-[…]`, or arbitrary `[Npx]` spacing
 - [ ] All font sizes from the scale table
 - [ ] Only palette tokens; accent used sparingly; contrast pairs from the table
 - [ ] No emoji; icons from one set

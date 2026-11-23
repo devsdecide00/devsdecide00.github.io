@@ -56,7 +56,7 @@ const steps = [
 const included = ['45-minute interview', 'Written report', '3 to 7 tool picks', 'Costs and setup effort', 'Quick-start plan', 'Review call'];
 
 const h2 = 'font-extrabold text-h2 m-0';
-const wrap = 'max-w-[1120px] mx-auto px-4 sm:px-8';
+const wrap = 'max-w-page mx-auto px-4 sm:px-8';
 
 export default function HomePage() {
   const price = formatPrice(currentPrice());
@@ -101,7 +101,7 @@ export default function HomePage() {
           <h1 className="font-extrabold text-display m-0 mb-6 [font-stretch:88%]">
             Get 5&nbsp;hours of your week back.
           </h1>
-          <p className="text-lead text-ink-soft m-0 mb-8 max-w-[500px]">
+          <p className="text-lead text-ink-soft m-0 mb-8 max-w-measure">
             A paid 45-minute assessment. A written report with AI tools you can use this week. If I can&rsquo;t find
             realistic ways to save at least 5 hours a week, you get a full refund.
           </p>
@@ -120,7 +120,7 @@ export default function HomePage() {
       {/* What the tools do */}
       <section className={`${wrap} pb-16 sm:pb-24`}>
         <h2 className={`${h2} mb-4`}>What the tools actually do</h2>
-        <p className="text-lead text-ink-soft m-0 mb-8 max-w-[620px]">
+        <p className="text-lead text-ink-soft m-0 mb-8 max-w-measure">
           A few of the kinds of tools I recommend. Your report depends on where your week actually goes.
         </p>
         <ToolExamples />
@@ -129,7 +129,7 @@ export default function HomePage() {
       {/* How it works */}
       <section className="bg-bg-deep border-y-[3px] border-ink">
         <div className={`${wrap} py-16 sm:py-24`}>
-          <h2 className={`${h2} mb-12`}>How it works</h2>
+          <h2 className={`${h2} mb-8`}>How it works</h2>
           <ol className="list-none m-0 p-0 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
             {steps.map(([t, d], i) => (
               <li key={t} className="flex md:flex-col gap-6">
@@ -151,8 +151,8 @@ export default function HomePage() {
         <div className={`${wrap} py-16 sm:py-24 flex flex-col md:flex-row md:items-center gap-12 md:gap-16`}>
           <Stamp id="stamp-home" className="w-[min(52vw,220px)] h-[min(52vw,220px)]" />
           <div>
-            <h2 className={`${h2} mb-6`}>No 5 hours, full refund.</h2>
-            <p className="text-lead text-white/85 m-0 max-w-[560px]">
+            <h2 className={`${h2} mb-4`}>No 5 hours, full refund.</h2>
+            <p className="text-lead text-white/85 m-0 max-w-measure">
               You pay {price} when you book. If the assessment can&rsquo;t find realistic ways to save at least 5 hours
               a week, I refund the full {price}. You keep the report either way.
             </p>
@@ -162,11 +162,11 @@ export default function HomePage() {
 
       {/* Price */}
       <section className={`${wrap} py-16 sm:py-24`}>
-        <div className="max-w-[760px] relative bg-white border-[3px] border-ink rounded-[22px] shadow-hard-lg grid grid-cols-1 sm:grid-cols-[auto_1fr]">
-          <div className="p-6 sm:p-8 bg-sun rounded-t-[19px] sm:rounded-tr-none sm:rounded-l-[19px] border-b-[3px] sm:border-b-0 sm:border-r-[3px] border-dashed border-ink">
+        <div className="max-w-column mx-auto w-full relative bg-white border-[3px] border-ink rounded-card shadow-hard-lg grid grid-cols-1 sm:grid-cols-[auto_1fr]">
+          <div className="p-6 sm:p-8 bg-sun rounded-t-card-inner sm:rounded-tr-none sm:rounded-l-card-inner border-b-[3px] sm:border-b-0 sm:border-r-[3px] border-dashed border-ink">
             <div className="font-bold text-body mb-1">{priceLabel()}</div>
             <div className="font-extrabold text-display leading-none">{price}</div>
-            <div className="text-small mt-2 max-w-[240px]">{priceCardDetail()}</div>
+            <div className="text-small mt-2 max-w-60">{priceCardDetail()}</div>
           </div>
           <div className="p-6 sm:p-8">
             <div className="font-extrabold text-title mb-4">What you get</div>
@@ -189,7 +189,7 @@ export default function HomePage() {
 
       {/* About */}
       <section className={`${wrap} pb-16 sm:pb-24`}>
-        <div className="max-w-[760px] flex flex-col sm:flex-row gap-6 sm:gap-8 sm:items-center">
+        <div className="max-w-column mx-auto flex flex-col sm:flex-row gap-6 sm:gap-8 sm:items-center">
           <Portrait className="w-24 h-24 sm:w-28 sm:h-28" />
           <div>
             <h2 className="font-extrabold text-h3 m-0 mb-4">Hi, I&rsquo;m Solomon.</h2>
@@ -206,7 +206,7 @@ export default function HomePage() {
 
       {/* FAQ */}
       <section className={`${wrap} pb-16 sm:pb-24`}>
-        <div className="max-w-[760px]">
+        <div className="max-w-column mx-auto">
           <h2 className={`${h2} mb-8`}>Questions</h2>
           {faqs.map((f) => (
             <details key={f.q} className="group border-b-[3px] border-ink first:border-t-[3px]">
@@ -216,7 +216,7 @@ export default function HomePage() {
                   <Plus size={20} />
                 </span>
               </summary>
-              <p className="text-body text-ink-soft m-0 pb-6 max-w-[640px]">{f.a}</p>
+              <p className="text-body text-ink-soft m-0 pb-6 max-w-measure">{f.a}</p>
             </details>
           ))}
         </div>
@@ -225,10 +225,10 @@ export default function HomePage() {
       {/* Closing */}
       <section className="bg-accent border-t-[3px] border-ink">
         <div className={`${wrap} py-16 sm:py-24`}>
-          <h2 className="font-extrabold text-display m-0 mb-6 max-w-[800px] [font-stretch:88%]">
+          <h2 className="font-extrabold text-display m-0 mb-6 max-w-headline [font-stretch:88%]">
             Let&rsquo;s find your 5&nbsp;hours.
           </h2>
-          <p className="text-lead m-0 mb-8 max-w-[520px]">
+          <p className="text-lead m-0 mb-8 max-w-measure">
             Tell me a little about your business. I&rsquo;ll reply within a day with times for your interview and how to pay.
           </p>
           <BookCallLink
