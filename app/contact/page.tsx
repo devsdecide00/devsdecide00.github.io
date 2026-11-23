@@ -35,11 +35,11 @@ export default function ContactPage() {
   return (
     <>
       <Nav />
-      <main className="max-w-[720px] mx-auto w-full px-5 pt-10 sm:pt-16 pb-20">
-        <h1 className="font-extrabold text-[clamp(48px,12vw,84px)] leading-[0.92] tracking-[-2.5px] m-0 mb-5 [font-stretch:88%]">
+      <main className="max-w-[720px] mx-auto w-full px-4 pt-12 sm:pt-16 pb-16">
+        <h1 className="font-extrabold text-display m-0 mb-6 [font-stretch:88%]">
           Book your assessment
         </h1>
-        <p className="text-[19px] sm:text-[21px] leading-[1.5] text-ink-soft m-0 mb-10">
+        <p className="text-lead text-ink-soft m-0 mb-8">
           Tell me a little about your business. I&rsquo;ll reply within a day with times for your 45-minute interview, in
           person or on Zoom, and how to pay. {contactPriceSentence()} If I can&rsquo;t find realistic ways to save at
           least 5 hours a week, you get a full refund.

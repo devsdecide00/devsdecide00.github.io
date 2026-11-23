@@ -2,8 +2,8 @@
 // These are examples of categories, not client results.
 
 const card = 'bg-white border-[3px] border-ink rounded-[22px] shadow-hard overflow-hidden flex flex-col';
-const scene = 'h-[190px] border-b-[3px] border-ink p-5 flex flex-col justify-center gap-2.5';
-const bubble = 'bg-white border-2 border-ink rounded-2xl px-3.5 py-2 text-[14px] leading-snug max-w-[88%]';
+const scene = 'h-[190px] border-b-[3px] border-ink p-6 flex flex-col justify-center gap-2';
+const bubble = 'bg-white border-2 border-ink rounded-2xl px-4 py-2 text-caption max-w-[88%]';
 
 function EmailScene() {
   return (
@@ -23,10 +23,10 @@ function EmailScene() {
 function NotesScene() {
   return (
     <div className={`${scene} bg-mint`}>
-      <div className="bg-white border-2 border-ink rounded-2xl p-3.5 text-[14px]">
-        <div className="font-bold mb-1.5">Call with Miller Plumbing</div>
+      <div className="bg-white border-2 border-ink rounded-2xl p-4 text-caption">
+        <div className="font-bold mb-2">Call with Miller Plumbing</div>
         {['Send revised estimate', 'Book site visit Thu', 'Follow-up email sent'].map((t, i) => (
-          <div key={t} className="flex items-center gap-2 py-0.5">
+          <div key={t} className="flex items-center gap-2 py-1">
             <span className={`w-4 h-4 rounded border-2 border-ink shrink-0 ${i === 2 ? 'bg-accent' : ''}`} />
             {t}
           </div>
@@ -40,11 +40,11 @@ function BookingScene() {
   return (
     <div className={`${scene} bg-sun`}>
       <div className={bubble}>&ldquo;When can someone come out?&rdquo;</div>
-      <div className="self-end flex gap-1.5">
+      <div className="self-end flex gap-2">
         {['Tue 9am', 'Wed 1pm', 'Thu 3pm'].map((t, i) => (
           <span
             key={t}
-            className={`border-2 border-ink rounded-full px-2.5 py-1 text-[13px] font-bold ${i === 1 ? 'bg-ink text-white' : 'bg-white'}`}
+            className={`border-2 border-ink rounded-full px-2 py-1 text-caption font-bold ${i === 1 ? 'bg-ink text-white' : 'bg-white'}`}
           >
             {t}
           </span>
@@ -66,9 +66,9 @@ export default function ToolExamples() {
       {examples.map((e) => (
         <div key={e.title} className={card}>
           {e.scene}
-          <div className="p-5 sm:p-6">
-            <h3 className="font-extrabold text-[23px] leading-tight tracking-[-0.4px] m-0 mb-2">{e.title}</h3>
-            <p className="text-[17px] leading-[1.5] text-ink-soft m-0">{e.body}</p>
+          <div className="p-6 sm:p-6">
+            <h3 className="font-extrabold text-title m-0 mb-2">{e.title}</h3>
+            <p className="text-body text-ink-soft m-0">{e.body}</p>
           </div>
         </div>
       ))}

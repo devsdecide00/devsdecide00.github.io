@@ -24,6 +24,33 @@
   --font-display: var(--font-bricolage), system-ui, sans-serif;
   --font-sans: var(--font-bricolage), system-ui, sans-serif;
 
+  /* Type scale (STYLE.md). Use only these sizes. */
+  --text-micro: 12px;
+  --text-micro--line-height: 1.4;
+  --text-caption: 14px;
+  --text-caption--line-height: 1.45;
+  --text-small: 16px;
+  --text-small--line-height: 1.5;
+  --text-body: 18px;
+  --text-body--line-height: 1.55;
+  --text-lead: 20px;
+  --text-lead--line-height: 1.5;
+  --text-title: 22px;
+  --text-title--line-height: 1.2;
+  --text-title--letter-spacing: -0.3px;
+  --text-h3: 28px;
+  --text-h3--line-height: 1.15;
+  --text-h3--letter-spacing: -0.5px;
+  --text-h2: clamp(36px, 7vw, 56px);
+  --text-h2--line-height: 1;
+  --text-h2--letter-spacing: -1.5px;
+  --text-display: clamp(48px, 12vw, 96px);
+  --text-display--line-height: 0.92;
+  --text-display--letter-spacing: -2.5px;
+  --text-jumbo: clamp(52px, 14.5vw, 120px);
+  --text-jumbo--line-height: 0.92;
+  --text-jumbo--letter-spacing: -2.5px;
+
   --shadow-hard: 4px 4px 0 0 #24123a;
   --shadow-hard-lg: 8px 8px 0 0 #24123a;
 }

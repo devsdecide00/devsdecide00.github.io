@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { RotateCcw } from '../components/icons';
 import { trackCtaClick } from '@/lib/analytics';
 import { Turnstile } from '@marsidev/react-turnstile';
 
@@ -117,12 +118,12 @@ export default function ChatUI() {
   };
 
   return (
-    <section className="max-w-[1240px] mx-auto py-14 px-10">
-      <div className="text-[12px] tracking-[2px] uppercase text-accent-deep mb-4">Try it yourself · live</div>
-      <h1 className="font-display text-[clamp(48px,6vw,88px)] leading-[1.05] tracking-[-2.5px] m-0 mb-6 font-normal max-w-[1000px]">
+    <section className="max-w-[1240px] mx-auto py-12 px-4 sm:px-12">
+      <div className="text-micro tracking-widest uppercase text-accent-deep mb-4">Try it yourself · live</div>
+      <h1 className="font-display text-display m-0 mb-6 font-normal max-w-[1000px]">
         A <span className="italic text-accent">practice discovery call</span>, run by AI.
       </h1>
-      <p className="text-[17px] text-ink-soft leading-[1.6] m-0 mb-10 max-w-[680px]">
+      <p className="text-body text-ink-soft m-0 mb-8 max-w-[680px]">
         Pick a scenario and a persona. You play the business owner; the AI plays me. Want the real version for your
         business? Book your assessment.
       </p>
@@ -130,13 +131,13 @@ export default function ChatUI() {
       <div className="grid grid-cols-[1fr_2fr] gap-8 items-start">
         <div className="flex flex-col gap-6">
           <div>
-            <div className="text-[11px] tracking-[1.5px] uppercase text-ink-faint mb-2.5">Scenario</div>
-            <div className="flex flex-col gap-1.5">
+            <div className="text-micro tracking-widest uppercase text-ink-faint mb-2">Scenario</div>
+            <div className="flex flex-col gap-2">
               {scenarios.map((s) => (
                 <button
                   key={s}
                   onClick={() => { setScenario(s); reset(s, persona); }}
-                  className={`text-left px-[14px] py-2.5 rounded-[10px] text-[13px] cursor-pointer font-[inherit] border ${
+                  className={`text-left px-4 py-2 rounded-[10px] text-caption cursor-pointer font-[inherit] border ${
                     scenario === s ? 'bg-ink text-bg border-ink' : 'bg-white text-ink-soft border-rule'
                   }`}
                 >
@@ -147,13 +148,13 @@ export default function ChatUI() {
           </div>
 
           <div>
-            <div className="text-[11px] tracking-[1.5px] uppercase text-ink-faint mb-2.5">You are</div>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="text-micro tracking-widest uppercase text-ink-faint mb-2">You are</div>
+            <div className="flex flex-wrap gap-2">
               {personas.map((p) => (
                 <button
                   key={p}
                   onClick={() => { setPersona(p); reset(scenario, p); }}
-                  className={`px-[13px] py-[7px] rounded-full text-[12px] cursor-pointer font-[inherit] border ${
+                  className={`px-4 py-2 rounded-full text-caption cursor-pointer font-[inherit] border ${
                     persona === p ? 'bg-ink text-bg border-ink' : 'bg-transparent text-ink-soft border-rule'
                   }`}
                 >
@@ -165,9 +166,9 @@ export default function ChatUI() {
 
           <button
             onClick={reset}
-            className="bg-transparent text-ink-faint border border-dashed border-rule py-2.5 rounded-lg text-[12px] cursor-pointer font-[inherit]"
+            className="bg-transparent text-ink-faint border border-dashed border-rule py-2 rounded-lg text-caption flex items-center justify-center gap-1 cursor-pointer font-[inherit]"
           >
-            ↻ Reset conversation
+            <RotateCcw size={16} /> Reset conversation
           </button>
 
           <div>
@@ -178,26 +179,26 @@ export default function ChatUI() {
               onExpire={() => setCfToken('')}
               onError={() => setCfToken('')}
             />
-            <div className="text-[12px] text-ink-faint mt-2">Quick human check so the live chat doesn&rsquo;t get farmed.</div>
+            <div className="text-micro text-ink-faint mt-2">Quick human check so the live chat doesn&rsquo;t get farmed.</div>
           </div>
         </div>
 
         <div className="bg-white border border-rule rounded-[20px] p-6 min-h-[560px] flex flex-col shadow-[0_20px_40px_-20px_rgba(26,24,20,0.1)]">
-          <div ref={scrollContainerRef} role="log" aria-live="polite" aria-label="Conversation" className="flex-1 overflow-y-auto pr-2 flex flex-col gap-[14px] min-h-[400px] max-h-[500px]">
+          <div ref={scrollContainerRef} role="log" aria-live="polite" aria-label="Conversation" className="flex-1 overflow-y-auto pr-2 flex flex-col gap-4 min-h-[400px] max-h-[500px]">
             {convo.length === 0 && (
-              <div className="text-ink-faint text-[14px] m-auto text-center max-w-[320px]">
-                <div className="font-display italic text-[28px] text-ink mb-3">Start talking.</div>
+              <div className="text-ink-faint text-caption m-auto text-center max-w-[320px]">
+                <div className="font-display italic text-h3 text-ink mb-4">Start talking.</div>
                 Say anything. &ldquo;Hey, we&rsquo;re drowning in X&rdquo; works fine.
               </div>
             )}
             {convo.map((m, i) => (
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div
-                  className={`max-w-[78%] px-4 py-3 rounded-[14px] text-[14px] leading-[1.5] ${
+                  className={`max-w-[78%] px-4 py-4 rounded-[14px] text-caption ${
                     m.role === 'user' ? 'bg-accent-deep text-white' : 'bg-bg text-ink'
                   }`}
                 >
-                  <div className="text-[10px] tracking-[1.2px] uppercase opacity-60 mb-1">
+                  <div className="text-micro tracking-widest uppercase mb-1">
                     {m.role === 'user' ? 'You' : 'Solomon (AI)'}
                   </div>
                   {m.text}
@@ -205,7 +206,7 @@ export default function ChatUI() {
               </div>
             ))}
             {loading && (
-              <div role="status" className="flex gap-1 px-4 py-2.5">
+              <div role="status" className="flex gap-1 px-4 py-2">
                 <span className="sr-only">Solomon is typing…</span>
                 {[0, 1, 2].map((i) => (
                   <div
@@ -221,7 +222,7 @@ export default function ChatUI() {
 
           <form
             onSubmit={(e) => { e.preventDefault(); send(); }}
-            className="flex gap-2.5 mt-[18px] pt-[18px] border-t border-rule"
+            className="flex gap-2 mt-4 pt-4 border-t border-rule"
           >
             <input
               value={input}
@@ -229,12 +230,12 @@ export default function ChatUI() {
               maxLength={1000}
               aria-label="Your message"
               placeholder="Type your side of the conversation…"
-              className="flex-1 bg-bg border border-rule rounded-[10px] px-[14px] py-3 font-[inherit] text-[14px] outline-none focus-visible:ring-2 focus-visible:ring-ink"
+              className="flex-1 bg-bg border border-rule rounded-[10px] px-4 py-4 font-[inherit] text-caption outline-none focus-visible:ring-2 focus-visible:ring-ink"
             />
             <button
               type="submit"
               disabled={loading || !input.trim()}
-              className="bg-ink text-bg border-none px-5 rounded-[10px] font-[inherit] text-[14px] font-medium cursor-pointer disabled:cursor-wait"
+              className="bg-ink text-bg border-none px-4 rounded-[10px] font-[inherit] text-caption font-medium cursor-pointer disabled:cursor-wait"
             >
               Send
             </button>
@@ -242,15 +243,15 @@ export default function ChatUI() {
         </div>
       </div>
 
-      <div className="text-center mt-[60px] p-10 bg-bg-deep rounded-2xl">
-        <div className="font-display text-[36px] tracking-[-1px] m-0 mb-3 font-normal">
+      <div className="text-center mt-16 p-12 bg-bg-deep rounded-2xl">
+        <div className="font-display text-h3 m-0 mb-4 font-normal">
           Done practicing?{' '}
-          <span className="italic text-accent">Let&rsquo;s do the real one.</span>
+          <span className="italic text-accent-deep">Let&rsquo;s do the real one.</span>
         </div>
         <Link
           href="/contact"
           onClick={() => trackCtaClick('Book your assessment', 'try_it_yourself')}
-          className="inline-block no-underline bg-ink text-bg px-7 py-[14px] rounded-full text-[14px] font-medium mt-2"
+          className="inline-block no-underline bg-ink text-bg px-6 py-4 rounded-full text-caption font-medium mt-2"
         >
           Book your assessment
         </Link>

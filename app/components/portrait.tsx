@@ -10,7 +10,7 @@ export default function Portrait({ className = 'w-24 h-24' }: { className?: stri
     return (
       <div
         aria-hidden
-        className={`${className} rounded-full bg-accent border-[3px] border-ink flex items-center justify-center font-extrabold text-ink text-[40px] shrink-0`}
+        className={`${className} rounded-full bg-accent border-[3px] border-ink flex items-center justify-center font-extrabold text-ink text-h3 shrink-0`}
       >
         S
       </div>

@@ -13,17 +13,17 @@ export const metadata: Metadata = {
 
 const EFFECTIVE_DATE = 'November 13, 2026';
 
-const h2 = 'font-extrabold text-[26px] sm:text-[30px] leading-[1.1] tracking-[-0.6px] m-0 mt-12 mb-4';
-const p = 'text-[18px] leading-[1.6] text-ink-soft m-0 mb-4';
-const li = 'text-[18px] leading-[1.6] text-ink-soft mb-2';
+const h2 = 'font-extrabold text-h3 m-0 mt-12 mb-4';
+const p = 'text-body text-ink-soft m-0 mb-4';
+const li = 'text-body text-ink-soft mb-2';
 const a = 'text-ink underline';
 
 export default function PrivacyPage() {
   return (
     <>
       <Nav />
-      <main className="max-w-[760px] mx-auto px-5 sm:px-8 pt-10 sm:pt-16 pb-20">
-        <h1 className="font-extrabold text-[clamp(40px,8vw,64px)] leading-[0.95] tracking-[-2px] m-0 mb-4">
+      <main className="max-w-[760px] mx-auto px-4 sm:px-8 pt-12 sm:pt-16 pb-16">
+        <h1 className="font-extrabold text-display m-0 mb-4">
           Privacy Policy
         </h1>
         <p className={p}>Effective {EFFECTIVE_DATE}</p>

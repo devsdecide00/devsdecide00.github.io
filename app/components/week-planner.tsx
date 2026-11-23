@@ -16,16 +16,16 @@ export default function WeekPlanner({ className = '' }: { className?: string }) 
   let n = 0;
 
   return (
-    <div className={`relative bg-white border-[3px] border-ink rounded-[22px] shadow-hard-lg p-4 sm:p-5 ${className}`}>
-      <div className="font-extrabold text-[20px] tracking-[-0.3px] mb-3">An example week</div>
+    <div className={`relative bg-white border-[3px] border-ink rounded-[22px] shadow-hard-lg p-4 sm:p-6 ${className}`}>
+      <div className="font-extrabold text-title mb-4">An example week</div>
 
-      <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
+      <div className="grid grid-cols-5 gap-2 sm:gap-2">
         {week.map(([day, blocks]) => (
-          <div key={day} className="flex flex-col gap-1.5 sm:gap-2">
-            <div className="text-[13px] font-bold text-ink-faint text-center">{day}</div>
+          <div key={day} className="flex flex-col gap-2 sm:gap-2">
+            <div className="text-caption font-bold text-ink-faint text-center">{day}</div>
             {blocks.map((b, i) => {
               const h = b.size === 2 ? 'h-[92px] sm:h-[104px]' : 'h-[42px] sm:h-[48px]';
-              const label = 'text-[11px] sm:text-[13px] font-semibold leading-tight';
+              const label = 'text-micro sm:text-caption font-semibold';
               if (!b.admin) {
                 return (
                   <div key={i} className={`${h} rounded-lg bg-bg-deep border-2 border-ink/10 flex items-center justify-center ${label} text-ink-soft`}>

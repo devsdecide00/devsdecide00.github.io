@@ -27,25 +27,29 @@ Every margin, padding, and gap is a multiple of 8px. 4px is allowed only for tig
 
 **Font:** Bricolage Grotesque (`--font-display`, `--font-sans`), loaded through `next/font` so it is self-hosted. Don't add a second family without a reason; never add more than two. Never load fonts from a third-party domain at runtime (see `AGENTS.md`). Avoid Inter; it reads as a template default.
 
-**Scale:** use only these sizes.
+**Scale:** use only these sizes. They are theme tokens in `app/globals.css` and carry their own line-height and letter-spacing, so don't add `leading-[…]` or `tracking-[…]` next to them.
 
-| Role | Size | Weight |
-|------|------|--------|
-| Display (hero) | `clamp(48px, 12vw, 84px)` | 800 |
-| H1 | 36px | 800 |
-| H2 | 28px | 700 |
-| H3 / card title | 22px | 700 |
-| Lead / large body | 18px | 400 |
-| Body | 16px | 400 |
-| Small / meta | 14px | 500 |
-| Caption / label | 12px | 600 |
+| Class | Size | Weight | Use |
+|-------|------|--------|-----|
+| `text-jumbo` | `clamp(52px, 14.5vw, 120px)` | 800 | `/pitch` slides only |
+| `text-display` | `clamp(48px, 12vw, 96px)` | 800 | page `<h1>`, final CTA, price |
+| `text-h2` | `clamp(36px, 7vw, 56px)` | 800 | section headings |
+| `text-h3` | 28px | 800 | sub-section headings, step titles |
+| `text-title` | 22px | 700–800 | card titles, FAQ questions |
+| `text-lead` | 20px | 400 | intro paragraph under a heading |
+| `text-body` | 18px | 400 (700 for buttons/labels) | body copy, buttons, form fields |
+| `text-small` | 16px | 400–700 | meta, chips, small buttons |
+| `text-caption` | 14px | 400–700 | mock UI inside illustrations, chat |
+| `text-micro` | 12px | 400–600 | uppercase eyebrows (`uppercase tracking-widest`) |
+
+Two scale steps can be paired responsively (`text-lead sm:text-h3`). Illustrations drawn as graphics (`stamp.tsx`, `opengraph-image.tsx`, `icon.tsx`) are exempt.
 
 - Each step must be clearly bigger than the one below it. Two sizes 1px apart (18/19, 21/22) are not a hierarchy; snap them to the nearest step.
 - Adding a size is a deliberate decision: only if it will be reused in more than one place, and it gets added to this table in the same change.
 - Hierarchy order on any screen: heading → subtitle → details. If the eye doesn't land on the heading first, the scale is being misused.
 - Line length for body copy: 60–75 characters (`max-w-prose` or ~`65ch`).
 
-> Current drift: the codebase uses ~20 distinct `text-[Npx]` values. When touching a component, snap its sizes to this scale.
+> Use the classes above, never `text-[Npx]`.
 
 ## 3. Color: small palette, 60/30/10
 
@@ -81,7 +85,7 @@ Every margin, padding, and gap is a multiple of 8px. 4px is allowed only for tig
 ## 4. Icons: one set, no emoji
 
 - **No emoji in the interface.** They render differently per device, bring their own colors that clash with the palette, and read as unfinished. Emoji are fine only inside user-generated content.
-- Use **one** icon set. All icons share stroke width and style; mixing sets shows up as mismatched weights side by side. The site currently uses hand-drawn inline SVG (`app/components/stamp.tsx`). If a library is added, pick one (e.g. Lucide), install it as a bundled npm package (never a CDN), and use only that.
+- Use **one** icon set. All icons share stroke width and style; mixing sets shows up as mismatched weights side by side. The set is `app/components/icons.tsx` (Lucide paths, stroke 2.5). Add new icons there, copied from Lucide; never from another set or a CDN.
 - Icons take color from text tokens (`currentColor`) and size from the type scale (16, 20, or 24px).
 - Decorative icons get `aria-hidden="true"`; icon-only buttons need an `aria-label`. Touch targets stay ≥24px, ≥44px for primary actions.
 - Not everything needs an icon. Add one only if it speeds up scanning.

@@ -5,6 +5,7 @@ import PitchBookQr from './book-qr';
 import Portrait from '../components/portrait';
 import WeekPlanner from '../components/week-planner';
 import Stamp from '../components/stamp';
+import { ArrowDown } from '../components/icons';
 import { currentPrice, formatPrice, pitchPriceDetail, priceLabel } from '@/lib/offer';
 
 export const metadata: Metadata = {
@@ -33,8 +34,8 @@ const tones = {
 
 type Tone = keyof typeof tones;
 
-const big = 'font-extrabold text-[clamp(52px,14.5vw,120px)] leading-[0.92] tracking-[-2.5px] m-0 [font-stretch:88%] text-balance';
-const sub = 'text-[21px] sm:text-[26px] leading-[1.35] m-0 mt-5 opacity-85 max-w-[560px]';
+const big = 'font-extrabold text-jumbo m-0 [font-stretch:88%] text-balance';
+const sub = 'text-lead sm:text-h3 m-0 mt-6 max-w-[560px]';
 
 export default async function PitchPage() {
   const pitchDetail = pitchPriceDetail();
@@ -60,7 +61,7 @@ export default async function PitchPage() {
           {['Inbox', 'Quotes', 'Booking', 'Follow-ups', 'Invoices', 'Same questions again'].map((t, i) => (
             <span
               key={t}
-              className="bg-white border-[3px] border-ink rounded-full px-4 py-2 text-[18px] font-bold"
+              className="bg-white border-[3px] border-ink rounded-full px-4 py-2 text-body font-bold"
               style={{ transform: `rotate(${[-4, 3, -2, 5, -3, 2][i]}deg)` }}
             >
               {t}
@@ -73,7 +74,7 @@ export default async function PitchPage() {
     [
       'white',
       <>
-        <WeekPlanner className="mb-10 max-w-[480px]" />
+        <WeekPlanner className="mb-8 max-w-[480px]" />
         <h2 className={big}>45 minutes. I find the hours.</h2>
       </>,
     ],
@@ -87,7 +88,7 @@ export default async function PitchPage() {
     [
       'plum',
       <>
-        <Stamp id="stamp-pitch" className="w-[min(50vw,220px)] h-[min(50vw,220px)] mb-10" />
+        <Stamp id="stamp-pitch" className="w-[min(50vw,220px)] h-[min(50vw,220px)] mb-8" />
         <h2 className={big}>No 5 hours, full refund.</h2>
         <p className={sub}>If I can&rsquo;t find realistic ways to save 5 hours a week, you get every dollar back.</p>
       </>,
@@ -95,8 +96,8 @@ export default async function PitchPage() {
     [
       'mint',
       <>
-        <div className="font-bold text-[22px] mb-2">{priceLabel()}</div>
-        <div className="font-extrabold text-[clamp(96px,32vw,220px)] leading-[0.85] tracking-[-5px] [font-stretch:85%]">
+        <div className="font-bold text-title mb-2">{priceLabel()}</div>
+        <div className="font-extrabold text-jumbo [font-stretch:85%]">
           {formatPrice(currentPrice())}
         </div>
         {pitchDetail && <p className={sub}>{pitchDetail}</p>}
@@ -123,8 +124,8 @@ export default async function PitchPage() {
     <Deck>
       {slides.map(([tone, content], i) => (
         <section key={i} id={`s${i}`} className={`h-[100dvh] snap-start snap-always ${tones[tone]}`}>
-          <div className="h-full max-w-[860px] mx-auto flex flex-col px-6 sm:px-14 pt-[max(20px,env(safe-area-inset-top))] pb-[max(24px,env(safe-area-inset-bottom))]">
-            <div className="flex justify-between items-center text-[16px] font-bold opacity-70 py-2">
+          <div className="h-full max-w-[860px] mx-auto flex flex-col px-6 sm:px-16 pt-[max(24px,env(safe-area-inset-top))] pb-[max(24px,env(safe-area-inset-bottom))]">
+            <div className="flex justify-between items-center text-small font-bold py-2">
               <span>Developers Decide</span>
               <span>
                 {i + 1}/{slides.length}
@@ -135,9 +136,9 @@ export default async function PitchPage() {
               <a
                 href={`#s${i + 1}`}
                 aria-label="Next slide"
-                className="self-start w-14 h-14 rounded-full border-[3px] border-current flex items-center justify-center no-underline text-current text-[24px] font-bold"
+                className="self-start w-14 h-14 rounded-full border-[3px] border-current flex items-center justify-center no-underline text-current"
               >
-                ↓
+                <ArrowDown size={24} />
               </a>
             )}
           </div>
