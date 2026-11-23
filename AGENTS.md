@@ -28,6 +28,10 @@ Every page and component must meet WCAG 2.1 AA.
 - **Links:** link text says where it goes; no bare "click here."
 - **Zoom:** the layout works at 200% zoom and at 320px width without horizontal scrolling.
 
+## Visual style
+
+Follow `STYLE.md` for spacing, type scale, color, icons, and decluttering.
+
 ## Before pushing
 
 - Run `npm test`, `npx tsc --noEmit`, and `npm run lint`. All must pass.
